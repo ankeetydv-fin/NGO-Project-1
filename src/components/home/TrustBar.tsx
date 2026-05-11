@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { Container } from "@/components/layout/Container";
 import * as LucideIcons from "lucide-react";
 import { trustPartners } from "@/content";
@@ -15,7 +16,7 @@ export function TrustBar() {
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
             {trustPartners.map((partner) => {
               // Dynamically get the icon component from LucideIcons
-              const Icon = (LucideIcons as Record<string, React.ElementType>)[partner.iconName] || LucideIcons.Building2;
+              const Icon = (LucideIcons as unknown as Record<string, React.ElementType>)[partner.iconName] || LucideIcons.Building2;
               
               return (
                 <div
