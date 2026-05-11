@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { PageBanner } from "@/components/ui/PageBanner";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -53,13 +52,9 @@ export default function ImpactPage() {
             {impactStatsExtended.map((stat, i) => {
               const Icon = ICON_MAP[stat.iconName] || Users;
               return (
-                <motion.div
+                <div
                   key={stat.label}
                   className="bg-bg-off-white border border-border-light rounded-[var(--radius-md)] p-6 text-center shadow-soft"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.08 }}
                 >
                   <div className={`w-14 h-14 rounded-full ${stat.bg} flex items-center justify-center mx-auto mb-3`}>
                     <Icon size={26} className={stat.color} />
@@ -68,7 +63,7 @@ export default function ImpactPage() {
                     {stat.value}
                   </p>
                   <p className="text-text-muted text-sm mt-1">{stat.label}</p>
-                </motion.div>
+                </div>
               );
             })}
           </div>
@@ -85,13 +80,9 @@ export default function ImpactPage() {
           />
           <div className="grid md:grid-cols-3 gap-8">
             {impactOutcomes.map((outcome, i) => (
-              <motion.div
+              <div
                 key={outcome.title}
                 className="bg-surface border border-border-light rounded-[var(--radius-md)] p-6 md:p-8 shadow-soft"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
               >
                 <div className="flex items-center gap-2 mb-4">
                   <BarChart3 size={20} className="text-secondary" />
@@ -105,7 +96,7 @@ export default function ImpactPage() {
                     </li>
                   ))}
                 </ul>
-              </motion.div>
+              </div>
             ))}
           </div>
         </Container>
@@ -117,13 +108,9 @@ export default function ImpactPage() {
           <SectionHeading label="Voices of Change" title="Stories from the Field" />
           <div className="grid md:grid-cols-2 gap-8">
             {impactStories.map((story, i) => (
-              <motion.div
+              <div
                 key={story.name}
                 className="bg-bg-off-white border border-border-light rounded-[var(--radius-md)] p-6 md:p-8 shadow-soft"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.15 }}
               >
                 <Quote size={28} className="text-accent-orange/40 mb-4" />
                 <blockquote className="text-text-dark leading-relaxed italic text-lg mb-4">
@@ -138,7 +125,7 @@ export default function ImpactPage() {
                     <p className="text-text-muted text-xs">{story.location}</p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </Container>

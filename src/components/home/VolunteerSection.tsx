@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
 import { Button } from "@/components/ui/Button";
@@ -28,12 +27,8 @@ export function VolunteerSection() {
       <Container size="lg">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text */}
-          <motion.div
+          <div
             className="space-y-6"
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6 }}
           >
             <p className="text-accent-orange font-semibold text-sm uppercase tracking-wider">
               Join Our Team
@@ -63,26 +58,18 @@ export function VolunteerSection() {
                 </Button>
               </Link>
             </div>
-          </motion.div>
+          </div>
 
           {/* Volunteer Role Cards */}
-          <motion.div
+          <div
             className="space-y-4"
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6, delay: 0.2 }}
           >
             {roles.map((role, i) => {
               const Icon = ICON_MAP[role.iconName] || Users;
               return (
-                <motion.div
+                <div
                   key={role.title}
                   className="bg-surface/10 backdrop-blur-sm border border-surface/20 rounded-[var(--radius-md)] p-5 flex items-center gap-4 hover:bg-surface/20 transition-colors cursor-pointer"
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.3 + i * 0.1 }}
                 >
                   <div className="w-12 h-12 rounded-full bg-accent-orange/20 flex items-center justify-center shrink-0">
                     <Icon size={24} className="text-accent-orange" />
@@ -99,10 +86,10 @@ export function VolunteerSection() {
                     </div>
                   </div>
                   <ArrowRight size={20} className="text-surface/50 shrink-0" />
-                </motion.div>
+                </div>
               );
             })}
-          </motion.div>
+          </div>
         </div>
       </Container>
     </Section>

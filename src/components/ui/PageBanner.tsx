@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Container } from "@/components/layout/Container";
 
 interface PageBannerProps {
@@ -19,11 +18,8 @@ export function PageBanner({ title, subtitle, breadcrumb }: PageBannerProps) {
       </div>
 
       <Container size="lg" className="relative z-10">
-        <motion.div
+        <div
           className="text-center text-surface space-y-4"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
         >
           {breadcrumb && (
             <p className="text-accent-orange font-semibold text-sm uppercase tracking-wider">
@@ -38,7 +34,7 @@ export function PageBanner({ title, subtitle, breadcrumb }: PageBannerProps) {
               {subtitle}
             </p>
           )}
-        </motion.div>
+        </div>
       </Container>
     </section>
   );

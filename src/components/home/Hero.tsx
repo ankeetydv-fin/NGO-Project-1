@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/layout/Container";
 import { Heart, ArrowRight } from "lucide-react";
@@ -22,22 +21,16 @@ export function Hero() {
       <Container size="xl" className="relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
-          <motion.div
+          <div
             className="text-surface space-y-8"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
           >
             {/* Trust badge */}
-            <motion.div
+            <div
               className="inline-flex items-center gap-2 bg-surface/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium border border-surface/20"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
             >
               <span className="w-2 h-2 rounded-full bg-accent-green animate-pulse" />
               {c.badge}
-            </motion.div>
+            </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-heading leading-tight">
               {c.headline}
@@ -49,11 +42,8 @@ export function Hero() {
             </p>
 
             {/* CTA Buttons */}
-            <motion.div
+            <div
               className="flex flex-wrap gap-4 pt-2"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
             >
               <Link href={c.primaryCTA.href} tabIndex={-1}>
                 <Button variant="accent" size="lg" className="gap-2 text-lg shadow-lg">
@@ -71,14 +61,11 @@ export function Hero() {
                   <ArrowRight size={20} />
                 </Button>
               </Link>
-            </motion.div>
+            </div>
 
             {/* Quick stats row */}
-            <motion.div
+            <div
               className="flex flex-wrap gap-8 pt-6 border-t border-surface/15"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
             >
               {c.stats.map((stat) => (
                 <div key={stat.label}>
@@ -86,15 +73,12 @@ export function Hero() {
                   <p className="text-surface/70 text-sm">{stat.label}</p>
                 </div>
               ))}
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
           {/* Hero Visual */}
-          <motion.div
+          <div
             className="hidden lg:block relative"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
           >
             <div className="relative w-full aspect-[4/5] rounded-[var(--radius-lg)] overflow-hidden shadow-2xl">
               <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent z-10" />
@@ -107,19 +91,16 @@ export function Hero() {
               </div>
             </div>
             {/* Floating donation card */}
-            <motion.div
+            <div
               className="absolute -bottom-6 -left-6 bg-surface text-text-dark rounded-[var(--radius-md)] shadow-lg p-5 max-w-[220px]"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
             >
               <p className="text-sm text-text-muted">Recent donation</p>
               <p className="text-2xl font-bold font-heading text-accent-green">{c.recentDonation.amount}</p>
               <p className="text-xs text-text-muted mt-1">
                 by {c.recentDonation.donor} • {c.recentDonation.time}
               </p>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </div>
       </Container>
     </section>

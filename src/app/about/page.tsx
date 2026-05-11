@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { PageBanner } from "@/components/ui/PageBanner";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -35,12 +34,7 @@ export default function AboutPage() {
         <Container size="lg">
           <SectionHeading label="Our Purpose" title="Mission & Vision" />
           <div className="grid md:grid-cols-2 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
+            <div>
               <Card>
                 <div className="space-y-4">
                   <div className="w-14 h-14 rounded-[var(--radius-sm)] bg-primary/10 flex items-center justify-center">
@@ -55,13 +49,8 @@ export default function AboutPage() {
                   </p>
                 </div>
               </Card>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.15 }}
-            >
+            </div>
+            <div>
               <Card>
                 <div className="space-y-4">
                   <div className="w-14 h-14 rounded-[var(--radius-sm)] bg-secondary/10 flex items-center justify-center">
@@ -76,7 +65,7 @@ export default function AboutPage() {
                   </p>
                 </div>
               </Card>
-            </motion.div>
+            </div>
           </div>
         </Container>
       </Section>
@@ -93,20 +82,16 @@ export default function AboutPage() {
             {values.map((v, i) => {
               const Icon = ICON_MAP[v.iconName] || Heart;
               return (
-                <motion.div
+                <div
                   key={v.title}
                   className="bg-surface border border-border-light rounded-[var(--radius-md)] p-6 text-center shadow-soft"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.1 }}
                 >
                   <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                     <Icon size={26} className="text-primary" />
                   </div>
                   <h3 className="font-bold font-heading text-lg mb-2">{v.title}</h3>
                   <p className="text-text-muted text-sm leading-relaxed">{v.text}</p>
-                </motion.div>
+                </div>
               );
             })}
           </div>
@@ -126,15 +111,11 @@ export default function AboutPage() {
 
             <div className="space-y-8">
               {timeline.map((item, i) => (
-                <motion.div
+                <div
                   key={item.year}
                   className={`relative flex items-start gap-6 md:gap-0 ${
                     i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                   }`}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.08 }}
                 >
                   <div className="absolute left-4 md:left-1/2 w-3 h-3 rounded-full bg-primary border-2 border-surface -translate-x-1.5 mt-2 z-10" />
                   <div className={`ml-10 md:ml-0 md:w-1/2 ${i % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"}`}>
@@ -142,7 +123,7 @@ export default function AboutPage() {
                     <h3 className="font-bold font-heading text-lg text-text-dark">{item.title}</h3>
                     <p className="text-text-muted text-sm mt-1">{item.text}</p>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -159,20 +140,16 @@ export default function AboutPage() {
           />
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {teamMembers.map((member, i) => (
-              <motion.div
+              <div
                 key={member.name}
                 className="bg-surface border border-border-light rounded-[var(--radius-md)] p-6 text-center shadow-soft"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
               >
                 <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 text-primary font-bold font-heading text-xl">
                   {member.initials}
                 </div>
                 <h3 className="font-bold font-heading text-lg">{member.name}</h3>
                 <p className="text-text-muted text-sm">{member.role}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </Container>

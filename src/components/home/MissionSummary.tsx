@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
 import { Button } from "@/components/ui/Button";
@@ -16,12 +15,8 @@ export function MissionSummary() {
       <Container size="lg">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Text */}
-          <motion.div
+          <div
             className="space-y-6"
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6 }}
           >
             <p className="text-secondary font-semibold text-sm uppercase tracking-wider">
               {c.label}
@@ -39,15 +34,11 @@ export function MissionSummary() {
                 <ArrowRight size={18} />
               </Button>
             </Link>
-          </motion.div>
+          </div>
 
           {/* Mission & Vision Cards */}
-          <motion.div
+          <div
             className="space-y-6"
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6, delay: 0.2 }}
           >
             {/* Mission Card */}
             <div className="bg-surface border border-border-light rounded-[var(--radius-md)] p-6 md:p-8 shadow-soft space-y-4">
@@ -66,7 +57,7 @@ export function MissionSummary() {
               <h3 className="text-xl font-bold font-heading text-text-dark">{c.vision.title}</h3>
               <p className="text-text-muted leading-relaxed">{c.vision.text}</p>
             </div>
-          </motion.div>
+          </div>
         </div>
       </Container>
     </Section>

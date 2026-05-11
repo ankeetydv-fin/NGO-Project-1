@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { PageBanner } from "@/components/ui/PageBanner";
 import { Section } from "@/components/layout/Section";
 import { Container } from "@/components/layout/Container";
@@ -35,12 +34,7 @@ export default function ContactPage() {
         <Container size="lg">
           <div className="grid lg:grid-cols-5 gap-12">
             {/* Form */}
-            <motion.div
-              className="lg:col-span-3"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-            >
+            <div className="lg:col-span-3">
               <div className="bg-bg-off-white border border-border-light rounded-[var(--radius-lg)] p-6 md:p-8 shadow-soft">
                 <h2 className="text-2xl font-bold font-heading mb-2 flex items-center gap-2">
                   <MessageSquare size={24} className="text-primary" />
@@ -90,15 +84,10 @@ export default function ContactPage() {
                   </form>
                 )}
               </div>
-            </motion.div>
+            </div>
 
             {/* Contact Info */}
-            <motion.div
-              className="lg:col-span-2 space-y-6"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.15 }}
-            >
+            <div className="lg:col-span-2 space-y-6">
               {contactInfo.map((info) => {
                 const Icon = ICON_MAP[info.iconName] || Mail;
                 return (
@@ -125,7 +114,7 @@ export default function ContactPage() {
                   <p className="text-sm">Map Embed</p>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </Container>
       </Section>

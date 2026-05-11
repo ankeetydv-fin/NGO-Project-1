@@ -18,8 +18,39 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "NGO Foundation",
-  description: "Making a difference in the world.",
+  title: {
+    default: "NGO Foundation | Making a Difference",
+    template: "%s | NGO Foundation"
+  },
+  description: "Dedicated to empowering communities and creating sustainable positive change globally through education, healthcare, and environmental initiatives.",
+  keywords: ["NGO", "non-profit", "charity", "donate", "volunteer", "community", "foundation"],
+  authors: [{ name: "NGO Foundation" }],
+  creator: "NGO Foundation",
+  metadataBase: new URL("https://ngofoundation.example.com"),
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "/",
+    title: "NGO Foundation | Making a Difference",
+    description: "Dedicated to empowering communities and creating sustainable positive change globally.",
+    siteName: "NGO Foundation",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "NGO Foundation",
+    description: "Making a difference in the world.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({

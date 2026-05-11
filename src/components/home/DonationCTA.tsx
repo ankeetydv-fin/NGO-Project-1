@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
 import { Heart, CheckCircle } from "lucide-react";
@@ -21,13 +20,7 @@ export function DonationCTA() {
       <Container size="lg" className="relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <motion.div
-            className="text-surface space-y-6"
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6 }}
-          >
+          <div className="text-surface space-y-6">
             <p className="text-accent-orange font-semibold text-sm uppercase tracking-wider">
               {c.label}
             </p>
@@ -47,15 +40,10 @@ export function DonationCTA() {
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
 
           {/* Right - Donation Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
+          <div>
             <div className="bg-surface text-text-dark rounded-[var(--radius-lg)] p-8 md:p-10 shadow-2xl space-y-6">
               <h3 className="text-2xl font-bold font-heading text-center">
                 Choose Your Impact
@@ -107,7 +95,7 @@ export function DonationCTA() {
                 {c.securityNote}
               </p>
             </div>
-          </motion.div>
+          </div>
         </div>
       </Container>
     </section>

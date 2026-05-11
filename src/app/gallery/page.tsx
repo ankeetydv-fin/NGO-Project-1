@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { PageBanner } from "@/components/ui/PageBanner";
 import { Section } from "@/components/layout/Section";
 import { Container } from "@/components/layout/Container";
@@ -31,12 +30,7 @@ export default function GalleryPage() {
 
       <Section spacing="lg" background="white">
         <Container size="lg">
-          <motion.div
-            className="flex flex-wrap justify-center gap-3 mb-10"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-          >
+          <div className="flex flex-wrap justify-center gap-3 mb-10">
             {galleryCategories.map((cat) => (
               <button
                 key={cat}
@@ -50,20 +44,15 @@ export default function GalleryPage() {
                 {cat}
               </button>
             ))}
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {filtered.map((item, i) => (
-              <motion.div
+              <div
                 key={`${item.alt}-${i}`}
                 className={`relative aspect-square rounded-[var(--radius-md)] overflow-hidden bg-gradient-to-br ${
                   galleryCategoryColors[item.category] || "from-primary/10 to-secondary/5"
-                } border border-border-light group cursor-pointer`}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: i * 0.05 }}
-                whileHover={{ scale: 1.02 }}
+                } border border-border-light group cursor-pointer hover:scale-[1.02] transition-transform duration-300`}
               >
                 <div className="absolute inset-0 flex items-center justify-center">
                   <Camera size={32} className="text-text-muted/20" />
@@ -76,7 +65,7 @@ export default function GalleryPage() {
                     <p className="text-surface text-sm mt-1 leading-snug">{item.alt}</p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
 

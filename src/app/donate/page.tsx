@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { PageBanner } from "@/components/ui/PageBanner";
 import { Section } from "@/components/layout/Section";
 import { Container } from "@/components/layout/Container";
@@ -37,12 +36,7 @@ export default function DonatePage() {
         <Container size="lg">
           <div className="grid lg:grid-cols-5 gap-12">
             {/* Donation Form - Left */}
-            <motion.div
-              className="lg:col-span-3 space-y-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
+            <div className="lg:col-span-3 space-y-8">
               <div>
                 <h2 className="text-2xl md:text-3xl font-bold font-heading mb-2">
                   Choose Your Impact
@@ -144,15 +138,10 @@ export default function DonatePage() {
                 <span className="flex items-center gap-1"><CreditCard size={16} /> Razorpay</span>
                 <span className="flex items-center gap-1"><CheckCircle size={16} /> 80G Tax Exempt</span>
               </div>
-            </motion.div>
+            </div>
 
             {/* Right Sidebar */}
-            <motion.div
-              className="lg:col-span-2 space-y-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
+            <div className="lg:col-span-2 space-y-6">
               <div className="bg-bg-off-white border border-border-light rounded-[var(--radius-md)] p-6 shadow-soft">
                 <h3 className="font-bold font-heading text-lg mb-4 flex items-center gap-2">
                   <Heart size={20} className="text-accent-orange" /> Your Impact
@@ -189,7 +178,7 @@ export default function DonatePage() {
                   ))}
                 </ul>
               </div>
-            </motion.div>
+            </div>
           </div>
         </Container>
       </Section>

@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
 import { Button } from "@/components/ui/Button";
@@ -15,12 +14,8 @@ export function TransparencySection() {
   return (
     <Section spacing="lg" background="default">
       <Container size="lg">
-        <motion.div
+        <div
           className="text-center mb-12 md:mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.5 }}
         >
           <p className="text-secondary font-semibold text-sm uppercase tracking-wider mb-3">
             Transparency & Trust
@@ -32,19 +27,15 @@ export function TransparencySection() {
             We believe accountability is the foundation of trust. Explore our reports,
             certifications, and audited financials to see exactly where your money goes.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid md:grid-cols-3 gap-6 md:gap-8 mb-12">
           {transparencyReports.map((report, i) => {
             const Icon = ICON_MAP[report.iconName] || FileText;
             return (
-              <motion.div
+              <div
                 key={report.title}
                 className="bg-surface border border-border-light rounded-[var(--radius-md)] p-6 md:p-8 shadow-soft hover:shadow-lg transition-shadow group cursor-pointer"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
               >
                 <div className="flex items-start justify-between mb-4">
                   <div className="w-12 h-12 rounded-[var(--radius-sm)] bg-primary/10 flex items-center justify-center">
@@ -63,18 +54,14 @@ export function TransparencySection() {
                 <span className="inline-flex items-center gap-1 text-primary text-sm font-semibold group-hover:underline underline-offset-4">
                   Download <Download size={14} />
                 </span>
-              </motion.div>
+              </div>
             );
           })}
         </div>
 
         {/* Certification badges */}
-        <motion.div
+        <div
           className="bg-surface border border-border-light rounded-[var(--radius-lg)] p-6 md:p-8 shadow-soft"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
         >
           <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
             <div className="flex items-center gap-3 shrink-0">
@@ -95,21 +82,17 @@ export function TransparencySection() {
               ))}
             </div>
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
+        <div
           className="text-center mt-10"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4, delay: 0.2 }}
         >
           <Link href="/reports" tabIndex={-1}>
             <Button variant="outline" className="gap-2">
               View All Reports <ArrowRight size={18} />
             </Button>
           </Link>
-        </motion.div>
+        </div>
       </Container>
     </Section>
   );

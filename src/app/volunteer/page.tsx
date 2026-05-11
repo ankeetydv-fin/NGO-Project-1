@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { PageBanner } from "@/components/ui/PageBanner";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Section } from "@/components/layout/Section";
@@ -58,13 +57,9 @@ export default function VolunteerPage() {
             {volunteerRoles.map((role, i) => {
               const Icon = ICON_MAP[role.iconName] || Users;
               return (
-                <motion.div
+                <div
                   key={role.title}
                   className="bg-bg-off-white border border-border-light rounded-[var(--radius-md)] p-6 shadow-soft hover:shadow-lg transition-shadow"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.1 }}
                 >
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-[var(--radius-sm)] bg-secondary/10 flex items-center justify-center shrink-0">
@@ -79,7 +74,7 @@ export default function VolunteerPage() {
                       <p className="text-text-muted text-sm">{role.description}</p>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               );
             })}
           </div>
@@ -91,13 +86,7 @@ export default function VolunteerPage() {
         <Container size="lg">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Benefits */}
-            <motion.div
-              className="space-y-6"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
+            <div className="space-y-6">
               <div>
                 <p className="text-secondary font-semibold text-sm uppercase tracking-wider mb-2">
                   Why Volunteer
@@ -123,15 +112,10 @@ export default function VolunteerPage() {
                   {volunteerCommunityStats.description}
                 </p>
               </div>
-            </motion.div>
+            </div>
 
             {/* Form */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.15 }}
-            >
+            <div>
               <div className="bg-surface border border-border-light rounded-[var(--radius-lg)] p-6 md:p-8 shadow-soft">
                 <h3 className="text-2xl font-bold font-heading mb-6 flex items-center gap-2">
                   <HandHeart size={24} className="text-secondary" />
@@ -174,7 +158,7 @@ export default function VolunteerPage() {
                   </form>
                 )}
               </div>
-            </motion.div>
+            </div>
           </div>
         </Container>
       </Section>

@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
 import { Button } from "@/components/ui/Button";
@@ -13,13 +12,7 @@ export function LatestUpdates() {
   return (
     <Section spacing="lg" background="white">
       <Container size="lg">
-        <motion.div
-          className="text-center mb-12 md:mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.5 }}
-        >
+        <div className="text-center mb-12 md:mb-16">
           <p className="text-secondary font-semibold text-sm uppercase tracking-wider mb-3">
             From the Field
           </p>
@@ -29,17 +22,11 @@ export function LatestUpdates() {
           <p className="text-body-large text-text-muted max-w-2xl mx-auto">
             Stay connected with our latest news, impact stories, and community updates.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid md:grid-cols-3 gap-6 md:gap-8">
           {homepageStories.map((post, i) => (
-            <motion.div
-              key={post.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-            >
+            <div key={post.title}>
               <Card interactive padding="none" className="h-full flex flex-col">
                 {/* Image placeholder */}
                 <div className="w-full h-48 bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
@@ -70,23 +57,17 @@ export function LatestUpdates() {
                   </Link>
                 </div>
               </Card>
-            </motion.div>
+            </div>
           ))}
         </div>
 
-        <motion.div
-          className="text-center mt-10"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4, delay: 0.3 }}
-        >
+        <div className="text-center mt-10">
           <Link href="/stories" tabIndex={-1}>
             <Button variant="primary" className="gap-2">
               View All Stories <ArrowRight size={18} />
             </Button>
           </Link>
-        </motion.div>
+        </div>
       </Container>
     </Section>
   );

@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { PageBanner } from "@/components/ui/PageBanner";
 import { Section } from "@/components/layout/Section";
 import { Container } from "@/components/layout/Container";
@@ -21,13 +20,7 @@ export default function StoriesPage() {
         <Container size="lg">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {stories.map((story, i) => (
-              <motion.div
-                key={story.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
-              >
+              <div key={story.title}>
                 <Card interactive padding="none" className="h-full flex flex-col">
                   <div className="w-full h-48 bg-gradient-to-br from-primary/8 to-secondary/8 flex items-center justify-center">
                     <Tag size={36} className="text-primary/20" />
@@ -50,7 +43,7 @@ export default function StoriesPage() {
                     </div>
                   </div>
                 </Card>
-              </motion.div>
+              </div>
             ))}
           </div>
         </Container>

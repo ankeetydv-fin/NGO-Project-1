@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { PageBanner } from "@/components/ui/PageBanner";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -177,13 +176,7 @@ export default function ProgramsPage() {
             <Container size="lg">
               <div className={`grid lg:grid-cols-2 gap-12 items-start ${i % 2 !== 0 ? "lg:flex-row-reverse" : ""}`}>
                 {/* Info */}
-                <motion.div
-                  className="space-y-6"
-                  initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5 }}
-                >
+                <div className="space-y-6">
                   <div className={`w-16 h-16 rounded-[var(--radius-sm)] ${program.bg} flex items-center justify-center`}>
                     <Icon size={32} className={program.color} />
                   </div>
@@ -203,16 +196,10 @@ export default function ProgramsPage() {
                       </li>
                     ))}
                   </ul>
-                </motion.div>
+                </div>
 
                 {/* Stats */}
-                <motion.div
-                  className="space-y-6"
-                  initial={{ opacity: 0, x: i % 2 === 0 ? 20 : -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.15 }}
-                >
+                <div className="space-y-6">
                   <div className="grid grid-cols-3 gap-4">
                     {program.stats.map((stat) => (
                       <div
@@ -240,7 +227,7 @@ export default function ProgramsPage() {
                       Support This Program <ArrowRight size={18} />
                     </Button>
                   </Link>
-                </motion.div>
+                </div>
               </div>
             </Container>
           </Section>

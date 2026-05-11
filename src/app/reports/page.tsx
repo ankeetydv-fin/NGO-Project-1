@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { PageBanner } from "@/components/ui/PageBanner";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Section } from "@/components/layout/Section";
@@ -40,13 +39,9 @@ export default function ReportsPage() {
           />
           <div className="grid md:grid-cols-2 gap-6">
             {annualReports.map((report, i) => (
-              <motion.div
+              <div
                 key={report.title}
                 className="bg-bg-off-white border border-border-light rounded-[var(--radius-md)] p-6 shadow-soft hover:shadow-lg transition-shadow group cursor-pointer flex items-start gap-4"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
               >
                 <div className="w-14 h-14 rounded-[var(--radius-sm)] bg-primary/10 flex items-center justify-center shrink-0">
                   <FileText size={28} className="text-primary" />
@@ -62,7 +57,7 @@ export default function ReportsPage() {
                   </div>
                 </div>
                 <Download size={20} className="text-primary shrink-0 mt-1 group-hover:scale-110 transition-transform" />
-              </motion.div>
+              </div>
             ))}
           </div>
         </Container>
@@ -76,18 +71,14 @@ export default function ReportsPage() {
               <SectionHeading label="Financial Transparency" title="Audited Financials" align="left" />
               <div className="space-y-4">
                 {financialReports.map((report, i) => (
-                  <motion.div
+                  <div
                     key={report.title}
                     className="bg-surface border border-border-light rounded-[var(--radius-sm)] p-4 flex items-center gap-3 hover:shadow-sm transition-shadow cursor-pointer group"
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: i * 0.08 }}
                   >
                     <BarChart3 size={20} className="text-secondary shrink-0" />
                     <span className="font-medium flex-1 group-hover:text-primary transition-colors">{report.title}</span>
                     <Download size={16} className="text-text-muted" />
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             </div>
@@ -95,18 +86,14 @@ export default function ReportsPage() {
               <SectionHeading label="Third-Party Verified" title="Impact Assessments" align="left" />
               <div className="space-y-4">
                 {impactReports.map((report, i) => (
-                  <motion.div
+                  <div
                     key={report.title}
                     className="bg-surface border border-border-light rounded-[var(--radius-sm)] p-4 flex items-center gap-3 hover:shadow-sm transition-shadow cursor-pointer group"
-                    initial={{ opacity: 0, x: 10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: i * 0.08 }}
                   >
                     <ShieldCheck size={20} className="text-accent-green shrink-0" />
                     <span className="font-medium flex-1 group-hover:text-primary transition-colors">{report.title}</span>
                     <Download size={16} className="text-text-muted" />
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             </div>
@@ -122,12 +109,8 @@ export default function ReportsPage() {
             title="Our Certifications"
             description="Verified by independent bodies and regulatory authorities."
           />
-          <motion.div
+          <div
             className="bg-bg-off-white border border-border-light rounded-[var(--radius-lg)] p-8 shadow-soft"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
           >
             <div className="flex flex-wrap justify-center gap-4">
               {certifications.map((cert) => (
@@ -140,7 +123,7 @@ export default function ReportsPage() {
                 </span>
               ))}
             </div>
-          </motion.div>
+          </div>
         </Container>
       </Section>
     </>

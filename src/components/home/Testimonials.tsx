@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
 import { Quote } from "lucide-react";
@@ -10,12 +9,8 @@ export function Testimonials() {
   return (
     <Section spacing="lg" background="white">
       <Container size="lg">
-        <motion.div
+        <div
           className="text-center mb-12 md:mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.5 }}
         >
           <p className="text-secondary font-semibold text-sm uppercase tracking-wider mb-3">
             Stories of Impact
@@ -27,17 +22,13 @@ export function Testimonials() {
             Real stories from real people whose lives have been transformed
             through the generosity of our donors and the hard work of our team.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid md:grid-cols-3 gap-6 md:gap-8">
           {testimonials.map((testimonial, i) => (
-            <motion.div
+            <div
               key={testimonial.name}
               className="bg-bg-off-white border border-border-light rounded-[var(--radius-md)] p-6 md:p-8 shadow-soft flex flex-col"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: i * 0.15 }}
             >
               <Quote size={32} className="text-accent-orange/40 mb-4" />
               <blockquote className="text-text-dark leading-relaxed flex-1 italic">
@@ -56,7 +47,7 @@ export function Testimonials() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </Container>
