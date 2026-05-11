@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1E4E8C;
+  --color-secondary: #0F766E;
+  --color-accent-orange: #F59E0B;
+  --color-accent-green: #16A34A;
+  --color-bg-off-white: #F8FAFC;
+  --color-surface: #FFFFFF;
+  --color-text-dark: #0F172A;
+  --color-text-muted: #475569;
+  --color-border-light: #E2E8F0;
+
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-poppins);
+
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+  --shadow-soft: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+}
+
+:root {
+  --background: var(--color-bg-off-white);
+  --foreground: var(--color-text-dark);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+@layer utilities {
+  .text-h1 {
+    @apply text-3xl md:text-5xl lg:text-6xl font-bold leading-tight;
+  }
+  .text-h2 {
+    @apply text-2xl md:text-3xl lg:text-4xl font-bold leading-tight;
+  }
+  .text-h3 {
+    @apply text-xl md:text-2xl lg:text-3xl font-semibold leading-snug;
+  }
+  .text-body-large {
+    @apply text-lg leading-relaxed;
+  }
+  .text-body-base {
+    @apply text-base leading-relaxed;
+  }
+  .text-body-small {
+    @apply text-sm leading-relaxed;
+  }
+}
