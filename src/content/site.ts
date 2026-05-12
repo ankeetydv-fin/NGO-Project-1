@@ -9,12 +9,12 @@
 import type { SiteConfig, NavLink, ContactInfoBlock } from "@/types/content";
 
 export const siteConfig: SiteConfig = {
-  name: "NGO Foundation",
-  tagline: "Empowering Communities, Transforming India",
+  name: "Shiv Prabha Foundation",
+  tagline: "Transforming lives..One Step At A Time | संस्कार, शिक्षा और सेवा की ओर एक कदम",
   description:
     "We empower communities across India through education, healthcare, and sustainable development. Every contribution creates lasting impact.",
-  url: "https://ngofund.org",
-  email: "hello@ngofund.org",
+  url: "https://shivprabhafoundation.org",
+  email: "hello@shivprabhafoundation.org",
   phone: ["+91 11 4567 8900", "+91 98765 43210"],
   address: {
     line1: "42, Lodhi Road, Institutional Area",

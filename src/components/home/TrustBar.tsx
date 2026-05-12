@@ -17,7 +17,7 @@ export function TrustBar() {
             {trustPartners.map((partner) => {
               // Dynamically get the icon component from LucideIcons
               const Icon = (LucideIcons as unknown as Record<string, React.ElementType>)[partner.iconName] || LucideIcons.Building2;
-              
+
               return (
                 <div
                   key={partner.name}

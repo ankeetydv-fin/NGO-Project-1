@@ -8,6 +8,8 @@ import { Container } from "@/components/layout/Container";
 import { cn } from "@/lib/utils";
 import { navLinks } from "@/content";
 
+import Image from "next/image";
+
 const NAV_LINKS = navLinks.map((l) => ({ name: l.label, href: l.href }));
 
 export function Navbar() {
@@ -16,13 +18,21 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full bg-surface/90 backdrop-blur-md border-b border-border-light shadow-sm">
       <Container size="xl">
-        <div className="flex h-20 items-center justify-between">
+        <div className="flex h-24 items-center justify-between">
           
           {/* Logo Area */}
-          <Link href="/" className="flex items-center gap-2">
-            <span className="text-2xl font-bold font-heading text-primary">
-              NGO<span className="text-accent-orange">Fund</span>
-            </span>
+          <Link href="/" className="flex items-center gap-3">
+            <Image 
+              src="/Logo_Icon.png" 
+              alt="Shiv Prabha Foundation Logo" 
+              width={80} 
+              height={80}
+              className="object-contain"
+            />
+            <div className="flex flex-col items-center justify-center">
+              <span className="font-bold text-xl text-text-dark leading-none tracking-tight">Shiv Prabha</span>
+              <span className="font-bold text-sm text-primary leading-tight">Foundation</span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -67,7 +77,7 @@ export function Navbar() {
       {/* Mobile Navigation */}
       <div
         className={cn(
-          "lg:hidden absolute top-20 left-0 w-full bg-surface border-b border-border-light shadow-md transition-all duration-300 ease-in-out",
+          "lg:hidden absolute top-24 left-0 w-full bg-surface border-b border-border-light shadow-md transition-all duration-300 ease-in-out",
           isOpen ? "opacity-100 visible" : "opacity-0 invisible h-0 overflow-hidden"
         )}
       >

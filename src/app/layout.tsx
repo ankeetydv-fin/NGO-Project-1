@@ -17,28 +17,30 @@ const poppins = Poppins({
   display: "swap",
 });
 
+import { siteConfig } from "@/content/site";
+
 export const metadata: Metadata = {
   title: {
-    default: "NGO Foundation | Making a Difference",
-    template: "%s | NGO Foundation"
+    default: `${siteConfig.name} | ${siteConfig.tagline.split(' | ')[0]}`,
+    template: `%s | ${siteConfig.name}`
   },
-  description: "Dedicated to empowering communities and creating sustainable positive change globally through education, healthcare, and environmental initiatives.",
-  keywords: ["NGO", "non-profit", "charity", "donate", "volunteer", "community", "foundation"],
-  authors: [{ name: "NGO Foundation" }],
-  creator: "NGO Foundation",
-  metadataBase: new URL("https://ngofoundation.example.com"),
+  description: siteConfig.description,
+  keywords: ["NGO", "Shiv Prabha Foundation", "charity", "donate", "volunteer", "community", "foundation", "India"],
+  authors: [{ name: siteConfig.name }],
+  creator: siteConfig.name,
+  metadataBase: new URL(siteConfig.url),
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "en_IN",
     url: "/",
-    title: "NGO Foundation | Making a Difference",
-    description: "Dedicated to empowering communities and creating sustainable positive change globally.",
-    siteName: "NGO Foundation",
+    title: `${siteConfig.name} | ${siteConfig.tagline.split(' | ')[0]}`,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
   },
   twitter: {
     card: "summary_large_image",
-    title: "NGO Foundation",
-    description: "Making a difference in the world.",
+    title: siteConfig.name,
+    description: siteConfig.description,
   },
   robots: {
     index: true,
