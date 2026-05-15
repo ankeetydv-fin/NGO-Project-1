@@ -54,7 +54,7 @@ export default function VolunteerPage() {
             description="Choose a role that matches your skills and availability."
           />
           <div className="grid md:grid-cols-2 gap-6">
-            {volunteerRoles.map((role, i) => {
+            {volunteerRoles.map((role) => {
               const Icon = ICON_MAP[role.iconName] || Users;
               return (
                 <div

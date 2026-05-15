@@ -40,9 +40,9 @@ export const faqs: FAQItem[] = [
       "Your 80G receipt is automatically emailed to you within 24 hours of a successful donation. If you provided your PAN number, it will be included on the receipt. For any issues, email support@ngofund.org.",
   },
   {
-    question: "Can I set up a recurring monthly donation?",
+    question: "Can I donate more than once?",
     answer:
-      "Yes. On the Donate page, simply toggle the 'Monthly' option before completing your payment. You can cancel or modify your recurring donation at any time by contacting our support team.",
+      "Absolutely! You can visit our Donate page anytime to make another contribution. Each donation is processed securely via Razorpay and you will receive an 80G tax receipt for every donation.",
   },
   {
     question: "Is NGO Foundation a registered organization?",

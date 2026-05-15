@@ -1,0 +1,9 @@
+{
+  "autoFix": {
+    "enabled": true,
+    "lint": "eslint . --fix",
+    "test": "npm test",
+    "maxRetries": 3,
+    "timeout": 30000
+  }
+}

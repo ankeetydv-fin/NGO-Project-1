@@ -49,7 +49,7 @@ export default function ImpactPage() {
             description="Every number represents a life transformed, a community uplifted, and a future made brighter."
           />
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-            {impactStatsExtended.map((stat, i) => {
+            {impactStatsExtended.map((stat) => {
               const Icon = ICON_MAP[stat.iconName] || Users;
               return (
                 <div
@@ -79,7 +79,7 @@ export default function ImpactPage() {
             description="Third-party verified results from our core programs."
           />
           <div className="grid md:grid-cols-3 gap-8">
-            {impactOutcomes.map((outcome, i) => (
+            {impactOutcomes.map((outcome) => (
               <div
                 key={outcome.title}
                 className="bg-surface border border-border-light rounded-[var(--radius-md)] p-6 md:p-8 shadow-soft"
@@ -107,7 +107,7 @@ export default function ImpactPage() {
         <Container size="lg">
           <SectionHeading label="Voices of Change" title="Stories from the Field" />
           <div className="grid md:grid-cols-2 gap-8">
-            {impactStories.map((story, i) => (
+            {impactStories.map((story) => (
               <div
                 key={story.name}
                 className="bg-bg-off-white border border-border-light rounded-[var(--radius-md)] p-6 md:p-8 shadow-soft"

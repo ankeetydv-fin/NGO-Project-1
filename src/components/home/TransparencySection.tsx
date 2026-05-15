@@ -30,7 +30,7 @@ export function TransparencySection() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 md:gap-8 mb-12">
-          {transparencyReports.map((report, i) => {
+          {transparencyReports.map((report) => {
             const Icon = ICON_MAP[report.iconName] || FileText;
             return (
               <div

@@ -79,7 +79,7 @@ export default function AboutPage() {
             description="Every decision we make is rooted in these principles."
           />
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {values.map((v, i) => {
+            {values.map((v) => {
               const Icon = ICON_MAP[v.iconName] || Heart;
               return (
                 <div
@@ -139,7 +139,7 @@ export default function AboutPage() {
             description="Dedicated professionals driving our mission forward."
           />
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {teamMembers.map((member, i) => (
+            {teamMembers.map((member) => (
               <div
                 key={member.name}
                 className="bg-surface border border-border-light rounded-[var(--radius-md)] p-6 text-center shadow-soft"

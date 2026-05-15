@@ -81,7 +81,7 @@ export const donationCTAContent = {
     "100% of donations go directly to programs",
     "80G tax exemption certificate for all donations",
     "Real-time impact tracking and updates",
-    "Choose one-time or recurring giving",
+    "Choose your preferred donation amount",
   ],
   amounts: ["₹500", "₹1,000", "₹2,500", "₹5,000", "₹10,000", "₹25,000"],
   securityNote:

@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 import { PageBanner } from "@/components/ui/PageBanner";
-import { SectionHeading } from "@/components/ui/SectionHeading";
+
 import { Section } from "@/components/layout/Section";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
-import { Card } from "@/components/ui/Card";
+
 import {
   GraduationCap,
   HeartPulse,
@@ -16,8 +16,6 @@ import {
   Baby,
   ArrowRight,
   CheckCircle,
-  Users,
-  MapPin,
 } from "lucide-react";
 
 const PROGRAMS = [

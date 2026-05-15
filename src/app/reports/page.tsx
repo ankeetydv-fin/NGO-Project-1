@@ -38,7 +38,7 @@ export default function ReportsPage() {
             description="Comprehensive overviews of our programs, achievements, and financials."
           />
           <div className="grid md:grid-cols-2 gap-6">
-            {annualReports.map((report, i) => (
+            {annualReports.map((report) => (
               <div
                 key={report.title}
                 className="bg-bg-off-white border border-border-light rounded-[var(--radius-md)] p-6 shadow-soft hover:shadow-lg transition-shadow group cursor-pointer flex items-start gap-4"
@@ -70,7 +70,7 @@ export default function ReportsPage() {
             <div>
               <SectionHeading label="Financial Transparency" title="Audited Financials" align="left" />
               <div className="space-y-4">
-                {financialReports.map((report, i) => (
+                {financialReports.map((report) => (
                   <div
                     key={report.title}
                     className="bg-surface border border-border-light rounded-[var(--radius-sm)] p-4 flex items-center gap-3 hover:shadow-sm transition-shadow cursor-pointer group"
@@ -85,7 +85,7 @@ export default function ReportsPage() {
             <div>
               <SectionHeading label="Third-Party Verified" title="Impact Assessments" align="left" />
               <div className="space-y-4">
-                {impactReports.map((report, i) => (
+                {impactReports.map((report) => (
                   <div
                     key={report.title}
                     className="bg-surface border border-border-light rounded-[var(--radius-sm)] p-4 flex items-center gap-3 hover:shadow-sm transition-shadow cursor-pointer group"

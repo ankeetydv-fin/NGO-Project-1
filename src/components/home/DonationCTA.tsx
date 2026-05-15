@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
@@ -7,6 +8,7 @@ import { Heart, CheckCircle } from "lucide-react";
 import { donationCTAContent } from "@/content";
 
 export function DonationCTA() {
+  const [donationType, setDonationType] = useState<'one-time' | 'monthly'>('one-time');
   const c = donationCTAContent;
 
   return (
@@ -49,6 +51,24 @@ export function DonationCTA() {
                 Choose Your Impact
               </h3>
 
+              {/* Donation Type Toggle */}
+              <div className="flex p-1 bg-bg-off-white/50 border border-border-light rounded-[var(--radius-sm)] mb-6">
+                {['one-time', 'monthly'].map((type) => (
+                  <button
+                    key={type}
+                    onClick={() => setDonationType(type as 'one-time' | 'monthly')}
+                    className={`flex-1 py-2 px-4 rounded-[calc(var(--radius-sm)-4px)] text-sm font-bold capitalize transition-all ${
+                      donationType === type
+                        ? "bg-primary text-surface shadow-sm"
+                        : "text-text-muted hover:text-primary"
+                    }`}
+                  >
+                    {type === 'monthly' && <span className="mr-1 text-[10px] bg-accent-orange text-surface px-1.5 py-0.5 rounded-full uppercase">Save 12x</span>}
+                    {type}
+                  </button>
+                ))}
+              </div>
+
               {/* Amount buttons */}
               <div className="grid grid-cols-3 gap-3">
                 {c.amounts.map((amount) => (
@@ -57,6 +77,7 @@ export function DonationCTA() {
                     className="py-3 px-4 rounded-[var(--radius-sm)] border-2 border-border-light text-text-dark font-bold font-heading hover:border-primary hover:bg-primary/5 transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
                   >
                     {amount}
+                    {donationType === 'monthly' && <span className="block text-[10px] text-text-muted font-normal mt-0.5">/ mo</span>}
                   </button>
                 ))}
               </div>
@@ -72,16 +93,6 @@ export function DonationCTA() {
                   placeholder="₹ Enter amount"
                   className="w-full px-4 py-3 rounded-[var(--radius-sm)] border-2 border-border-light focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 text-lg font-medium transition-colors"
                 />
-              </div>
-
-              {/* Frequency toggle */}
-              <div className="flex rounded-[var(--radius-sm)] border border-border-light overflow-hidden">
-                <button className="flex-1 py-3 text-center font-medium bg-primary text-surface transition-colors">
-                  One-Time
-                </button>
-                <button className="flex-1 py-3 text-center font-medium text-text-muted hover:bg-bg-off-white transition-colors">
-                  Monthly
-                </button>
               </div>
 
               <Link href="/donate" tabIndex={-1} className="block">

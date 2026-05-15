@@ -25,7 +25,7 @@ export function LatestUpdates() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-          {homepageStories.map((post, i) => (
+          {homepageStories.map((post) => (
             <div key={post.title}>
               <Card interactive padding="none" className="h-full flex flex-col">
                 {/* Image placeholder */}

@@ -33,7 +33,7 @@ export function ImpactStats() {
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-          {impactStats.map((stat, i) => {
+          {impactStats.map((stat) => {
             const Icon = ICON_MAP[stat.iconName] || Users;
             return (
               <div

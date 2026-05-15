@@ -46,7 +46,7 @@ export function ProgramsPreview() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-          {homepagePrograms.map((program, i) => {
+          {homepagePrograms.map((program) => {
             const Icon = ICON_MAP[program.iconName] || GraduationCap;
             return (
               <div

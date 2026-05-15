@@ -64,7 +64,7 @@ export function VolunteerSection() {
           <div
             className="space-y-4"
           >
-            {roles.map((role, i) => {
+            {roles.map((role) => {
               const Icon = ICON_MAP[role.iconName] || Users;
               return (
                 <div

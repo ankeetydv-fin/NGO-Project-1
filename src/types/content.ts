@@ -4,7 +4,6 @@
  * These types ensure content stays structured.
  * ────────────────────────────────────────────── */
 
-import type { LucideIcon } from "lucide-react";
 
 /* ─── Site-wide ─── */
 export interface SiteConfig {

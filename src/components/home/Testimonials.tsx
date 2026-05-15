@@ -25,7 +25,7 @@ export function Testimonials() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-          {testimonials.map((testimonial, i) => (
+          {testimonials.map((testimonial) => (
             <div
               key={testimonial.name}
               className="bg-bg-off-white border border-border-light rounded-[var(--radius-md)] p-6 md:p-8 shadow-soft flex flex-col"

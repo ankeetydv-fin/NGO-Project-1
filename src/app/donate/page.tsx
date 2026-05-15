@@ -10,17 +10,15 @@ import {
   CheckCircle,
   ShieldCheck,
   CreditCard,
-  RefreshCw,
-  Gift,
 } from "lucide-react";
 import { donationTiers } from "@/content";
 
 const AMOUNTS = donationTiers.map((t) => t.amount);
 
 export default function DonatePage() {
+  const [donationFrequency, setDonationFrequency] = useState<'one-time' | 'monthly'>('one-time');
   const [selectedAmount, setSelectedAmount] = useState<number | null>(2500);
   const [customAmount, setCustomAmount] = useState("");
-  const [frequency, setFrequency] = useState<"one-time" | "monthly">("one-time");
 
   const activeAmount = customAmount ? parseInt(customAmount) : selectedAmount;
 
@@ -37,37 +35,32 @@ export default function DonatePage() {
           <div className="grid lg:grid-cols-5 gap-12">
             {/* Donation Form - Left */}
             <div className="lg:col-span-3 space-y-8">
-              <div>
-                <h2 className="text-2xl md:text-3xl font-bold font-heading mb-2">
-                  Choose Your Impact
-                </h2>
-                <p className="text-text-muted">
-                  Select an amount or enter your own. Every contribution matters.
-                </p>
-              </div>
+              <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div>
+                  <h2 className="text-2xl md:text-3xl font-bold font-heading mb-2">
+                    Choose Your Impact
+                  </h2>
+                  <p className="text-text-muted">
+                    Select an amount or enter your own. Every contribution matters.
+                  </p>
+                </div>
 
-              {/* Frequency Toggle */}
-              <div className="flex rounded-[var(--radius-sm)] border border-border-light overflow-hidden">
-                <button
-                  className={`flex-1 py-3 text-center font-medium flex items-center justify-center gap-2 transition-colors ${
-                    frequency === "one-time"
-                      ? "bg-primary text-surface"
-                      : "text-text-muted hover:bg-bg-off-white"
-                  }`}
-                  onClick={() => setFrequency("one-time")}
-                >
-                  <Gift size={18} /> One-Time
-                </button>
-                <button
-                  className={`flex-1 py-3 text-center font-medium flex items-center justify-center gap-2 transition-colors ${
-                    frequency === "monthly"
-                      ? "bg-primary text-surface"
-                      : "text-text-muted hover:bg-bg-off-white"
-                  }`}
-                  onClick={() => setFrequency("monthly")}
-                >
-                  <RefreshCw size={18} /> Monthly
-                </button>
+                {/* Frequency Toggle */}
+                <div className="flex p-1 bg-bg-off-white border border-border-light rounded-[var(--radius-sm)] w-full md:w-auto">
+                  {['one-time', 'monthly'].map((freq) => (
+                    <button
+                      key={freq}
+                      onClick={() => setDonationFrequency(freq as 'one-time' | 'monthly')}
+                      className={`flex-1 md:w-32 py-2 px-4 rounded-[calc(var(--radius-sm)-4px)] text-sm font-bold capitalize transition-all ${
+                        donationFrequency === freq
+                          ? "bg-primary text-surface shadow-md"
+                          : "text-text-muted hover:text-primary"
+                      }`}
+                    >
+                      {freq}
+                    </button>
+                  ))}
+                </div>
               </div>
 
               {/* Amount Grid */}
@@ -75,7 +68,7 @@ export default function DonatePage() {
                 {AMOUNTS.map((amount) => (
                   <button
                     key={amount}
-                    className={`py-4 px-4 rounded-[var(--radius-sm)] border-2 font-bold font-heading text-lg transition-all focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none ${
+                    className={`py-4 px-4 rounded-[var(--radius-sm)] border-2 font-bold font-heading transition-all focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none ${
                       selectedAmount === amount && !customAmount
                         ? "border-primary bg-primary/5 text-primary"
                         : "border-border-light text-text-dark hover:border-primary/50"
@@ -85,7 +78,10 @@ export default function DonatePage() {
                       setCustomAmount("");
                     }}
                   >
-                    ₹{amount.toLocaleString("en-IN")}
+                    <div className="text-lg">₹{amount.toLocaleString("en-IN")}</div>
+                    {donationFrequency === 'monthly' && (
+                      <div className="text-[10px] uppercase tracking-wider font-medium opacity-70">per month</div>
+                    )}
                   </button>
                 ))}
               </div>
@@ -129,8 +125,7 @@ export default function DonatePage() {
               {/* Submit */}
               <Button variant="accent" size="lg" className="w-full gap-2 text-lg">
                 <Heart size={22} />
-                Donate {activeAmount ? `₹${activeAmount.toLocaleString("en-IN")}` : ""}{" "}
-                {frequency === "monthly" ? "Monthly" : "Now"}
+                Donate {activeAmount ? `₹${activeAmount.toLocaleString("en-IN")}` : ""} {donationFrequency === 'monthly' ? "Monthly" : "Now"}
               </Button>
 
               <div className="flex items-center justify-center gap-6 text-text-muted text-sm flex-wrap">
@@ -167,7 +162,6 @@ export default function DonatePage() {
                     "100% of donations go to programs",
                     "80G tax exemption certificate via email",
                     "Transparent spending reports published annually",
-                    "Cancel recurring donations anytime",
                     "Secure, encrypted payment via Razorpay",
                     "FCRA compliant for international donations",
                   ].map((item) => (

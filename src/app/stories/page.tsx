@@ -4,7 +4,7 @@ import { PageBanner } from "@/components/ui/PageBanner";
 import { Section } from "@/components/layout/Section";
 import { Container } from "@/components/layout/Container";
 import { Card } from "@/components/ui/Card";
-import { Calendar, ArrowRight, Tag, Clock } from "lucide-react";
+import { Calendar, Tag, Clock } from "lucide-react";
 import { stories } from "@/content";
 
 export default function StoriesPage() {
@@ -19,7 +19,7 @@ export default function StoriesPage() {
       <Section spacing="lg" background="white">
         <Container size="lg">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {stories.map((story, i) => (
+            {stories.map((story) => (
               <div key={story.title}>
                 <Card interactive padding="none" className="h-full flex flex-col">
                   <div className="w-full h-48 bg-gradient-to-br from-primary/8 to-secondary/8 flex items-center justify-center">
