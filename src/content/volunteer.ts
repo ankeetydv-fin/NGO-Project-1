@@ -47,7 +47,7 @@ export const volunteerBenefits: string[] = [
   "Make a direct, tangible impact",
   "Gain field experience in social development",
   "Receive a certificate of volunteering",
-  "Join a supportive community of 2,000+ volunteers",
+  "Join a supportive community of 200+ volunteers",
   "Flexible commitment — from hours to months",
   "Professional development and training",
 ];
@@ -55,15 +55,15 @@ export const volunteerBenefits: string[] = [
 export const volunteerPageMeta = {
   title: "Volunteer",
   subtitle:
-    "Your time can change someone's life. Join 2,000+ volunteers making a real difference.",
+    "Your time can change someone's life. Join 200+ volunteers making a real difference.",
   breadcrumb: "Join Our Team",
 };
 
 export const volunteerCommunityStats = {
-  count: "2,000+",
+  count: "200+",
   label: "Active Volunteers",
   description:
-    "Join a growing community of volunteers across India who have collectively contributed over 50,000 hours of service.",
+    "Join a growing community of volunteers across India who have collectively contributed over 5,000 hours of service.",
 };
 
 export const volunteerFormOptions = {

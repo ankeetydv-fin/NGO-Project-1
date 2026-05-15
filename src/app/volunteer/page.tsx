@@ -137,21 +137,21 @@ export default function VolunteerPage() {
                     }}
                   >
                     <div className="grid md:grid-cols-2 gap-4">
-                      <input type="text" placeholder="Full Name *" required className="w-full px-4 py-3 rounded-[var(--radius-sm)] border border-border-light focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20" />
-                      <input type="email" placeholder="Email *" required className="w-full px-4 py-3 rounded-[var(--radius-sm)] border border-border-light focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20" />
+                      <input type="text" placeholder="Full Name *" required className="w-full px-4 py-3 rounded-[var(--radius-sm)] border border-border-light focus:border-btn-blue focus:outline-none focus:ring-2 focus:ring-btn-blue/20" />
+                      <input type="email" placeholder="Email *" required className="w-full px-4 py-3 rounded-[var(--radius-sm)] border border-border-light focus:border-btn-blue focus:outline-none focus:ring-2 focus:ring-btn-blue/20" />
                     </div>
-                    <input type="tel" placeholder="Phone Number" className="w-full px-4 py-3 rounded-[var(--radius-sm)] border border-border-light focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20" />
-                    <select className="w-full px-4 py-3 rounded-[var(--radius-sm)] border border-border-light focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 text-text-muted">
+                    <input type="tel" placeholder="Phone Number" className="w-full px-4 py-3 rounded-[var(--radius-sm)] border border-border-light focus:border-btn-blue focus:outline-none focus:ring-2 focus:ring-btn-blue/20" />
+                    <select className="w-full px-4 py-3 rounded-[var(--radius-sm)] border border-border-light focus:border-btn-blue focus:outline-none focus:ring-2 focus:ring-btn-blue/20 text-text-muted">
                       {volunteerFormOptions.interests.map((opt) => (
                         <option key={opt}>{opt}</option>
                       ))}
                     </select>
-                    <select className="w-full px-4 py-3 rounded-[var(--radius-sm)] border border-border-light focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 text-text-muted">
+                    <select className="w-full px-4 py-3 rounded-[var(--radius-sm)] border border-border-light focus:border-btn-blue focus:outline-none focus:ring-2 focus:ring-btn-blue/20 text-text-muted">
                       {volunteerFormOptions.availability.map((opt) => (
                         <option key={opt}>{opt}</option>
                       ))}
                     </select>
-                    <textarea placeholder="Tell us about yourself and why you want to volunteer..." rows={4} className="w-full px-4 py-3 rounded-[var(--radius-sm)] border border-border-light focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 resize-none" />
+                    <textarea placeholder="Tell us about yourself and why you want to volunteer..." rows={4} className="w-full px-4 py-3 rounded-[var(--radius-sm)] border border-border-light focus:border-btn-blue focus:outline-none focus:ring-2 focus:ring-btn-blue/20 resize-none" />
                     <Button type="submit" variant="secondary" size="lg" className="w-full gap-2">
                       <Send size={20} /> Submit Application
                     </Button>

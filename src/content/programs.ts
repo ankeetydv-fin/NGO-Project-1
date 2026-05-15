@@ -15,11 +15,11 @@ export const programs: ProgramItem[] = [
     title: "Education for All",
     tagline: "Building futures through learning",
     description:
-      "Our education programs provide quality schooling, scholarships, after-school tutoring, and digital literacy to underprivileged children in rural and urban areas. We operate 45 learning centers across 12 states.",
+      "Our education programs provide quality schooling, scholarships, after-school tutoring, and digital literacy to underprivileged children in rural and urban areas. We operate 5 learning centers across 3 states.",
     stats: [
-      { label: "Children Enrolled", value: "12,000+" },
-      { label: "Learning Centers", value: "45" },
-      { label: "Scholarship Recipients", value: "3,200" },
+      { label: "Children Enrolled", value: "1,200+" },
+      { label: "Learning Centers", value: "5" },
+      { label: "Scholarship Recipients", value: "200" },
     ],
     highlights: [
       "Free primary and secondary education",
@@ -40,9 +40,9 @@ export const programs: ProgramItem[] = [
     description:
       "We run mobile health clinics, maternal care programs, vaccination drives, and mental health awareness campaigns. Our goal is to ensure no community is left without essential healthcare.",
     stats: [
-      { label: "Medical Checkups", value: "35,000+" },
-      { label: "Mobile Clinics", value: "12" },
-      { label: "Health Workers Trained", value: "500+" },
+      { label: "Medical Checkups", value: "3,000+" },
+      { label: "Mobile Clinics", value: "2" },
+      { label: "Health Workers Trained", value: "50+" },
     ],
     highlights: [
       "Mobile health clinics in remote areas",
@@ -63,9 +63,9 @@ export const programs: ProgramItem[] = [
     description:
       "We build bore wells, install filtration systems, and implement rainwater harvesting in drought-affected communities. Clean water reduces disease, frees up time for education, and transforms entire villages.",
     stats: [
-      { label: "Wells Built", value: "200+" },
-      { label: "People Served", value: "25,000+" },
-      { label: "Villages Reached", value: "85" },
+      { label: "Wells Built", value: "25+" },
+      { label: "People Served", value: "3,000+" },
+      { label: "Villages Reached", value: "15" },
     ],
     highlights: [
       "Bore well construction in water-scarce regions",
@@ -74,8 +74,8 @@ export const programs: ProgramItem[] = [
       "Water quality testing and monitoring",
       "Hygiene and sanitation education",
     ],
-    color: "text-secondary",
-    bg: "bg-secondary/10",
+    color: "text-primary",
+    bg: "bg-primary/10",
     link: "/programs#water",
   },
   {
@@ -86,9 +86,9 @@ export const programs: ProgramItem[] = [
     description:
       "Our livelihood programs empower families through vocational training, micro-finance, sustainable agriculture, and small business support — building self-reliance and long-term stability.",
     stats: [
-      { label: "Families Supported", value: "4,500+" },
-      { label: "Micro-Loans Given", value: "2,100" },
-      { label: "Businesses Started", value: "800+" },
+      { label: "Families Supported", value: "500+" },
+      { label: "Micro-Loans Given", value: "150" },
+      { label: "Businesses Started", value: "100+" },
     ],
     highlights: [
       "Vocational skill training",
@@ -109,9 +109,9 @@ export const programs: ProgramItem[] = [
     description:
       "During natural disasters and crises, we provide emergency shelter, food, and supplies. We also run long-term housing assistance for displaced families.",
     stats: [
-      { label: "Families Sheltered", value: "1,800+" },
-      { label: "Emergency Responses", value: "25" },
-      { label: "Homes Rebuilt", value: "350" },
+      { label: "Families Sheltered", value: "200+" },
+      { label: "Emergency Responses", value: "5" },
+      { label: "Homes Rebuilt", value: "40" },
     ],
     highlights: [
       "Emergency disaster relief",
@@ -132,9 +132,9 @@ export const programs: ProgramItem[] = [
     description:
       "We protect vulnerable children through nutrition programs, early childhood development centers, child protection services, and safe community spaces.",
     stats: [
-      { label: "Children Supported", value: "8,000+" },
-      { label: "Nutrition Centers", value: "30" },
-      { label: "Child Protection Cases", value: "600+" },
+      { label: "Children Supported", value: "800+" },
+      { label: "Nutrition Centers", value: "3" },
+      { label: "Child Protection Cases", value: "50+" },
     ],
     highlights: [
       "Nutrition and meal programs",

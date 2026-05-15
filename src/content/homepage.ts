@@ -9,7 +9,7 @@
 import type { HeroContent, TrustPartner, DonationTier } from "@/types/content";
 
 export const heroContent: HeroContent = {
-  badge: "Trusted by 10,000+ donors across India",
+  badge: "Supported by 1,000+ donors across India",
   slides: [
     {
       id: "slide-1",
@@ -40,11 +40,11 @@ export const heroContent: HeroContent = {
     }
   ],
   stats: [
-    { value: "50K+", label: "Lives Impacted" },
-    { value: "120+", label: "Villages Reached" },
-    { value: "15+", label: "Years of Service" },
+    { value: "5,000+", label: "Lives Impacted" },
+    { value: "30+", label: "Villages Reached" },
+    { value: "2", label: "Years of Service" },
   ],
-  recentDonation: { amount: "₹25,000", donor: "Anonymous", time: "2 min ago" },
+  recentDonation: { amount: "₹5,000", donor: "Anonymous", time: "2 min ago" },
 };
 
 export const trustPartners: TrustPartner[] = [
@@ -60,7 +60,7 @@ export const missionContent = {
   headline: "Empowering Communities,",
   highlightedText: "Transforming Futures",
   description:
-    "Founded in 2009, we are an India-based nonprofit dedicated to creating sustainable change in underserved communities across the country. Our programs focus on education, healthcare, and economic empowerment — because every Indian deserves the chance to thrive.",
+    "Founded in 2024, we are an India-based nonprofit dedicated to creating sustainable change in underserved communities. Our programs focus on education, healthcare, and clean water — because every community deserves the chance to thrive.",
   mission: {
     title: "Our Mission",
     text: "To provide sustainable solutions that uplift communities through education, clean water access, healthcare, and livelihood programs — creating lasting change from the ground up.",
@@ -76,7 +76,7 @@ export const donationCTAContent = {
   headline: "Your Generosity Can",
   highlightedText: "Save Lives",
   description:
-    "A small act of kindness can create a ripple effect of change. Whether it's ₹500 or ₹5,00,000 — every rupee fuels education, healthcare, and hope for thousands of families across India.",
+    "A small act of kindness can create a ripple effect of change. Whether it's ₹500 or ₹50,000 — every rupee fuels education, healthcare, and hope for families across India.",
   benefits: [
     "100% of donations go directly to programs",
     "80G tax exemption certificate for all donations",

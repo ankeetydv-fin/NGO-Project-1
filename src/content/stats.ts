@@ -9,45 +9,45 @@
 import type { ImpactStat } from "@/types/content";
 
 export const impactStats: ImpactStat[] = [
-  { iconName: "Users", value: "50,000+", label: "Lives Impacted", color: "text-primary", bg: "bg-primary/10" },
-  { iconName: "GraduationCap", value: "12,000+", label: "Children Educated", color: "text-secondary", bg: "bg-secondary/10" },
-  { iconName: "Droplets", value: "200+", label: "Clean Water Wells", color: "text-accent-green", bg: "bg-accent-green/10" },
-  { iconName: "HeartPulse", value: "35,000+", label: "Medical Checkups", color: "text-accent-orange", bg: "bg-accent-orange/10" },
+  { iconName: "Users", value: "5,000+", label: "Lives Impacted", color: "text-primary", bg: "bg-primary/10" },
+  { iconName: "GraduationCap", value: "1,200+", label: "Children Educated", color: "text-primary", bg: "bg-primary/10" },
+  { iconName: "Droplets", value: "25+", label: "Water Wells Built", color: "text-accent-green", bg: "bg-accent-green/10" },
+  { iconName: "HeartPulse", value: "3,000+", label: "Medical Checkups", color: "text-accent-orange", bg: "bg-accent-orange/10" },
 ];
 
 /** Extended stats used on the /impact page */
 export const impactStatsExtended: ImpactStat[] = [
   ...impactStats,
-  { iconName: "MapPin", value: "120+", label: "Villages Reached", color: "text-primary", bg: "bg-primary/10" },
-  { iconName: "Globe", value: "12", label: "States Covered", color: "text-secondary", bg: "bg-secondary/10" },
+  { iconName: "MapPin", value: "30+", label: "Villages Reached", color: "text-primary", bg: "bg-primary/10" },
+  { iconName: "Globe", value: "5", label: "States Covered", color: "text-primary", bg: "bg-primary/10" },
 ];
 
 export const impactOutcomes = [
   {
     title: "Education",
     items: [
-      "94% school attendance rate in our programs",
-      "78% of scholarship recipients go to college",
-      "45 learning centers operational",
-      "3,200 active scholarships",
+      "90% school attendance rate in our programs",
+      "1,200+ children enrolled in learning centers",
+      "5 learning centers operational",
+      "200 active scholarships",
     ],
   },
   {
     title: "Healthcare",
     items: [
-      "80% reduction in waterborne disease",
-      "12 mobile clinics operational",
-      "95% vaccination coverage in target areas",
-      "500+ community health workers trained",
+      "60% reduction in waterborne disease in target areas",
+      "2 mobile clinics operational",
+      "3,000+ medical checkups conducted",
+      "50+ community health workers trained",
     ],
   },
   {
     title: "Livelihoods",
     items: [
-      "85% of micro-loan recipients report income increase",
-      "800+ small businesses started",
-      "4,500+ families supported",
-      "60% of beneficiaries are women",
+      "80% of micro-loan recipients report income increase",
+      "100+ small businesses started",
+      "500+ families supported",
+      "55% of beneficiaries are women",
     ],
   },
 ];

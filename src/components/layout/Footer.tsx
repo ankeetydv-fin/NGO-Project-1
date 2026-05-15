@@ -32,7 +32,7 @@ const socialIcons: Record<string, React.FC> = {
 
 export function Footer() {
   return (
-    <footer className="bg-primary text-surface pt-16 pb-8 border-t border-primary/20">
+    <footer className="bg-secondary text-surface pt-16 pb-8 border-t border-secondary/20">
       <Container size="xl">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
 
@@ -68,7 +68,7 @@ export function Footer() {
                     href={url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-surface/10 flex items-center justify-center hover:bg-accent-orange transition-colors"
+                    className="w-10 h-10 rounded-full bg-surface/10 flex items-center justify-center hover:bg-primary transition-colors"
                     aria-label={key}
                   >
                     <IconComp />
@@ -127,17 +127,17 @@ export function Footer() {
             <h3 className="text-xl font-bold font-heading mb-6">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <MapPin size={20} className="text-accent-orange shrink-0 mt-1" />
+                <MapPin size={20} className="text-primary shrink-0 mt-1" />
                 <span className="text-surface/80">
                   {siteConfig.address.line1}<br />{siteConfig.address.line2}
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone size={20} className="text-accent-orange shrink-0" />
+                <Phone size={20} className="text-primary shrink-0" />
                 <span className="text-surface/80">{siteConfig.phone[0]}</span>
               </li>
               <li className="flex items-center gap-3">
-                <Mail size={20} className="text-accent-orange shrink-0" />
+                <Mail size={20} className="text-primary shrink-0" />
                 <a href={`mailto:${siteConfig.email}`} className="text-surface/80 hover:text-surface transition-colors">
                   {siteConfig.email}
                 </a>

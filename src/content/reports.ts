@@ -9,23 +9,19 @@
 import type { ReportItem } from "@/types/content";
 
 export const annualReports: ReportItem[] = [
-  { title: "Annual Report 2024–25", year: "2024-25", pages: "48 pages", size: "PDF • 4.2 MB", type: "annual" },
-  { title: "Annual Report 2023–24", year: "2023-24", pages: "42 pages", size: "PDF • 3.8 MB", type: "annual" },
-  { title: "Annual Report 2022–23", year: "2022-23", pages: "38 pages", size: "PDF • 3.5 MB", type: "annual" },
-  { title: "Annual Report 2021–22", year: "2021-22", pages: "34 pages", size: "PDF • 3.1 MB", type: "annual" },
+  { title: "Annual Report 2024–25", year: "2024-25", pages: "32 pages", size: "PDF • 2.8 MB", type: "annual" },
+  { title: "Annual Report 2023–24", year: "2023-24", pages: "24 pages", size: "PDF • 2.1 MB", type: "annual" },
 ];
 
 export const financialReports: ReportItem[] = [
-  { title: "Audited Financial Statement FY 2024", year: "FY 2024", type: "financial" },
-  { title: "Audited Financial Statement FY 2023", year: "FY 2023", type: "financial" },
-  { title: "Audited Financial Statement FY 2022", year: "FY 2022", type: "financial" },
+  { title: "Audited Financial Statement FY 2024-25", year: "FY 2024-25", type: "financial" },
+  { title: "Audited Financial Statement FY 2023-24", year: "FY 2023-24", type: "financial" },
 ];
 
 export const impactReports: ReportItem[] = [
-  { title: "Impact Assessment Report 2024", year: "2024", type: "impact" },
-  { title: "Program Evaluation: Education", year: "2024", type: "impact" },
-  { title: "Program Evaluation: Healthcare", year: "2024", type: "impact" },
-  { title: "Clean Water Initiative — Outcomes Report", year: "2023", type: "impact" },
+  { title: "Impact Assessment Report 2024-25", year: "2024-25", type: "impact" },
+  { title: "Program Evaluation: Education", year: "2024-25", type: "impact" },
+  { title: "Program Evaluation: Healthcare", year: "2024-25", type: "impact" },
 ];
 
 export const certifications: string[] = [
@@ -53,7 +49,7 @@ export const transparencyReports = [
     title: "Impact Assessment Report",
     description: "Third-party evaluation of our programs and their measurable outcomes.",
     iconName: "ShieldCheck",
-    year: "2024",
+    year: "2024-25",
   },
 ];
 

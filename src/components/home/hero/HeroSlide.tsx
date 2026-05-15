@@ -36,12 +36,12 @@ export function HeroSlide({ slide, isActive, isPriority }: HeroSlideProps) {
           <div className="space-y-6 md:space-y-8">
             {/* Animated Badge */}
             <div
-              className={`inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-orange/20 border border-accent-orange/30 backdrop-blur-md transition-all duration-1000 ${
+              className={`inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 border border-primary/30 backdrop-blur-md transition-all duration-1000 ${
                 isActive ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
               }`}
             >
-              <span className="w-2 h-2 rounded-full bg-accent-orange animate-pulse" />
-              <span className="text-xs md:text-sm font-bold tracking-widest text-accent-orange uppercase">
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              <span className="text-xs md:text-sm font-bold tracking-widest text-primary uppercase">
                 {slide.subtitle}
               </span>
             </div>
@@ -78,7 +78,7 @@ export function HeroSlide({ slide, isActive, isPriority }: HeroSlideProps) {
                 <Button
                   variant="accent"
                   size="xl"
-                  className="w-full sm:w-auto min-h-[64px] text-xl px-10 shadow-[0_20px_50px_rgba(249,115,22,0.3)] hover:shadow-[0_20px_50px_rgba(249,115,22,0.5)] hover:-translate-y-1 transition-all"
+                  className="w-full sm:w-auto min-h-[64px] text-xl px-10 shadow-[0_20px_50px_rgba(200,169,81,0.3)] hover:shadow-[0_20px_50px_rgba(200,169,81,0.5)] hover:-translate-y-1 transition-all"
                 >
                   {slide.ctaText}
                 </Button>

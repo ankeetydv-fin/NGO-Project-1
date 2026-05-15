@@ -18,7 +18,7 @@ export function MissionSummary() {
           <div
             className="space-y-6"
           >
-            <p className="text-secondary font-semibold text-sm uppercase tracking-wider">
+            <p className="text-primary font-semibold text-sm uppercase tracking-wider">
               {c.label}
             </p>
             <h2 className="text-h2 text-text-dark">
@@ -52,7 +52,7 @@ export function MissionSummary() {
             {/* Vision Card */}
             <div className="bg-surface border border-border-light rounded-[var(--radius-md)] p-6 md:p-8 shadow-soft space-y-4">
               <div className="w-12 h-12 rounded-[var(--radius-sm)] bg-secondary/10 flex items-center justify-center">
-                <Eye size={24} className="text-secondary" />
+                <Eye size={24} className="text-primary" />
               </div>
               <h3 className="text-xl font-bold font-heading text-text-dark">{c.vision.title}</h3>
               <p className="text-text-muted leading-relaxed">{c.vision.text}</p>

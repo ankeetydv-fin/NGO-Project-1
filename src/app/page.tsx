@@ -6,15 +6,11 @@ import {
   ImpactStats,
   ProgramsPreview,
   DonationCTA,
-  Testimonials,
-  TransparencySection,
-  VolunteerSection,
-  LatestUpdates,
 } from "@/components/home";
 
 export const metadata: Metadata = {
   title: "Home",
-  description: "Join us in our mission to empower communities and create sustainable positive change globally.",
+  description: "Join us in our mission to empower communities and create sustainable positive change across India.",
 };
 
 export default function Home() {
@@ -26,10 +22,6 @@ export default function Home() {
       <ImpactStats />
       <ProgramsPreview />
       <DonationCTA />
-      <Testimonials />
-      <TransparencySection />
-      <VolunteerSection />
-      <LatestUpdates />
     </>
   );
 }

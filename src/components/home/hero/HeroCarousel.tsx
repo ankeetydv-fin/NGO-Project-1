@@ -56,10 +56,10 @@ export function HeroCarousel() {
 
       {/* Autoplay Progress Bar */}
       <div className="absolute top-0 left-0 w-full h-1 z-20 bg-white/10">
-        <div 
-          className="h-full bg-accent-orange"
-          style={{ 
-            animation: "progress 5000ms linear forwards" 
+        <div
+          className="h-full bg-primary"
+          style={{
+            animation: "progress 5000ms linear forwards"
           }}
           key={selectedIndex}
         />

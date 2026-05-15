@@ -51,7 +51,7 @@ export function Navbar() {
             </ul>
             <div className="flex items-center gap-4">
               <Link href="/donate" tabIndex={-1}>
-                <Button variant="accent">Donate Now</Button>
+                <Button variant="primary">Donate Now</Button>
               </Link>
             </div>
           </nav>
@@ -59,7 +59,7 @@ export function Navbar() {
           {/* Mobile Menu Toggle */}
           <div className="lg:hidden flex items-center gap-4">
             <Link href="/donate" tabIndex={-1}>
-              <Button variant="accent" size="sm">Donate</Button>
+              <Button variant="primary" size="sm">Donate</Button>
             </Link>
             <button
               onClick={() => setIsOpen(!isOpen)}

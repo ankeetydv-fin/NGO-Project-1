@@ -23,7 +23,7 @@ export const stories: StoryItem[] = [
   {
     title: "Annual Report 2024: A Year of Unprecedented Growth",
     excerpt:
-      "We reached 50,000 lives this year — a milestone made possible by our donors, volunteers, and partners. Explore the highlights and key numbers from our best year yet.",
+      "We reached 5,000 lives this year — a milestone made possible by our donors, volunteers, and partners. Explore the highlights and key numbers from our first full year.",
     date: "April 15, 2025",
     author: "Communications",
     category: "Reports",
@@ -56,7 +56,7 @@ export const stories: StoryItem[] = [
   {
     title: "Building Resilience: Our Disaster Relief in Bihar",
     excerpt:
-      "When floods devastated 12 villages in Bihar, our team was on the ground within 24 hours. Here is how we helped 1,200 families recover.",
+      "When floods devastated villages in Bihar, our team was on the ground within 24 hours. Here is how we helped 200 families recover.",
     date: "February 28, 2025",
     author: "Relief Team",
     category: "Field Update",

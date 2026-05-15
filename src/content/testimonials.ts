@@ -25,7 +25,7 @@ export const testimonials: TestimonialItem[] = [
   },
   {
     quote:
-      "I have been volunteering with NGO Foundation for 3 years. The transparency and dedication of this team is remarkable. Every rupee truly goes where it is needed most.",
+      "I have been volunteering with Shiv Prabha Foundation since its early days. The transparency and dedication of this team is remarkable. Every rupee truly goes where it is needed most.",
     name: "Dr. Anjali Gupta",
     role: "Volunteer Doctor",
     location: "Mumbai, Maharashtra",

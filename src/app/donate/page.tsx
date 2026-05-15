@@ -16,7 +16,6 @@ import { donationTiers } from "@/content";
 const AMOUNTS = donationTiers.map((t) => t.amount);
 
 export default function DonatePage() {
-  const [donationFrequency, setDonationFrequency] = useState<'one-time' | 'monthly'>('one-time');
   const [selectedAmount, setSelectedAmount] = useState<number | null>(2500);
   const [customAmount, setCustomAmount] = useState("");
 
@@ -45,22 +44,6 @@ export default function DonatePage() {
                   </p>
                 </div>
 
-                {/* Frequency Toggle */}
-                <div className="flex p-1 bg-bg-off-white border border-border-light rounded-[var(--radius-sm)] w-full md:w-auto">
-                  {['one-time', 'monthly'].map((freq) => (
-                    <button
-                      key={freq}
-                      onClick={() => setDonationFrequency(freq as 'one-time' | 'monthly')}
-                      className={`flex-1 md:w-32 py-2 px-4 rounded-[calc(var(--radius-sm)-4px)] text-sm font-bold capitalize transition-all ${
-                        donationFrequency === freq
-                          ? "bg-primary text-surface shadow-md"
-                          : "text-text-muted hover:text-primary"
-                      }`}
-                    >
-                      {freq}
-                    </button>
-                  ))}
-                </div>
               </div>
 
               {/* Amount Grid */}
@@ -68,10 +51,10 @@ export default function DonatePage() {
                 {AMOUNTS.map((amount) => (
                   <button
                     key={amount}
-                    className={`py-4 px-4 rounded-[var(--radius-sm)] border-2 font-bold font-heading transition-all focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none ${
+                    className={`py-4 px-4 rounded-[var(--radius-sm)] border-2 font-bold font-heading transition-all focus-visible:ring-2 focus-visible:ring-btn-blue focus-visible:outline-none ${
                       selectedAmount === amount && !customAmount
-                        ? "border-primary bg-primary/5 text-primary"
-                        : "border-border-light text-text-dark hover:border-primary/50"
+                        ? "border-btn-blue bg-btn-blue/5 text-btn-blue"
+                        : "border-border-light text-text-dark hover:border-btn-blue/50"
                     }`}
                     onClick={() => {
                       setSelectedAmount(amount);
@@ -79,9 +62,6 @@ export default function DonatePage() {
                     }}
                   >
                     <div className="text-lg">₹{amount.toLocaleString("en-IN")}</div>
-                    {donationFrequency === 'monthly' && (
-                      <div className="text-[10px] uppercase tracking-wider font-medium opacity-70">per month</div>
-                    )}
                   </button>
                 ))}
               </div>
@@ -102,7 +82,7 @@ export default function DonatePage() {
                       setCustomAmount(e.target.value);
                       setSelectedAmount(null);
                     }}
-                    className="w-full pl-10 pr-4 py-4 rounded-[var(--radius-sm)] border-2 border-border-light focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 text-lg font-medium transition-colors"
+                    className="w-full pl-10 pr-4 py-4 rounded-[var(--radius-sm)] border-2 border-border-light focus:border-btn-blue focus:outline-none focus:ring-2 focus:ring-btn-blue/20 text-lg font-medium transition-colors"
                   />
                 </div>
               </div>
@@ -111,21 +91,21 @@ export default function DonatePage() {
               <div className="space-y-4">
                 <h3 className="text-lg font-bold font-heading">Your Information</h3>
                 <div className="grid md:grid-cols-2 gap-4">
-                  <input type="text" placeholder="Full Name *" required className="w-full px-4 py-3 rounded-[var(--radius-sm)] border border-border-light focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-colors" />
-                  <input type="email" placeholder="Email Address *" required className="w-full px-4 py-3 rounded-[var(--radius-sm)] border border-border-light focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-colors" />
-                  <input type="tel" placeholder="Mobile Number *" required className="w-full px-4 py-3 rounded-[var(--radius-sm)] border border-border-light focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-colors" />
-                  <input type="text" placeholder="PAN Number (for 80G receipt)" className="w-full px-4 py-3 rounded-[var(--radius-sm)] border border-border-light focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-colors" />
+                  <input type="text" placeholder="Full Name *" required className="w-full px-4 py-3 rounded-[var(--radius-sm)] border border-border-light focus:border-btn-blue focus:outline-none focus:ring-2 focus:ring-btn-blue/20 transition-colors" />
+                  <input type="email" placeholder="Email Address *" required className="w-full px-4 py-3 rounded-[var(--radius-sm)] border border-border-light focus:border-btn-blue focus:outline-none focus:ring-2 focus:ring-btn-blue/20 transition-colors" />
+                  <input type="tel" placeholder="Mobile Number *" required className="w-full px-4 py-3 rounded-[var(--radius-sm)] border border-border-light focus:border-btn-blue focus:outline-none focus:ring-2 focus:ring-btn-blue/20 transition-colors" />
+                  <input type="text" placeholder="PAN Number (for 80G receipt)" className="w-full px-4 py-3 rounded-[var(--radius-sm)] border border-border-light focus:border-btn-blue focus:outline-none focus:ring-2 focus:ring-btn-blue/20 transition-colors" />
                 </div>
                 <div className="grid md:grid-cols-2 gap-4">
-                  <input type="text" placeholder="City" className="w-full px-4 py-3 rounded-[var(--radius-sm)] border border-border-light focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-colors" />
-                  <input type="text" placeholder="Pincode" className="w-full px-4 py-3 rounded-[var(--radius-sm)] border border-border-light focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-colors" />
+                  <input type="text" placeholder="City" className="w-full px-4 py-3 rounded-[var(--radius-sm)] border border-border-light focus:border-btn-blue focus:outline-none focus:ring-2 focus:ring-btn-blue/20 transition-colors" />
+                  <input type="text" placeholder="Pincode" className="w-full px-4 py-3 rounded-[var(--radius-sm)] border border-border-light focus:border-btn-blue focus:outline-none focus:ring-2 focus:ring-btn-blue/20 transition-colors" />
                 </div>
               </div>
 
               {/* Submit */}
               <Button variant="accent" size="lg" className="w-full gap-2 text-lg">
                 <Heart size={22} />
-                Donate {activeAmount ? `₹${activeAmount.toLocaleString("en-IN")}` : ""} {donationFrequency === 'monthly' ? "Monthly" : "Now"}
+                Donate {activeAmount ? `₹${activeAmount.toLocaleString("en-IN")}` : "Now"}
               </Button>
 
               <div className="flex items-center justify-center gap-6 text-text-muted text-sm flex-wrap">

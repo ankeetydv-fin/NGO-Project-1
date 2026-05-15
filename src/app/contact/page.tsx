@@ -59,11 +59,11 @@ export default function ContactPage() {
                     }}
                   >
                     <div className="grid md:grid-cols-2 gap-4">
-                      <input type="text" placeholder="Full Name *" required className="w-full px-4 py-3 rounded-[var(--radius-sm)] border border-border-light focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 bg-surface" />
-                      <input type="email" placeholder="Email Address *" required className="w-full px-4 py-3 rounded-[var(--radius-sm)] border border-border-light focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 bg-surface" />
+                      <input type="text" placeholder="Full Name *" required className="w-full px-4 py-3 rounded-[var(--radius-sm)] border border-border-light focus:border-btn-blue focus:outline-none focus:ring-2 focus:ring-btn-blue/20 bg-surface" />
+                      <input type="email" placeholder="Email Address *" required className="w-full px-4 py-3 rounded-[var(--radius-sm)] border border-border-light focus:border-btn-blue focus:outline-none focus:ring-2 focus:ring-btn-blue/20 bg-surface" />
                     </div>
-                    <input type="tel" placeholder="Phone Number (Optional)" className="w-full px-4 py-3 rounded-[var(--radius-sm)] border border-border-light focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 bg-surface" />
-                    <select className="w-full px-4 py-3 rounded-[var(--radius-sm)] border border-border-light focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 text-text-muted bg-surface">
+                    <input type="tel" placeholder="Phone Number (Optional)" className="w-full px-4 py-3 rounded-[var(--radius-sm)] border border-border-light focus:border-btn-blue focus:outline-none focus:ring-2 focus:ring-btn-blue/20 bg-surface" />
+                    <select className="w-full px-4 py-3 rounded-[var(--radius-sm)] border border-border-light focus:border-btn-blue focus:outline-none focus:ring-2 focus:ring-btn-blue/20 text-text-muted bg-surface">
                       <option>Subject</option>
                       <option>General Inquiry</option>
                       <option>Donations &amp; Payments</option>
@@ -76,7 +76,7 @@ export default function ContactPage() {
                       placeholder="Your message... *"
                       rows={5}
                       required
-                      className="w-full px-4 py-3 rounded-[var(--radius-sm)] border border-border-light focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 resize-none bg-surface"
+                      className="w-full px-4 py-3 rounded-[var(--radius-sm)] border border-border-light focus:border-btn-blue focus:outline-none focus:ring-2 focus:ring-btn-blue/20 resize-none bg-surface"
                     />
                     <Button type="submit" variant="primary" size="lg" className="w-full gap-2">
                       <Send size={20} /> Send Message

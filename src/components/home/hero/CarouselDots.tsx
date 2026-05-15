@@ -19,7 +19,7 @@ export function CarouselDots({
           onClick={() => onDotClick(index)}
           className={`h-2.5 rounded-full transition-all duration-300 ${
             selectedIndex === index
-              ? "w-8 bg-accent-orange"
+              ? "w-8 bg-primary"
               : "w-2.5 bg-surface/50 hover:bg-surface/80"
           }`}
           aria-label={`Go to slide ${index + 1}`}

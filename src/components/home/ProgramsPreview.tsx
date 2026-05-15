@@ -33,7 +33,7 @@ export function ProgramsPreview() {
         <div
           className="text-center mb-12 md:mb-16"
         >
-          <p className="text-secondary font-semibold text-sm uppercase tracking-wider mb-3">
+          <p className="text-primary font-semibold text-sm uppercase tracking-wider mb-3">
             What We Do
           </p>
           <h2 className="text-h2 text-text-dark mb-4">
