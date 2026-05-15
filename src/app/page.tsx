@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import {
-  Hero,
+  HeroCarousel,
   TrustBar,
   MissionSummary,
   ImpactStats,
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <Hero />
+      <HeroCarousel />
       <TrustBar />
       <MissionSummary />
       <ImpactStats />

@@ -10,12 +10,35 @@ import type { HeroContent, TrustPartner, DonationTier } from "@/types/content";
 
 export const heroContent: HeroContent = {
   badge: "Trusted by 10,000+ donors across India",
-  headline: "Together, We Can",
-  highlightedText: "Transform India",
-  description:
-    "We empower communities across India through education, healthcare, and sustainable development. Every contribution creates lasting impact for those who need it most.",
-  primaryCTA: { label: "Donate Now", href: "/donate" },
-  secondaryCTA: { label: "Explore Programs", href: "/programs" },
+  slides: [
+    {
+      id: "slide-1",
+      subtitle: "Empowering Futures",
+      title: "Education is a Right",
+      description: "We empower communities across India through quality education, ensuring every child has the opportunity to learn and thrive.",
+      image: "/images/hero/education.png",
+      ctaText: "Support Education",
+      ctaLink: "/donate?cause=education"
+    },
+    {
+      id: "slide-2",
+      subtitle: "Healing Hands",
+      title: "Accessible Healthcare",
+      description: "Bringing vital medical care to rural communities. Your support funds health camps and essential treatments for those in need.",
+      image: "/images/hero/healthcare.png",
+      ctaText: "Fund Healthcare",
+      ctaLink: "/donate?cause=healthcare"
+    },
+    {
+      id: "slide-3",
+      subtitle: "Life's Source",
+      title: "Clean Water for All",
+      description: "Building sustainable water solutions to provide safe, clean drinking water to remote villages across the nation.",
+      image: "/images/hero/water.png",
+      ctaText: "Provide Water",
+      ctaLink: "/donate?cause=water"
+    }
+  ],
   stats: [
     { value: "50K+", label: "Lives Impacted" },
     { value: "120+", label: "Villages Reached" },

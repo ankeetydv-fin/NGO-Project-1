@@ -1,4 +1,4 @@
-export { Hero } from "./Hero";
+export { HeroCarousel } from "./hero";
 export { TrustBar } from "./TrustBar";
 export { MissionSummary } from "./MissionSummary";
 export { ImpactStats } from "./ImpactStats";
