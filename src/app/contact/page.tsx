@@ -108,16 +108,46 @@ export default function ContactPage() {
                 );
               })}
 
-              <div className="w-full aspect-video rounded-[var(--radius-md)] bg-gradient-to-br from-primary/5 to-secondary/5 border border-border-light flex items-center justify-center">
-                <div className="text-center text-text-muted/40 space-y-2">
-                  <MapPin size={36} />
-                  <p className="text-sm">Map Embed</p>
-                </div>
-              </div>
+              {/* Mini map hint — full map below */}
+              <a
+                href="#location-map"
+                className="flex items-center gap-3 text-sm font-semibold text-btn-blue hover:underline"
+              >
+                <MapPin size={16} /> View full map below
+              </a>
             </div>
           </div>
         </Container>
       </Section>
+
+      {/* ─── Full-width Location Map ─── */}
+      <section id="location-map" className="w-full">
+        <div className="w-full h-[400px] md:h-[500px] relative bg-neutral-200">
+          <iframe
+            title="Shiv Prabha Foundation Location"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.5!2d77.2273!3d28.5919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sLodhi+Road%2C+New+Delhi!5e0!3m2!1sen!2sin!4v1"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="absolute inset-0"
+          />
+          {/* Overlay label */}
+          <div className="absolute bottom-4 left-4 z-10">
+            <div className="bg-surface/95 backdrop-blur-sm rounded-[var(--radius-md)] shadow-lg px-5 py-3 border border-border-light">
+              <p className="font-bold font-heading text-sm text-text-dark flex items-center gap-2">
+                <MapPin size={16} className="text-primary" />
+                Shiv Prabha Foundation
+              </p>
+              <p className="text-text-muted text-xs mt-0.5">
+                42, Lodhi Road, Institutional Area, New Delhi 110003
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

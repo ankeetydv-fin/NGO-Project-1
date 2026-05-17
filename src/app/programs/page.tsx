@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { PageBanner } from "@/components/ui/PageBanner";
 
 import { Section } from "@/components/layout/Section";
@@ -40,6 +41,7 @@ const PROGRAMS = [
     ],
     color: "text-primary",
     bg: "bg-primary/10",
+    image: "/images/programs/education.jpg",
   },
   {
     id: "healthcare",
@@ -62,6 +64,7 @@ const PROGRAMS = [
     ],
     color: "text-accent-orange",
     bg: "bg-accent-orange/10",
+    image: "/images/programs/healthcare.jpg",
   },
   {
     id: "water",
@@ -84,6 +87,7 @@ const PROGRAMS = [
     ],
     color: "text-secondary",
     bg: "bg-secondary/10",
+    image: "/images/programs/water.jpg",
   },
   {
     id: "livelihood",
@@ -106,6 +110,7 @@ const PROGRAMS = [
     ],
     color: "text-accent-green",
     bg: "bg-accent-green/10",
+    image: "/images/programs/livelihood.jpg",
   },
   {
     id: "shelter",
@@ -128,6 +133,7 @@ const PROGRAMS = [
     ],
     color: "text-primary",
     bg: "bg-primary/10",
+    image: "/images/programs/shelter.jpg",
   },
   {
     id: "childcare",
@@ -150,6 +156,7 @@ const PROGRAMS = [
     ],
     color: "text-accent-orange",
     bg: "bg-accent-orange/10",
+    image: "/images/programs/childcare.jpg",
   },
 ];
 
@@ -212,12 +219,21 @@ export default function ProgramsPage() {
                     ))}
                   </div>
 
-                  {/* Placeholder image area */}
-                  <div className="w-full aspect-video rounded-[var(--radius-md)] bg-gradient-to-br from-primary/5 to-secondary/5 border border-border-light flex items-center justify-center">
-                    <div className="text-center text-text-muted/40 space-y-2">
-                      <Icon size={48} className={program.color + "/30"} />
-                      <p className="text-sm">Program Photo</p>
-                    </div>
+                  {/* Program image */}
+                  <div className="relative w-full aspect-video rounded-[var(--radius-md)] overflow-hidden border border-border-light bg-neutral-100">
+                    {program.image ? (
+                      <Image
+                        src={program.image}
+                        alt={program.title}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/5 to-secondary/5">
+                        <Icon size={48} className={`${program.color}/30`} />
+                      </div>
+                    )}
                   </div>
 
                   <Link href="/donate" tabIndex={-1}>

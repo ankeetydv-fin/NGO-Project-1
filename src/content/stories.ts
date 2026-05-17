@@ -19,6 +19,7 @@ export const stories: StoryItem[] = [
     categoryColor: "bg-accent-green/10 text-accent-green",
     readTime: "5 min read",
     slug: "clean-water-rajasthan",
+    image: "/images/stories/clean-water-rajasthan.jpg",
   },
   {
     title: "Annual Report 2024: A Year of Unprecedented Growth",
@@ -30,6 +31,7 @@ export const stories: StoryItem[] = [
     categoryColor: "bg-primary/10 text-primary",
     readTime: "8 min read",
     slug: "annual-report-2024",
+    image: "/images/stories/annual-report-2024.jpg",
   },
   {
     title: "Volunteer Spotlight: Meet Dr. Anjali Gupta",
@@ -41,6 +43,7 @@ export const stories: StoryItem[] = [
     categoryColor: "bg-secondary/10 text-secondary",
     readTime: "4 min read",
     slug: "volunteer-anjali-gupta",
+    image: "/images/stories/volunteer-anjali-gupta.jpg",
   },
   {
     title: "From Dropout to Engineer: Ravi's Scholarship Story",
@@ -52,6 +55,7 @@ export const stories: StoryItem[] = [
     categoryColor: "bg-accent-green/10 text-accent-green",
     readTime: "6 min read",
     slug: "ravi-scholarship-story",
+    image: "/images/stories/ravi-scholarship-story.jpg",
   },
   {
     title: "Building Resilience: Our Disaster Relief in Bihar",
@@ -63,6 +67,7 @@ export const stories: StoryItem[] = [
     categoryColor: "bg-accent-orange/10 text-accent-orange",
     readTime: "7 min read",
     slug: "disaster-relief-bihar",
+    image: "/images/stories/disaster-relief-bihar.jpg",
   },
   {
     title: "Why Transparency Matters: Our Open Books Policy",
@@ -74,6 +79,7 @@ export const stories: StoryItem[] = [
     categoryColor: "bg-primary/10 text-primary",
     readTime: "5 min read",
     slug: "transparency-open-books",
+    image: "/images/stories/transparency-open-books.jpg",
   },
 ];
 

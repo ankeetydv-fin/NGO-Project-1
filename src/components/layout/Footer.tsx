@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -31,13 +33,26 @@ const socialIcons: Record<string, React.FC> = {
 };
 
 export function Footer() {
+  const [newsletterName, setNewsletterName] = React.useState("");
+  const [newsletterEmail, setNewsletterEmail] = React.useState("");
+  const [subscribed, setSubscribed] = React.useState(false);
+
+  function handleSubscribe(e: React.FormEvent) {
+    e.preventDefault();
+    if (newsletterName && newsletterEmail) {
+      setSubscribed(true);
+      setNewsletterName("");
+      setNewsletterEmail("");
+    }
+  }
+
   return (
     <footer className="bg-secondary text-surface pt-16 pb-8 border-t border-secondary/20">
       <Container size="xl">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
 
           {/* Brand & Mission */}
-          <div className="flex flex-col space-y-12">
+          <div className="flex flex-col items-center text-center md:items-start md:text-left space-y-12">
             <div className="space-y-4">
               <Link href="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity">
                 <Image
@@ -52,13 +67,13 @@ export function Footer() {
                   <span className="text-xl font-semibold text-surface/80 leading-none">Foundation</span>
                 </div>
               </Link>
-              <div className="space-y-2 text-center">
+              <div className="space-y-2">
                 <p className="text-lg font-medium text-surface/90 leading-tight">Transforming lives .. One Step At A Time</p>
                 <p className="text-base text-surface/80 font-hindi leading-tight">संस्कार, शिक्षा और सेवा की ओर एक कदम</p>
               </div>
             </div>
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center justify-center md:justify-start gap-4">
               {Object.entries(siteConfig.social).map(([key, url]) => {
                 const IconComp = socialIcons[key];
                 if (!IconComp || !url) return null;
@@ -145,6 +160,47 @@ export function Footer() {
             </ul>
           </div>
 
+        </div>
+
+        {/* Newsletter Overhaul — Clean Minimalistic Border-Bottom Inputs */}
+        <div className="py-10 border-t border-surface/10">
+          <div className="max-w-4xl mx-auto space-y-6">
+            <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-surface/90 text-left">
+              Subscribe to Our Newsletter
+            </h3>
+            {subscribed ? (
+              <p className="text-accent-green text-sm text-left">Thank you for subscribing!</p>
+            ) : (
+              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row items-end gap-8 sm:gap-12 w-full">
+                <div className="flex-1 w-full">
+                  <input
+                    type="text"
+                    placeholder="Name"
+                    value={newsletterName}
+                    onChange={(e) => setNewsletterName(e.target.value)}
+                    required
+                    className="w-full bg-transparent border-b border-surface/20 pb-2 text-surface placeholder:text-surface/35 text-sm focus:outline-none focus:border-primary transition-colors rounded-none"
+                  />
+                </div>
+                <div className="flex-[2] w-full">
+                  <input
+                    type="email"
+                    placeholder="Enter Your Email"
+                    value={newsletterEmail}
+                    onChange={(e) => setNewsletterEmail(e.target.value)}
+                    required
+                    className="w-full bg-transparent border-b border-surface/20 pb-2 text-surface placeholder:text-surface/35 text-sm focus:outline-none focus:border-primary transition-colors rounded-none"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="w-full sm:w-auto px-10 py-3.5 rounded-lg bg-[#82ca33] hover:bg-[#72b42b] text-white font-extrabold text-xs tracking-widest uppercase transition-all duration-300 shrink-0 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+                >
+                  SUBSCRIBE
+                </button>
+              </form>
+            )}
+          </div>
         </div>
 
         {/* Copyright Bar */}

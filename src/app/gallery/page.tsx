@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { PageBanner } from "@/components/ui/PageBanner";
 import { Section } from "@/components/layout/Section";
 import { Container } from "@/components/layout/Container";
@@ -50,13 +51,23 @@ export default function GalleryPage() {
             {filtered.map((item, i) => (
               <div
                 key={`${item.alt}-${i}`}
-                className={`relative aspect-square rounded-[var(--radius-md)] overflow-hidden bg-gradient-to-br ${
-                  galleryCategoryColors[item.category] || "from-primary/10 to-secondary/5"
-                } border border-border-light group cursor-pointer hover:scale-[1.02] transition-transform duration-300`}
+                className={`relative aspect-square rounded-[var(--radius-md)] overflow-hidden border border-border-light group cursor-pointer hover:scale-[1.02] transition-transform duration-300 ${
+                  item.image ? "bg-neutral-100" : `bg-gradient-to-br ${galleryCategoryColors[item.category] || "from-primary/10 to-secondary/5"}`
+                }`}
               >
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Camera size={32} className="text-text-muted/20" />
-                </div>
+                {item.image ? (
+                  <Image
+                    src={item.image}
+                    alt={item.alt}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <Camera size={32} className="text-text-muted/20" />
+                  </div>
+                )}
                 <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/70 transition-colors flex items-end p-4 opacity-0 group-hover:opacity-100">
                   <div>
                     <span className="text-xs font-semibold text-accent-orange uppercase tracking-wider">

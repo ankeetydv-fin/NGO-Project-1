@@ -12,7 +12,7 @@ export function CarouselDots({
   onDotClick,
 }: CarouselDotsProps) {
   return (
-    <div className="absolute bottom-8 inset-x-0 flex justify-center gap-3 z-20">
+    <div className="absolute bottom-8 lg:bottom-28 inset-x-0 flex justify-center gap-3 z-20">
       {Array.from({ length: slidesCount }).map((_, index) => (
         <button
           key={index}

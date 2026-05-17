@@ -18,18 +18,18 @@ export const galleryCategories = [
 ];
 
 export const galleryItems: GalleryItem[] = [
-  { category: "Education", alt: "Children studying in our learning center" },
-  { category: "Healthcare", alt: "Mobile health camp in a rural village" },
-  { category: "Water", alt: "Borewell installation in Rajasthan" },
-  { category: "Events", alt: "Annual fundraising gala 2024" },
-  { category: "Volunteers", alt: "Volunteer team at community outreach" },
-  { category: "Education", alt: "Digital literacy class for children" },
-  { category: "Healthcare", alt: "Vaccination drive in rural school" },
-  { category: "Water", alt: "Community celebration after well completion" },
-  { category: "Events", alt: "World Water Day awareness campaign" },
-  { category: "Volunteers", alt: "Teaching assistants in the classroom" },
-  { category: "Education", alt: "School supply distribution day" },
-  { category: "Healthcare", alt: "Maternal care program checkup" },
+  { category: "Education", alt: "Children studying in our learning center", image: "/images/gallery/education-1.jpg" },
+  { category: "Healthcare", alt: "Mobile health camp in a rural village", image: "/images/gallery/healthcare-1.jpg" },
+  { category: "Water", alt: "Borewell installation in Rajasthan", image: "/images/gallery/water-1.jpg" },
+  { category: "Events", alt: "Annual fundraising gala 2024", image: "/images/gallery/events-1.jpg" },
+  { category: "Volunteers", alt: "Volunteer team at community outreach", image: "/images/gallery/volunteers-1.jpg" },
+  { category: "Education", alt: "Digital literacy class for children", image: "/images/gallery/education-2.jpg" },
+  { category: "Healthcare", alt: "Vaccination drive in rural school", image: "/images/gallery/healthcare-2.jpg" },
+  { category: "Water", alt: "Community celebration after well completion", image: "/images/gallery/water-2.jpg" },
+  { category: "Events", alt: "World Water Day awareness campaign", image: "/images/gallery/events-2.jpg" },
+  { category: "Volunteers", alt: "Teaching assistants in the classroom", image: "/images/gallery/volunteers-2.jpg" },
+  { category: "Education", alt: "School supply distribution day", image: "/images/gallery/education-3.jpg" },
+  { category: "Healthcare", alt: "Maternal care program checkup", image: "/images/gallery/healthcare-3.jpg" },
 ];
 
 export const galleryCategoryColors: Record<string, string> = {

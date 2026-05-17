@@ -102,6 +102,7 @@ export interface StoryItem {
   categoryColor: string;
   readTime: string;
   slug?: string;
+  image?: string;
 }
 
 /* ─── Report ─── */

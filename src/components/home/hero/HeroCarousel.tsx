@@ -78,13 +78,18 @@ export function HeroCarousel() {
         onDotClick={scrollTo}
       />
       
-      {/* Optional Quick Stats Overlay at the bottom on desktop */}
-      <div className="hidden lg:flex absolute bottom-0 inset-x-0 bg-surface/10 backdrop-blur-md border-t border-surface/20 z-10 p-4">
-        <div className="max-w-7xl mx-auto w-full flex justify-around items-center">
-          {heroContent.stats.map((stat) => (
-            <div key={stat.label} className="text-center">
-              <p className="text-3xl font-bold font-heading text-surface">{stat.value}</p>
-              <p className="text-surface/80 text-sm font-medium">{stat.label}</p>
+      {/* Floating High-Integrity Parameter Deck */}
+      <div className="hidden lg:flex absolute bottom-0 inset-x-0 z-10 justify-center">
+        <div className="w-full max-w-5xl bg-secondary/80 backdrop-blur-xl border-t border-x border-white/10 rounded-t-2xl px-12 py-6 shadow-[0_-8px_30px_rgba(0,0,0,0.4)] flex justify-between items-center">
+          {heroContent.stats.map((stat, i) => (
+            <div key={stat.label} className="flex items-center w-full justify-center">
+              <div className="text-center px-8">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary/80 mb-1">{stat.label}</p>
+                <p className="text-3xl font-extrabold font-heading text-white">{stat.value}</p>
+              </div>
+              {i < heroContent.stats.length - 1 && (
+                <div className="h-8 w-[1px] bg-white/15 self-center" />
+              )}
             </div>
           ))}
         </div>

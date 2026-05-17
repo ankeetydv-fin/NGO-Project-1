@@ -9,45 +9,43 @@
 import type { ImpactStat } from "@/types/content";
 
 export const impactStats: ImpactStat[] = [
-  { iconName: "Users", value: "5,000+", label: "Lives Impacted", color: "text-primary", bg: "bg-primary/10" },
-  { iconName: "GraduationCap", value: "1,200+", label: "Children Educated", color: "text-primary", bg: "bg-primary/10" },
-  { iconName: "Droplets", value: "25+", label: "Water Wells Built", color: "text-accent-green", bg: "bg-accent-green/10" },
-  { iconName: "HeartPulse", value: "3,000+", label: "Medical Checkups", color: "text-accent-orange", bg: "bg-accent-orange/10" },
+  { iconName: "Calendar", value: "2025", label: "Foundation Established", color: "text-primary", bg: "bg-primary/10" },
+  { iconName: "Target", value: "3", label: "Direct Focus Pillars", color: "text-primary", bg: "bg-primary/10" },
+  { iconName: "Shield", value: "100%", label: "Direct Grassroots Funding", color: "text-primary", bg: "bg-primary/10" },
+  { iconName: "Eye", value: "1", label: "Unified Strategic Vision", color: "text-primary", bg: "bg-primary/10" },
 ];
 
 /** Extended stats used on the /impact page */
 export const impactStatsExtended: ImpactStat[] = [
   ...impactStats,
-  { iconName: "MapPin", value: "30+", label: "Villages Reached", color: "text-primary", bg: "bg-primary/10" },
-  { iconName: "Globe", value: "5", label: "States Covered", color: "text-primary", bg: "bg-primary/10" },
 ];
 
 export const impactOutcomes = [
   {
-    title: "Education",
+    title: "Education Focus",
     items: [
-      "90% school attendance rate in our programs",
-      "1,200+ children enrolled in learning centers",
-      "5 learning centers operational",
-      "200 active scholarships",
+      "Supplying textbooks, learning materials, and basic stationery kits directly",
+      "Designing workshops for digital awareness and basic computer literacy",
+      "Structuring mentorship links to support promising underprivileged youth",
+      "Developing personalized academic paths to prevent school dropouts",
     ],
   },
   {
-    title: "Healthcare",
+    title: "Community Welfare",
     items: [
-      "60% reduction in waterborne disease in target areas",
-      "2 mobile clinics operational",
-      "3,000+ medical checkups conducted",
-      "50+ community health workers trained",
+      "Distributing nutrition kits and basic healthcare support to remote areas",
+      "Organizing basic safety, sanitation, and first-aid awareness guidelines",
+      "Running clean water access awareness campaigns in primary clusters",
+      "Engaging community volunteer doctors to deliver diagnostic checkups",
     ],
   },
   {
-    title: "Livelihoods",
+    title: "Grassroots Athletics",
     items: [
-      "80% of micro-loan recipients report income increase",
-      "100+ small businesses started",
-      "500+ families supported",
-      "55% of beneficiaries are women",
+      "Sponsoring sports gear and athletic supplies to promising local children",
+      "Creating simple sports camps and accessible athletic training clusters",
+      "Supplying nutritional counseling and financial stipends for trials",
+      "Building a community of active sportsmanship, discipline, and success",
     ],
   },
 ];

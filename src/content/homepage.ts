@@ -9,42 +9,42 @@
 import type { HeroContent, TrustPartner, DonationTier } from "@/types/content";
 
 export const heroContent: HeroContent = {
-  badge: "Supported by 1,000+ donors across India",
+  badge: "Shiv Prabha Foundation • Direct Grassroots Action",
   slides: [
     {
       id: "slide-1",
       subtitle: "Empowering Futures",
       title: "Education is a Right",
-      description: "We empower communities across India through quality education, ensuring every child has the opportunity to learn and thrive.",
+      description: "We empower children in underprivileged clusters through complete writing aid packages and direct support, ensuring every youth has a sincere opportunity to learn and grow.",
       image: "/images/hero/education.png",
       ctaText: "Support Education",
       ctaLink: "/donate?cause=education"
     },
     {
       id: "slide-2",
-      subtitle: "Healing Hands",
-      title: "Accessible Healthcare",
-      description: "Bringing vital medical care to rural communities. Your support funds health camps and essential treatments for those in need.",
+      subtitle: "Compassion in Action",
+      title: "Essential Healthcare",
+      description: "Delivering first-aid awareness and direct hygiene kit drives to remote blocks. Your support funds local wellness workshops and basic medical guidance panels.",
       image: "/images/hero/healthcare.png",
       ctaText: "Fund Healthcare",
       ctaLink: "/donate?cause=healthcare"
     },
     {
       id: "slide-3",
-      subtitle: "Life's Source",
-      title: "Clean Water for All",
-      description: "Building sustainable water solutions to provide safe, clean drinking water to remote villages across the nation.",
+      subtitle: "Sports Excellence",
+      title: "Nurturing Athletic Talents",
+      description: "Sponsoring training stipends, active sportswear, and athletic kits for passionate, underprivileged local young talents to dream big on and off the field.",
       image: "/images/hero/water.png",
-      ctaText: "Provide Water",
-      ctaLink: "/donate?cause=water"
+      ctaText: "Support Sports",
+      ctaLink: "/donate?cause=sports"
     }
   ],
   stats: [
-    { value: "5,000+", label: "Lives Impacted" },
-    { value: "30+", label: "Villages Reached" },
-    { value: "2", label: "Years of Service" },
+    { value: "2025", label: "Year Established" },
+    { value: "3", label: "Focus Pillars" },
+    { value: "100%", label: "Direct-to-Cause" },
   ],
-  recentDonation: { amount: "₹5,000", donor: "Anonymous", time: "2 min ago" },
+  recentDonation: { amount: "₹2,500", donor: "Anonymous", time: "Just now" },
 };
 
 export const trustPartners: TrustPartner[] = [
@@ -60,39 +60,38 @@ export const missionContent = {
   headline: "Empowering Communities,",
   highlightedText: "Transforming Futures",
   description:
-    "Founded in 2024, we are an India-based nonprofit dedicated to creating sustainable change in underserved communities. Our programs focus on education, healthcare, and clean water — because every community deserves the chance to thrive.",
+    "Founded on February 13, 2025, we are an India-based nonprofit dedicated to creating sustainable change in underserved communities. Our programs focus on primary education drives, healthcare awareness, and grassroots sports excellence — because every child deserves the chance to thrive.",
   mission: {
     title: "Our Mission",
-    text: "To provide sustainable solutions that uplift communities through education, clean water access, healthcare, and livelihood programs — creating lasting change from the ground up.",
+    text: "To provide direct support and resources that uplift communities through primary learning aids, healthcare wellness workshops, and youth athletic gear sponsorships.",
   },
   vision: {
     title: "Our Vision",
-    text: "A world where every community has the resources, knowledge, and support to build a self-sufficient and dignified future for all its members.",
+    text: "A world where every child has the core supplies, support networks, and sporting opportunities to shape a self-sufficient and dignified future.",
   },
 };
 
 export const donationCTAContent = {
   label: "Make a Difference",
   headline: "Your Generosity Can",
-  highlightedText: "Save Lives",
+  highlightedText: "Transform Lives",
   description:
-    "A small act of kindness can create a ripple effect of change. Whether it's ₹500 or ₹50,000 — every rupee fuels education, healthcare, and hope for families across India.",
+    "A sincere act of support creates a ripple effect of change. Whether it's ₹500 or ₹10,000 — every contribution directly funds school writing aids, wellness kits, and youth sports kits in remote clusters.",
   benefits: [
-    "100% of donations go directly to programs",
-    "80G tax exemption certificate for all donations",
-    "Real-time impact tracking and updates",
-    "Choose your preferred donation amount",
+    "100% of public donations go directly to causes",
+    "80G tax exemption certificate for all sponsors",
+    "Transparent updates and operational metrics",
+    "Fully secure local payment methods",
   ],
-  amounts: ["₹500", "₹1,000", "₹2,500", "₹5,000", "₹10,000", "₹25,000"],
+  amounts: ["₹500", "₹1,000", "₹2,500", "₹5,000", "₹10,000"],
   securityNote:
-    "Secure payment via Razorpay. All donations eligible for 80G tax exemption.",
+    "Secure payment via Razorpay. All sponsors eligible for 80G tax exemption certificate.",
 };
 
 export const donationTiers: DonationTier[] = [
-  { amount: 500, impact: "Provides school supplies for 5 children for a month" },
-  { amount: 1000, impact: "Funds a complete health checkup for 10 families" },
-  { amount: 2500, impact: "Provides clean water access for a family for a year" },
-  { amount: 5000, impact: "Sponsors a child's education for 3 months" },
-  { amount: 10000, impact: "Funds a community health camp for a full day" },
-  { amount: 25000, impact: "Builds a clean water handpump in a rural village" },
+  { amount: 500, impact: "Provides textbook sets and writing supplies for 5 kids" },
+  { amount: 1000, impact: "Sponsors essential wellness & nutrition kit for 2 families" },
+  { amount: 2500, impact: "Sponsors complete athletic kit and shoes for a local sports talent" },
+  { amount: 5000, impact: "Sponsors primary educational aid for a classroom block" },
+  { amount: 10000, impact: "Funds an entire community hygiene drives event in a village block" },
 ];

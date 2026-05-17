@@ -2,17 +2,15 @@
 
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
-import { Users, GraduationCap, Droplets, HeartPulse, MapPin, Globe } from "lucide-react";
+import { Calendar, Target, Shield, Eye } from "lucide-react";
 import { impactStats } from "@/content";
 import type { LucideIcon } from "lucide-react";
 
 const ICON_MAP: Record<string, LucideIcon> = {
-  Users,
-  GraduationCap,
-  Droplets,
-  HeartPulse,
-  MapPin,
-  Globe,
+  Calendar,
+  Target,
+  Shield,
+  Eye,
 };
 
 export function ImpactStats() {
@@ -21,20 +19,19 @@ export function ImpactStats() {
       <Container size="lg">
         <div className="text-center mb-12 md:mb-16">
           <p className="text-primary font-semibold text-sm uppercase tracking-wider mb-3">
-            Our Impact
+            Our Foundation
           </p>
           <h2 className="text-h2 text-text-dark mb-4">
-            Real Numbers, Real Change
+            Sincere Action, Grassroots Focus
           </h2>
           <p className="text-body-large text-text-muted max-w-2xl mx-auto">
-            Every number represents a life transformed, a community uplifted,
-            and a future made brighter. Here is the impact we have created together.
+            Every effort represents a direct, transparent local touchpoint. Here are the proud operational parameters of our founding journey as we build for the future.
           </p>
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {impactStats.map((stat) => {
-            const Icon = ICON_MAP[stat.iconName] || Users;
+            const Icon = ICON_MAP[stat.iconName] || Target;
             return (
               <div
                 key={stat.label}
@@ -55,3 +52,4 @@ export function ImpactStats() {
     </Section>
   );
 }
+

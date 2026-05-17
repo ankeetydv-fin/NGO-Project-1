@@ -17,74 +17,35 @@ export function DonationCTA() {
         <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-surface/5 blur-3xl" />
       </div>
 
-      <Container size="lg" className="relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div className="text-surface space-y-6">
-            <p className="text-primary font-semibold text-sm uppercase tracking-wider">
-              {c.label}
-            </p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading leading-tight">
-              {c.headline}
-              <span className="text-primary"> {c.highlightedText}</span>
-            </h2>
-            <p className="text-surface/85 text-lg leading-relaxed max-w-lg">
-              {c.description}
-            </p>
+      <Container size="md" className="relative z-10">
+        <div className="text-center text-surface space-y-6 max-w-2xl mx-auto">
+          <p className="text-primary font-semibold text-sm uppercase tracking-wider">
+            {c.label}
+          </p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading leading-tight">
+            {c.headline}
+            <span className="text-primary"> {c.highlightedText}</span>
+          </h2>
+          <p className="text-surface/85 text-lg leading-relaxed">
+            {c.description}
+          </p>
 
-            <ul className="space-y-3 pt-2">
-              {c.benefits.map((benefit) => (
-                <li key={benefit} className="flex items-start gap-3 text-surface/90">
-                  <CheckCircle size={20} className="text-accent-green shrink-0 mt-0.5" />
-                  <span>{benefit}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <ul className="space-y-3 pt-2 inline-block text-left">
+            {c.benefits.map((benefit) => (
+              <li key={benefit} className="flex items-start gap-3 text-surface/90">
+                <CheckCircle size={20} className="text-accent-green shrink-0 mt-0.5" />
+                <span>{benefit}</span>
+              </li>
+            ))}
+          </ul>
 
-          {/* Right - Donation Card */}
-          <div>
-            <div className="bg-surface text-text-dark rounded-[var(--radius-lg)] p-8 md:p-10 shadow-2xl space-y-6">
-              <h3 className="text-2xl font-bold font-heading text-center">
-                Choose Your Impact
-              </h3>
-
-              {/* Amount buttons */}
-              <div className="grid grid-cols-3 gap-3">
-                {c.amounts.map((amount) => (
-                  <button
-                    key={amount}
-                    className="py-3 px-4 rounded-[var(--radius-sm)] border-2 border-border-light text-text-dark font-bold font-heading hover:border-btn-blue hover:bg-btn-blue/10 transition-colors focus-visible:ring-2 focus-visible:ring-btn-blue focus-visible:outline-none"
-                  >
-                    {amount}
-                  </button>
-                ))}
-              </div>
-
-              {/* Custom amount */}
-              <div>
-                <label htmlFor="custom-amount" className="text-sm text-text-muted block mb-2">
-                  Or enter a custom amount
-                </label>
-                <input
-                  id="custom-amount"
-                  type="text"
-                  placeholder="₹ Enter amount"
-                  className="w-full px-4 py-3 rounded-[var(--radius-sm)] border-2 border-border-light focus:border-btn-blue focus:outline-none focus:ring-2 focus:ring-btn-blue/20 text-lg font-medium transition-colors"
-                />
-              </div>
-
-              <Link href="/donate" tabIndex={-1} className="block">
-                <Button variant="primary" size="lg" className="w-full gap-2 text-lg">
-                  <Heart size={22} />
-                  Donate Now
-                </Button>
-              </Link>
-
-              <p className="text-xs text-text-muted text-center">
-                {c.securityNote}
-              </p>
-            </div>
+          <div className="pt-4">
+            <Link href="/donate" tabIndex={-1}>
+              <Button variant="primary" size="lg" className="gap-2 text-lg">
+                <Heart size={22} />
+                Donate Now
+              </Button>
+            </Link>
           </div>
         </div>
       </Container>

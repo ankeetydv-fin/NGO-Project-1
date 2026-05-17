@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { PageBanner } from "@/components/ui/PageBanner";
 import { Section } from "@/components/layout/Section";
 import { Container } from "@/components/layout/Container";
@@ -12,7 +13,6 @@ export default function StoriesPage() {
     <>
       <PageBanner
         title="Stories & Updates"
-        subtitle="Real stories from the field, impact reports, volunteer experiences, and the latest from our programs."
         breadcrumb="From the Field"
       />
 
@@ -22,9 +22,21 @@ export default function StoriesPage() {
             {stories.map((story) => (
               <div key={story.title}>
                 <Card interactive padding="none" className="h-full flex flex-col">
-                  <div className="w-full h-48 bg-gradient-to-br from-primary/8 to-secondary/8 flex items-center justify-center">
-                    <Tag size={36} className="text-primary/20" />
-                  </div>
+                  {story.image ? (
+                    <div className="relative w-full h-48">
+                      <Image
+                        src={story.image}
+                        alt={story.title}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
+                    </div>
+                  ) : (
+                    <div className="w-full h-48 bg-gradient-to-br from-primary/8 to-secondary/8 flex items-center justify-center">
+                      <Tag size={36} className="text-primary/20" />
+                    </div>
+                  )}
                   <div className="p-6 flex flex-col flex-1">
                     <div className="flex items-center gap-3 mb-3">
                       <span className={`text-xs font-semibold px-3 py-1 rounded-full ${story.categoryColor}`}>
@@ -37,9 +49,15 @@ export default function StoriesPage() {
                     <p className="text-text-muted text-sm leading-relaxed flex-1 line-clamp-3 mb-4">
                       {story.excerpt}
                     </p>
-                    <div className="flex items-center justify-between text-xs text-text-muted pt-3 border-t border-border-light">
-                      <span className="flex items-center gap-1"><Calendar size={12} /> {story.date}</span>
-                      <span className="flex items-center gap-1"><Clock size={12} /> {story.readTime}</span>
+                    <div className="flex items-center gap-4 text-xs text-text-muted pt-4 border-t border-border-light">
+                      <span className="flex items-center gap-1">
+                        <Calendar size={14} />
+                        {story.date}
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <Clock size={14} />
+                        {story.readTime}
+                      </span>
                     </div>
                   </div>
                 </Card>

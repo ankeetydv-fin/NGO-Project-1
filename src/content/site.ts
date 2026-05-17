@@ -12,7 +12,7 @@ export const siteConfig: SiteConfig = {
   name: "Shiv Prabha Foundation",
   tagline: "Transforming lives..One Step At A Time | संस्कार, शिक्षा और सेवा की ओर एक कदम",
   description:
-    "We empower communities across India through education, healthcare, and sustainable development. Every contribution creates lasting impact.",
+    "We empower communities across India through education, awareness, opportunity, and empowerment. Every contribution creates lasting impact.",
   url: "https://shivprabhafoundation.org",
   email: "hello@shivprabhafoundation.org",
   phone: ["+91 11 4567 8900", "+91 98765 43210"],
