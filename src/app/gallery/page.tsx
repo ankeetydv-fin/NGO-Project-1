@@ -31,15 +31,15 @@ export default function GalleryPage() {
 
       <Section spacing="lg" background="white">
         <Container size="lg">
-          <div className="flex flex-wrap justify-center gap-3 mb-10">
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
             {galleryCategories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-5 py-2 rounded-full text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none ${
+                className={`px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-wider transition-all focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none ${
                   activeCategory === cat
-                    ? "bg-primary text-surface"
-                    : "bg-bg-off-white border border-border-light text-text-muted hover:bg-primary/10 hover:text-primary"
+                    ? "bg-secondary text-primary shadow-glow scale-105"
+                    : "bg-neutral-100 border border-border-light/60 text-text-muted hover:bg-primary/10 hover:text-primary hover:border-primary/20"
                 }`}
               >
                 {cat}
@@ -47,11 +47,11 @@ export default function GalleryPage() {
             ))}
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {filtered.map((item, i) => (
               <div
                 key={`${item.alt}-${i}`}
-                className={`relative aspect-square rounded-[var(--radius-md)] overflow-hidden border border-border-light group cursor-pointer hover:scale-[1.02] transition-transform duration-300 ${
+                className={`relative aspect-square rounded-[var(--radius-lg)] overflow-hidden shadow-sm group cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ${
                   item.image ? "bg-neutral-100" : `bg-gradient-to-br ${galleryCategoryColors[item.category] || "from-primary/10 to-secondary/5"}`
                 }`}
               >
@@ -60,7 +60,7 @@ export default function GalleryPage() {
                     src={item.image}
                     alt={item.alt}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
                     sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   />
                 ) : (
@@ -68,12 +68,12 @@ export default function GalleryPage() {
                     <Camera size={32} className="text-text-muted/20" />
                   </div>
                 )}
-                <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/70 transition-colors flex items-end p-4 opacity-0 group-hover:opacity-100">
+                <div className="absolute inset-0 bg-secondary/80 transition-opacity duration-300 flex items-end p-5 opacity-0 group-hover:opacity-100">
                   <div>
-                    <span className="text-xs font-semibold text-accent-orange uppercase tracking-wider">
+                    <span className="text-xs font-bold text-primary uppercase tracking-widest mb-1 block">
                       {item.category}
                     </span>
-                    <p className="text-surface text-sm mt-1 leading-snug">{item.alt}</p>
+                    <p className="text-surface font-medium text-sm leading-snug">{item.alt}</p>
                   </div>
                 </div>
               </div>

@@ -1,97 +1,49 @@
 "use client";
 
 import Link from "next/link";
-import { Container } from "@/components/layout/Container";
+import Image from "next/image";
 import { Section } from "@/components/layout/Section";
 import { Button } from "@/components/ui/Button";
-import { HandHeart, MapPin, Clock, Users, ArrowRight } from "lucide-react";
-import { volunteerRoles } from "@/content";
-import type { LucideIcon } from "lucide-react";
-
-const ICON_MAP: Record<string, LucideIcon> = {
-  GraduationCap: Users,
-  HeartPulse: HandHeart,
-  Megaphone: MapPin,
-  Camera: Users,
-  Users,
-  HandHeart,
-  MapPin,
-};
 
 export function VolunteerSection() {
-  // Show first 3 roles on homepage
-  const roles = volunteerRoles.slice(0, 3);
-
   return (
-    <Section spacing="lg" background="secondary">
-      <Container size="lg">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Text */}
-          <div
-            className="space-y-6"
-          >
-            <p className="text-accent-orange font-semibold text-sm uppercase tracking-wider">
-              Join Our Team
-            </p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading leading-tight">
-              Your Time Can Change
-              <span className="text-accent-orange"> Someone&apos;s Life</span>
+    <Section spacing="none" background="default">
+      <div className="flex flex-col lg:flex-row w-full min-h-[500px]">
+        {/* Image Half */}
+        <div className="lg:w-1/2 relative min-h-[400px] lg:min-h-full bg-neutral-800">
+          <Image 
+            src="/images/impact/community-outreach.jpg" 
+            alt="Volunteer with us" 
+            fill 
+            className="object-cover" 
+          />
+          {/* Overlay for better blending */}
+          <div className="absolute inset-0 bg-secondary/20 mix-blend-multiply" />
+        </div>
+        
+        {/* Content Half */}
+        <div className="lg:w-1/2 bg-secondary text-surface p-12 lg:p-24 flex flex-col justify-center relative overflow-hidden">
+          {/* Decorative Pattern */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+          
+          <div className="relative z-10 max-w-xl">
+            <h2 className="text-4xl md:text-5xl font-extrabold font-heading mb-6 leading-tight">
+              Become A Proud Volunteer Now
             </h2>
-            <p className="text-surface/85 text-lg leading-relaxed max-w-lg">
-              Whether you have a few hours or a few months, there is a role for you.
-              Join 2,000+ volunteers making a difference in communities across India.
+            <div className="w-16 h-1 bg-primary mb-8 rounded-full"></div>
+            <p className="text-surface/80 text-lg leading-relaxed mb-10 font-light">
+              Join our grassroots movement today. Whether you have a few hours or a few months, there is a sincere role for you to make a tangible difference in communities that need us most.
             </p>
-            <div className="flex flex-wrap gap-4 pt-2">
+            <div>
               <Link href="/volunteer" tabIndex={-1}>
-                <Button variant="accent" size="lg" className="gap-2">
-                  <HandHeart size={22} />
-                  Become a Volunteer
-                </Button>
-              </Link>
-              <Link href="/volunteer" tabIndex={-1}>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="gap-2 border-surface/40 text-surface hover:bg-surface/10"
-                >
-                  Learn More <ArrowRight size={18} />
+                <Button variant="primary" size="lg" className="rounded-full px-10 font-bold shadow-glow hover:-translate-y-1 transition-all">
+                  Apply Now
                 </Button>
               </Link>
             </div>
           </div>
-
-          {/* Volunteer Role Cards */}
-          <div
-            className="space-y-4"
-          >
-            {roles.map((role) => {
-              const Icon = ICON_MAP[role.iconName] || Users;
-              return (
-                <div
-                  key={role.title}
-                  className="bg-surface/10 backdrop-blur-sm border border-surface/20 rounded-[var(--radius-md)] p-5 flex items-center gap-4 hover:bg-surface/20 transition-colors cursor-pointer"
-                >
-                  <div className="w-12 h-12 rounded-full bg-accent-orange/20 flex items-center justify-center shrink-0">
-                    <Icon size={24} className="text-accent-orange" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="font-bold font-heading text-surface">{role.title}</h3>
-                    <div className="flex flex-wrap items-center gap-3 text-surface/70 text-sm mt-1">
-                      <span className="flex items-center gap-1">
-                        <MapPin size={14} /> {role.location}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <Clock size={14} /> {role.commitment}
-                      </span>
-                    </div>
-                  </div>
-                  <ArrowRight size={20} className="text-surface/50 shrink-0" />
-                </div>
-              );
-            })}
-          </div>
         </div>
-      </Container>
+      </div>
     </Section>
   );
 }

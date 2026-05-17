@@ -468,18 +468,12 @@ export default function AboutPage() {
             {aboutPillars.map((pillar) => {
               const Icon = ICON_MAP[pillar.iconName] || Heart;
               return (
-                <div key={pillar.title} className="text-center space-y-4">
-                  <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
+                <div key={pillar.title} className="text-center space-y-4 group">
+                  <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto transition-transform duration-300 group-hover:scale-110">
                     <Icon size={36} className="text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold font-heading">{pillar.title}</h3>
-                  <p className="text-text-muted leading-relaxed">{pillar.description}</p>
-                  <ImagePlaceholder
-                    src={`/images/about/${pillar.title.toLowerCase().replace(/[^a-z]/g, "-")}.jpg`}
-                    alt={pillar.title}
-                    aspect="16/10"
-                    className="mt-4"
-                  />
+                  <h3 className="text-2xl font-bold font-heading text-secondary">{pillar.title}</h3>
+                  <p className="text-text-muted leading-relaxed max-w-sm mx-auto">{pillar.description}</p>
                 </div>
               );
             })}
@@ -501,12 +495,12 @@ export default function AboutPage() {
               return (
                 <div
                   key={v.title}
-                  className="bg-surface border border-border-light rounded-[var(--radius-md)] p-6 text-center shadow-soft"
+                  className="bg-surface border border-border-light/60 rounded-[var(--radius-md)] p-8 text-center shadow-soft hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
                 >
-                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5">
                     <Icon size={26} className="text-primary" />
                   </div>
-                  <h3 className="font-bold font-heading text-lg mb-2">{v.title}</h3>
+                  <h3 className="font-bold font-heading text-lg mb-3 text-secondary">{v.title}</h3>
                   <p className="text-text-muted text-sm leading-relaxed">{v.text}</p>
                 </div>
               );
@@ -527,19 +521,19 @@ export default function AboutPage() {
             {teamMembers.map((member) => (
               <div
                 key={member.name}
-                className="bg-surface border border-border-light rounded-[var(--radius-md)] p-6 text-center shadow-soft"
+                className="bg-surface border border-border-light/60 rounded-[var(--radius-md)] p-8 text-center shadow-soft hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
               >
                 {member.image ? (
-                  <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 relative">
+                  <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-5 relative border-2 border-primary/20">
                     <Image src={member.image} alt={member.name} fill className="object-cover" />
                   </div>
                 ) : (
-                  <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 text-primary font-bold font-heading text-xl">
+                  <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5 text-primary font-bold font-heading text-2xl border-2 border-primary/20">
                     {member.initials}
                   </div>
                 )}
-                <h3 className="font-bold font-heading text-lg">{member.name}</h3>
-                <p className="text-text-muted text-sm">{member.role}</p>
+                <h3 className="font-bold font-heading text-lg text-secondary mb-1">{member.name}</h3>
+                <p className="text-text-muted text-sm font-semibold uppercase tracking-widest">{member.role}</p>
               </div>
             ))}
           </div>
@@ -549,17 +543,17 @@ export default function AboutPage() {
       {/* ─── CTA ─── */}
       <Section spacing="md" background="primary">
         <Container size="md">
-          <div className="text-center space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading text-surface">
+          <div className="text-center space-y-8">
+            <h2 className="text-4xl md:text-5xl font-extrabold font-heading text-secondary leading-tight">
               Join the Movement
             </h2>
-            <p className="text-surface/80 text-lg max-w-xl mx-auto">
+            <p className="text-secondary/80 text-lg max-w-xl mx-auto font-medium">
               Be part of a brighter tomorrow. Support Shiv Prabha Foundation and
               help us create lasting change for those who need it most.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link href="/donate" tabIndex={-1}>
-                <Button variant="accent" size="lg" className="gap-2">
+                <Button variant="secondary" size="lg" className="gap-2 rounded-full px-8 shadow-glow hover:-translate-y-1 transition-transform font-bold text-surface">
                   <Heart size={20} /> Donate Now
                 </Button>
               </Link>
@@ -567,7 +561,7 @@ export default function AboutPage() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="gap-2 border-surface/40 text-surface hover:bg-surface/10"
+                  className="gap-2 rounded-full px-8 border-secondary/30 text-secondary hover:bg-secondary hover:text-primary transition-all font-bold"
                 >
                   Become a Volunteer <ArrowRight size={18} />
                 </Button>

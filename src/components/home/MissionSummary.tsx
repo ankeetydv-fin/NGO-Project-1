@@ -4,58 +4,46 @@ import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
 import { Button } from "@/components/ui/Button";
-import { Target, Eye, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { missionContent } from "@/content";
 
 export function MissionSummary() {
   const c = missionContent;
 
   return (
-    <Section spacing="lg" background="default">
+    <Section spacing="lg" background="white" className="border-b border-border-light/50">
       <Container size="lg">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Text */}
-          <div
-            className="space-y-6"
-          >
-            <p className="text-primary font-semibold text-sm uppercase tracking-wider">
-              {c.label}
-            </p>
-            <h2 className="text-h2 text-text-dark">
-              {c.headline}{" "}
-              <span className="text-primary">{c.highlightedText}</span>
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+          {/* Left: About */}
+          <div className="space-y-6">
+            <h2 className="text-primary font-bold text-2xl uppercase tracking-wider font-heading">
+              About The Foundation
             </h2>
-            <p className="text-body-large text-text-muted max-w-lg">
+            <h3 className="text-3xl md:text-4xl font-extrabold font-heading text-text-dark leading-tight">
+              All children deserve to live in safe, nurturing environments to feel valued and loved.
+            </h3>
+            <p className="text-text-muted text-lg leading-relaxed font-light">
               {c.description}
             </p>
-            <Link href="/about" tabIndex={-1}>
-              <Button variant="outline" className="gap-2 mt-2">
-                Learn More About Us
-                <ArrowRight size={18} />
-              </Button>
-            </Link>
+            <div className="pt-4">
+              <Link href="/about" tabIndex={-1}>
+                <Button variant="primary" className="gap-2 rounded-full px-8 shadow-glow hover:-translate-y-1 transition-transform">
+                  Read More
+                </Button>
+              </Link>
+            </div>
           </div>
 
-          {/* Mission & Vision Cards */}
-          <div
-            className="space-y-6"
-          >
-            {/* Mission Card */}
-            <div className="bg-surface border border-border-light rounded-[var(--radius-md)] p-6 md:p-8 shadow-soft space-y-4">
-              <div className="w-12 h-12 rounded-[var(--radius-sm)] bg-primary/10 flex items-center justify-center">
-                <Target size={24} className="text-primary" />
-              </div>
-              <h3 className="text-xl font-bold font-heading text-text-dark">{c.mission.title}</h3>
-              <p className="text-text-muted leading-relaxed">{c.mission.text}</p>
-            </div>
-
-            {/* Vision Card */}
-            <div className="bg-surface border border-border-light rounded-[var(--radius-md)] p-6 md:p-8 shadow-soft space-y-4">
-              <div className="w-12 h-12 rounded-[var(--radius-sm)] bg-secondary/10 flex items-center justify-center">
-                <Eye size={24} className="text-primary" />
-              </div>
-              <h3 className="text-xl font-bold font-heading text-text-dark">{c.vision.title}</h3>
-              <p className="text-text-muted leading-relaxed">{c.vision.text}</p>
+          {/* Right: Mission Statement */}
+          <div className="space-y-6 lg:border-l lg:border-border-light lg:pl-16 flex flex-col justify-center h-full pt-8 lg:pt-0">
+            <h2 className="text-primary font-bold text-2xl uppercase tracking-wider font-heading lg:text-right">
+              In A Mission Since 2025
+            </h2>
+            <h3 className="text-3xl md:text-4xl font-extrabold font-heading text-text-dark leading-tight lg:text-right">
+              To help the Helpless and uplift the Society
+            </h3>
+            <div className="flex justify-end pt-4">
+              <div className="h-1 w-24 bg-primary rounded-full"></div>
             </div>
           </div>
         </div>
