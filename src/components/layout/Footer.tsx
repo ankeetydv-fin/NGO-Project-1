@@ -4,6 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/layout/Container";
+import { Button } from "@/components/ui/Button";
 import { Mail, Phone, MapPin } from "lucide-react";
 import {
   siteConfig,
@@ -47,62 +48,53 @@ export function Footer() {
   }
 
   return (
-    <footer className="bg-secondary text-surface pt-16 pb-8 border-t border-secondary/20">
+    <footer className="bg-secondary text-surface pt-16 pb-8">
       <Container size="xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-
-          {/* Brand & Mission */}
-          <div className="flex flex-col items-center text-center md:items-start md:text-left space-y-12">
-            <div className="space-y-4">
-              <Link href="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity">
-                <Image
-                  src="/Logo_Icon.png"
-                  alt="Shiv Prabha Foundation Logo"
-                  width={100}
-                  height={100}
-                  className="object-contain"
-                />
-                <div className="flex flex-col items-center">
-                  <span className="text-3xl font-bold text-surface leading-tight tracking-tight">Shiv Prabha</span>
-                  <span className="text-xl font-semibold text-surface/80 leading-none">Foundation</span>
-                </div>
-              </Link>
-              <div className="space-y-2">
-                <p className="text-lg font-medium text-surface/90 leading-tight">Transforming lives .. One Step At A Time</p>
-                <p className="text-base text-surface/80 font-hindi leading-tight">संस्कार, शिक्षा और सेवा की ओर एक कदम</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+          
+          {/* Column 1: Brand & Trust */}
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
+            <Link href="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity mb-6">
+              <Image
+                src="/Logo_Icon.png"
+                alt="Shiv Prabha Foundation Logo"
+                width={64}
+                height={64}
+                className="object-contain"
+              />
+              <div className="flex flex-col items-start text-left">
+                <span className="text-2xl font-bold text-surface leading-tight tracking-tight">Shiv Prabha</span>
+                <span className="text-sm font-semibold text-surface/80 leading-none mt-0.5">Foundation</span>
               </div>
+            </Link>
+            <div className="space-y-1 mb-8 text-center md:text-left">
+              <p className="text-sm text-surface/90 font-medium leading-relaxed">
+                Transforming Lives… One Step at a Time
+              </p>
+              <p className="text-sm text-surface/80 font-hindi leading-relaxed">
+                संस्कार, शिक्षा और सेवा की ओर एक कदम
+              </p>
             </div>
-
-            <div className="flex items-center justify-center md:justify-start gap-4">
-              {Object.entries(siteConfig.social).map(([key, url]) => {
-                const IconComp = socialIcons[key];
-                if (!IconComp || !url) return null;
-                return (
-                  <a
-                    key={key}
-                    href={url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-surface/10 flex items-center justify-center hover:bg-primary transition-colors"
-                    aria-label={key}
-                  >
-                    <IconComp />
-                  </a>
-                );
-              })}
+            <div className="flex items-center justify-center md:justify-start gap-4 opacity-70 grayscale">
+              <div className="w-12 h-12 bg-white/10 rounded flex items-center justify-center"><span className="text-[9px] text-surface font-bold text-center leading-tight">GuideStar<br/>India</span></div>
+              <div className="w-12 h-12 bg-white/10 rounded flex items-center justify-center"><span className="text-[9px] text-surface font-bold text-center leading-tight">Credibility<br/>Alliance</span></div>
+              <div className="w-12 h-12 bg-white/10 rounded flex items-center justify-center"><span className="text-[9px] text-surface font-bold text-center leading-tight">ISO<br/>Cert</span></div>
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-xl font-bold font-heading mb-6">Quick Links</h3>
-            <ul className="space-y-3">
-              {footerQuickLinks.map((link) => (
+          {/* Column 2: Discover & Engage */}
+          <div className="flex flex-col items-center md:items-start">
+            <h3 className="text-lg font-bold font-heading mb-6 text-surface">Quick Links</h3>
+            <ul className="space-y-3 text-center md:text-left">
+              {[
+                { label: "About Us", href: "/about" },
+                { label: "Our Programs", href: "/programs" },
+                { label: "Impact & Stories", href: "/stories" },
+                { label: "Become a Volunteer", href: "/volunteer" },
+                { label: "CSR Partnerships", href: "/contact" }
+              ].map((link) => (
                 <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-surface/80 hover:text-surface hover:underline underline-offset-4 transition-colors"
-                  >
+                  <Link href={link.href} className="text-surface/80 hover:text-surface hover:underline underline-offset-4 transition-colors text-sm font-medium">
                     {link.label}
                   </Link>
                 </li>
@@ -110,68 +102,79 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Legal & Trust */}
-          <div>
-            <h3 className="text-xl font-bold font-heading mb-6">Transparency</h3>
-            <ul className="space-y-3">
-              {footerLegalLinks.map((link) => (
+          {/* Column 3: Governance & Compliance */}
+          <div className="flex flex-col items-center md:items-start">
+            <h3 className="text-lg font-bold font-heading mb-6 text-surface">Transparency</h3>
+            <ul className="space-y-3 text-center md:text-left">
+              {[
+                { label: "Audited Financials", href: "/reports" },
+                { label: "Child Protection Policy", href: "#" },
+                { label: "Whistleblower Policy", href: "#" },
+                { label: "Privacy Policy", href: "#" },
+                { label: "Terms & Conditions", href: "#" }
+              ].map((link) => (
                 <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-surface/80 hover:text-surface hover:underline underline-offset-4 transition-colors"
-                  >
+                  <Link href={link.href} className="text-surface/80 hover:text-surface hover:underline underline-offset-4 transition-colors text-sm font-medium">
                     {link.label}
                   </Link>
                 </li>
               ))}
-              <li>
-                <span className="text-surface/80 block mt-4 text-sm border-t border-surface/20 pt-4">
-                  {siteConfig.legal.registrations.slice(0, 2).join(" | ")}
-                </span>
-              </li>
-              <li>
-                <span className="text-surface/80 block text-sm">
-                  {siteConfig.legal.registrations[2]}
-                </span>
-              </li>
             </ul>
+            <div className="mt-8 pt-6 border-t border-[#334155] w-full space-y-2 text-xs text-surface/70 font-medium text-center md:text-left">
+              <p>FCRA Registered Organization</p>
+              <p>80G Tax Exemption Certificate</p>
+              <p>12A Registration under IT Act</p>
+            </div>
           </div>
 
-          {/* Contact */}
-          <div>
-            <h3 className="text-xl font-bold font-heading mb-6">Contact Us</h3>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <MapPin size={20} className="text-primary shrink-0 mt-1" />
-                <span className="text-surface/80">
-                  {siteConfig.address.line1}<br />{siteConfig.address.line2}
+          {/* Column 4: Connect & Action */}
+          <div className="flex flex-col items-center md:items-start w-full">
+            <h3 className="text-lg font-bold font-heading mb-6 text-surface">Contact Us</h3>
+            <ul className="space-y-4 mb-8 w-full text-center md:text-left">
+              <li className="flex flex-col md:flex-row items-center md:items-start gap-3">
+                <MapPin size={18} className="text-primary shrink-0 mt-0.5" />
+                <span className="text-surface/80 text-sm font-medium">
+                  42, Lodhi Road, Institutional Area,<br />New Delhi, Delhi 110003
                 </span>
               </li>
-              <li className="flex items-center gap-3">
-                <Phone size={20} className="text-primary shrink-0" />
-                <span className="text-surface/80">{siteConfig.phone[0]}</span>
+              <li className="flex flex-col md:flex-row items-center md:items-start gap-3">
+                <Phone size={18} className="text-primary shrink-0" />
+                <span className="text-surface/80 text-sm font-medium">+91 11 4567 8900</span>
               </li>
-              <li className="flex items-center gap-3">
-                <Mail size={20} className="text-primary shrink-0" />
-                <a href={`mailto:${siteConfig.email}`} className="text-surface/80 hover:text-surface transition-colors">
-                  {siteConfig.email}
+              <li className="flex flex-col md:flex-row items-center md:items-start gap-3">
+                <Mail size={18} className="text-primary shrink-0" />
+                <a href="mailto:hello@shivprabhafoundation.org" className="text-surface/80 hover:text-surface text-sm font-medium transition-colors">
+                  hello@shivprabhafoundation.org
                 </a>
               </li>
             </ul>
+            
+            <Link href="/donate" className="w-full block mb-6">
+              <Button variant="primary" className="w-full font-bold text-sm tracking-widest py-4 rounded-xl shadow-glow">
+                DONATE NOW
+              </Button>
+            </Link>
+
+            <div className="flex items-center justify-center gap-3 w-full opacity-60 grayscale">
+              <div className="bg-white px-2 py-1 rounded text-secondary text-[10px] font-bold">UPI</div>
+              <div className="bg-white px-2 py-1 rounded text-secondary text-[10px] font-bold">RuPay</div>
+              <div className="bg-white px-2 py-1 rounded text-secondary text-[10px] font-bold">VISA</div>
+              <div className="bg-white px-2 py-1 rounded text-secondary text-[10px] font-bold">MC</div>
+            </div>
           </div>
 
         </div>
 
-        {/* Newsletter Overhaul — Clean Minimalistic Border-Bottom Inputs */}
-        <div className="py-10 border-t border-surface/10">
-          <div className="max-w-4xl mx-auto space-y-6">
-            <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-surface/90 text-left">
+        {/* Newsletter Horizontal Block */}
+        <div className="mt-16 pt-10 border-t border-[#334155]">
+          <div className="max-w-5xl mx-auto">
+            <h3 className="text-sm font-medium text-surface/90 text-center md:text-left mb-6">
               Subscribe to Our Newsletter
             </h3>
             {subscribed ? (
-              <p className="text-accent-green text-sm text-left">Thank you for subscribing!</p>
+              <p className="text-accent-green text-sm text-center md:text-left font-medium">Thank you for subscribing!</p>
             ) : (
-              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row items-end gap-8 sm:gap-12 w-full">
+              <form onSubmit={handleSubscribe} className="flex flex-col md:flex-row items-end gap-6 md:gap-8 w-full">
                 <div className="flex-1 w-full">
                   <input
                     type="text"
@@ -179,38 +182,50 @@ export function Footer() {
                     value={newsletterName}
                     onChange={(e) => setNewsletterName(e.target.value)}
                     required
-                    className="w-full bg-transparent border-b border-surface/20 pb-2 text-surface placeholder:text-surface/35 text-sm focus:outline-none focus:border-primary transition-colors rounded-none"
+                    className="w-full bg-transparent border-b border-surface/30 pb-2 text-surface placeholder:text-surface/50 text-sm focus:outline-none focus:border-primary transition-colors rounded-none"
                   />
                 </div>
-                <div className="flex-[2] w-full">
+                <div className="flex-1 w-full">
                   <input
                     type="email"
                     placeholder="Enter Your Email"
                     value={newsletterEmail}
                     onChange={(e) => setNewsletterEmail(e.target.value)}
                     required
-                    className="w-full bg-transparent border-b border-surface/20 pb-2 text-surface placeholder:text-surface/35 text-sm focus:outline-none focus:border-primary transition-colors rounded-none"
+                    className="w-full bg-transparent border-b border-surface/30 pb-2 text-surface placeholder:text-surface/50 text-sm focus:outline-none focus:border-primary transition-colors rounded-none"
                   />
                 </div>
-                <button
-                  type="submit"
-                  className="w-full sm:w-auto px-10 py-3.5 rounded-lg bg-[#82ca33] hover:bg-[#72b42b] text-white font-extrabold text-xs tracking-widest uppercase transition-all duration-300 shrink-0 shadow-md hover:shadow-lg hover:-translate-y-0.5"
-                >
+                <Button type="submit" variant="primary" className="w-full md:w-auto px-10 py-3 shrink-0 font-bold tracking-widest text-xs rounded-lg">
                   SUBSCRIBE
-                </button>
+                </Button>
               </form>
             )}
           </div>
         </div>
 
-        {/* Copyright Bar */}
-        <div className="pt-8 border-t border-surface/10 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-surface/60 text-sm">
-            © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+        {/* Bottom Copyright Bar */}
+        <div className="mt-16 pt-6 border-t border-[#334155] flex flex-col md:flex-row items-center justify-between gap-6">
+          <p className="text-surface/60 text-sm font-medium text-center md:text-left">
+            © 2026 Shiv Prabha Foundation. All rights reserved.
           </p>
-          <p className="text-surface/60 text-sm">
-            Designed with compassion.
-          </p>
+          <div className="flex items-center gap-3">
+            {Object.entries(siteConfig.social).map(([key, url]) => {
+              const IconComp = socialIcons[key];
+              if (!IconComp || !url) return null;
+              return (
+                <a
+                  key={key}
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-full bg-surface/10 flex items-center justify-center hover:bg-primary transition-colors text-surface hover:text-secondary"
+                  aria-label={key}
+                >
+                  <IconComp />
+                </a>
+              );
+            })}
+          </div>
         </div>
       </Container>
     </footer>
