@@ -8,8 +8,6 @@ import { Button } from "@/components/ui/Button";
 import { Mail, Phone, MapPin } from "lucide-react";
 import {
   siteConfig,
-  footerQuickLinks,
-  footerLegalLinks,
 } from "@/content";
 
 /* Inline SVG social icons since lucide-react no longer ships brand icons */
@@ -113,7 +111,7 @@ export function Footer() {
                 { label: "Privacy Policy", href: "#" },
                 { label: "Terms & Conditions", href: "#" }
               ].map((link) => (
-                <li key={link.href}>
+                <li key={link.label}>
                   <Link href={link.href} className="text-surface/80 hover:text-surface hover:underline underline-offset-4 transition-colors text-sm font-medium">
                     {link.label}
                   </Link>
@@ -182,7 +180,7 @@ export function Footer() {
                     value={newsletterName}
                     onChange={(e) => setNewsletterName(e.target.value)}
                     required
-                    className="w-full bg-transparent border-b border-surface/30 pb-2 text-surface placeholder:text-surface/50 text-sm focus:outline-none focus:border-primary transition-colors rounded-none"
+                    className="w-full bg-white/10 border-b border-surface/30 pb-2 text-surface placeholder:text-surface/50 text-sm focus:outline-none focus:border-primary transition-colors rounded-none px-2"
                   />
                 </div>
                 <div className="flex-1 w-full">
@@ -192,7 +190,7 @@ export function Footer() {
                     value={newsletterEmail}
                     onChange={(e) => setNewsletterEmail(e.target.value)}
                     required
-                    className="w-full bg-transparent border-b border-surface/30 pb-2 text-surface placeholder:text-surface/50 text-sm focus:outline-none focus:border-primary transition-colors rounded-none"
+                    className="w-full bg-white/10 border-b border-surface/30 pb-2 text-surface placeholder:text-surface/50 text-sm focus:outline-none focus:border-primary transition-colors rounded-none px-2"
                   />
                 </div>
                 <Button type="submit" variant="primary" className="w-full md:w-auto px-10 py-3 shrink-0 font-bold tracking-widest text-xs rounded-lg">

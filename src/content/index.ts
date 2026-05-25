@@ -11,7 +11,6 @@
 
 export * from "./site";
 export * from "./homepage";
-export * from "./programs";
 export * from "./stats";
 export * from "./testimonials";
 export * from "./stories";

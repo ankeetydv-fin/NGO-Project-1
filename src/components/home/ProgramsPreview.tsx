@@ -7,10 +7,19 @@ import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
 import { Button } from "@/components/ui/Button";
 import { ArrowRight } from "lucide-react";
-import { homepagePrograms } from "@/content";
 import useEmblaCarousel from "embla-carousel-react";
+import { urlForImage } from "@/sanity/lib/image";
 
-export function ProgramsPreview() {
+type Program = {
+  _id: string;
+  title: string;
+  description: string;
+  imageUrl?: string;
+  tagline?: string;
+  link?: string;
+};
+
+export function ProgramsPreview({ programs }: { programs: Program[] }) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "center",
     loop: false,
@@ -29,19 +38,20 @@ export function ProgramsPreview() {
     onSelect();
   }, [emblaApi]);
 
-  const ProgramCard = ({ program, isMobileActive = true }: { program: typeof homepagePrograms[0], isMobileActive?: boolean }) => (
+  const ProgramCard = ({ program, isMobileActive = true }: { program: Program, isMobileActive?: boolean }) => (
     <div 
       className={`group flex flex-col bg-surface border border-border-light/60 shadow-sm rounded-[var(--radius-md)] overflow-hidden transition-all duration-500 h-full ${
         isMobileActive 
-          ? "opacity-100 scale-100 blur-none hover:shadow-xl" 
-          : "opacity-40 scale-[0.85] blur-[3px]"
+          ? "opacity-100 scale-100 hover:shadow-xl" 
+          : "opacity-40 scale-[0.85]"
       }`}
     >
       <div className="relative w-full aspect-[4/3] overflow-hidden bg-neutral-100">
         <Image
-          src={`/images/programs/${program.id}.jpg`}
+          src={program.imageUrl || "/images/placeholder.jpg"}
           alt={program.title}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover transition-transform duration-700 group-hover:scale-110"
         />
         <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-primary text-[10px] font-bold uppercase px-3 py-1 rounded-sm shadow-sm">
@@ -56,7 +66,7 @@ export function ProgramsPreview() {
           {program.description}
         </p>
         <div className="mt-auto pt-4 border-t border-border-light/60">
-          <Link href={program.link} tabIndex={isMobileActive ? 0 : -1} className="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-accent-orange transition-colors uppercase tracking-wider">
+          <Link href={program.link || "#"} tabIndex={isMobileActive ? 0 : -1} className="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-accent-orange transition-colors uppercase tracking-wider">
             Read More <ArrowRight size={14} />
           </Link>
         </div>
@@ -88,9 +98,9 @@ export function ProgramsPreview() {
         {/* Mobile Carousel View */}
         <div className="md:hidden w-full overflow-hidden -mx-4 px-4 py-4" ref={emblaRef}>
           <div className="flex touch-pan-y items-stretch">
-            {homepagePrograms.map((program, index) => (
+            {programs.map((program, index) => (
               <div 
-                key={program.title} 
+                key={program._id} 
                 className="flex-[0_0_80%] min-w-0 px-2"
                 onClick={() => emblaApi?.scrollTo(index)}
               >
@@ -102,8 +112,8 @@ export function ProgramsPreview() {
 
         {/* Desktop Grid View */}
         <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {homepagePrograms.map((program) => (
-            <div key={program.title} className="h-full">
+          {programs.map((program) => (
+            <div key={program._id} className="h-full">
               <ProgramCard program={program} isMobileActive={true} />
             </div>
           ))}
