@@ -59,7 +59,7 @@ export default function VolunteerPage() {
               return (
                 <div
                   key={role.title}
-                  className="bg-surface border border-border-light/60 rounded-2xl p-8 shadow-soft hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
+                  className="bg-surface border border-border-light/60 rounded-2xl p-5 sm:p-6 md:p-8 shadow-soft hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
                 >
                   <div className="flex items-start gap-5">
                     <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary transition-colors">
@@ -91,22 +91,22 @@ export default function VolunteerPage() {
                 <p className="text-primary font-bold text-sm uppercase tracking-widest mb-3">
                   Why Volunteer
                 </p>
-                <h2 className="text-4xl md:text-5xl font-extrabold font-heading text-secondary leading-tight">Benefits of Volunteering</h2>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold font-heading text-secondary leading-tight">Benefits of Volunteering</h2>
               </div>
               <ul className="space-y-4">
                 {volunteerBenefits.map((b) => (
                   <li key={b} className="flex items-start gap-4 text-text-muted font-medium">
                     <CheckCircle size={22} className="text-accent-green shrink-0 mt-0.5" />
-                    <span className="text-lg leading-relaxed">{b}</span>
+                    <span className="text-base sm:text-lg leading-relaxed">{b}</span>
                   </li>
                 ))}
               </ul>
-              <div className="bg-white border border-border-light/60 rounded-2xl p-8 shadow-sm flex items-start gap-5 mt-8">
+              <div className="bg-white border border-border-light/60 rounded-2xl p-5 sm:p-6 md:p-8 shadow-sm flex items-start gap-5 mt-8">
                 <div className="w-12 h-12 rounded-full bg-secondary/5 flex items-center justify-center shrink-0">
                   <Users size={24} className="text-secondary" />
                 </div>
                 <div>
-                  <h3 className="font-extrabold font-heading text-2xl text-secondary mb-1">
+                  <h3 className="font-extrabold font-heading text-xl sm:text-2xl text-secondary mb-1">
                     {volunteerCommunityStats.count} {volunteerCommunityStats.label}
                   </h3>
                   <p className="text-text-muted text-sm leading-relaxed">
@@ -118,8 +118,8 @@ export default function VolunteerPage() {
 
             {/* Form */}
             <div>
-              <div className="bg-surface border border-border-light/60 rounded-2xl p-8 md:p-10 shadow-soft">
-                <h3 className="text-3xl font-extrabold font-heading mb-8 flex items-center gap-3 text-secondary">
+              <div className="bg-surface border border-border-light/60 rounded-2xl p-5 sm:p-8 md:p-10 shadow-soft">
+                <h3 className="text-2xl sm:text-3xl font-extrabold font-heading mb-8 flex items-center gap-3 text-secondary">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                     <HandHeart size={20} />
                   </div>

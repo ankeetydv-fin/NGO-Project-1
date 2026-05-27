@@ -35,7 +35,7 @@ export default function ReportsPage() {
             title="Year in Review"
             description="Comprehensive overviews of our programs, achievements, and financials."
           />
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
             {annualReports.map((report) => (
               <div
                 key={report.title}
@@ -112,7 +112,7 @@ export default function ReportsPage() {
             description="Verified by independent bodies and regulatory authorities."
           />
           <div
-            className="bg-surface border border-border-light/60 rounded-2xl p-10 shadow-soft"
+            className="bg-surface border border-border-light/60 rounded-2xl p-5 sm:p-8 md:p-10 shadow-soft"
           >
             <div className="flex flex-wrap justify-center gap-4">
               {certifications.map((cert) => (

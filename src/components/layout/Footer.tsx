@@ -48,7 +48,7 @@ export function Footer() {
   }
 
   return (
-    <footer className="bg-secondary text-surface pt-16 pb-8">
+    <footer className="bg-secondary text-surface pt-10 sm:pt-12 md:pt-16 pb-6 sm:pb-8">
       <Container size="xl">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           
@@ -60,8 +60,7 @@ export function Footer() {
                 alt="Shiv Prabha Foundation Logo"
                 width={64}
                 height={64}
-                className="object-contain"
-              />
+                className="object-contain w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16"              />
               <div className="flex flex-col items-start text-left">
                 <span className="text-2xl font-bold text-surface leading-tight tracking-tight">Shiv Prabha</span>
                 <span className="text-sm font-semibold text-surface/80 leading-none mt-0.5">Foundation</span>

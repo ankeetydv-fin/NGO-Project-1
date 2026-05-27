@@ -197,7 +197,7 @@ export default function ProgramsPage() {
               </div>
 
               {/* Content Half */}
-              <div className="lg:w-1/2 p-10 md:p-16 lg:p-20 xl:p-24 flex flex-col justify-center">
+              <div className="lg:w-1/2 p-6 sm:p-10 md:p-16 lg:p-20 xl:p-24 flex flex-col justify-center">
                 <div className="max-w-xl mx-auto lg:mx-0">
                   <div className={`w-14 h-14 rounded-2xl ${program.bg} flex items-center justify-center mb-6`}>
                     <Icon size={28} className={program.color} />
@@ -206,10 +206,10 @@ export default function ProgramsPage() {
                   <p className={`text-xs font-bold uppercase tracking-widest ${program.color} mb-2`}>
                     {program.tagline}
                   </p>
-                  <h2 className="text-4xl md:text-5xl font-extrabold font-heading text-secondary mb-6 leading-tight">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold font-heading text-secondary mb-6 leading-tight">
                     {program.title}
                   </h2>
-                  <p className="text-text-muted text-lg leading-relaxed font-light mb-8">
+                  <p className="text-text-muted text-base sm:text-lg leading-relaxed font-light mb-8">
                     {program.description}
                   </p>
 
@@ -224,10 +224,10 @@ export default function ProgramsPage() {
                   </ul>
 
                   {/* Stats Grid */}
-                  <div className="grid grid-cols-3 gap-4 pt-8 border-t border-border-light/60 mb-8">
+                  <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-8 border-t border-border-light/60 mb-8">
                     {program.stats.map((stat) => (
                       <div key={stat.label}>
-                        <p className={`text-3xl font-extrabold font-heading ${program.color} mb-1`}>
+                        <p className={`text-xl sm:text-2xl md:text-3xl font-extrabold font-heading ${program.color} mb-1`}>
                           {stat.value}
                         </p>
                         <p className="text-text-muted text-[10px] font-bold uppercase tracking-wider">{stat.label}</p>
@@ -251,7 +251,7 @@ export default function ProgramsPage() {
       <Section spacing="md" background="primary">
         <Container size="md">
           <div className="text-center space-y-8">
-            <h2 className="text-4xl md:text-5xl font-extrabold font-heading text-secondary leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold font-heading text-secondary leading-tight">
               Every Program Needs Your Support
             </h2>
             <p className="text-secondary/80 text-lg max-w-xl mx-auto font-medium">

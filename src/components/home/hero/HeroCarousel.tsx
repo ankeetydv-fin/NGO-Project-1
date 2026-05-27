@@ -73,7 +73,7 @@ export function HeroCarousel() {
       
       {/* Floating High-Integrity Parameter Deck */}
       <div className="hidden lg:flex absolute bottom-0 inset-x-0 z-10 justify-center">
-        <div className="w-full max-w-5xl bg-secondary/80 backdrop-blur-xl border-t border-x border-white/10 rounded-t-2xl px-12 py-6 shadow-[0_-8px_30px_rgba(0,0,0,0.4)] flex justify-between items-center">
+        <div className="w-full max-w-5xl bg-secondary/80 backdrop-blur-xl border-t border-x border-white/10 rounded-t-2xl px-6 lg:px-12 py-6 shadow-[0_-8px_30px_rgba(0,0,0,0.4)] flex justify-between items-center">
           {heroContent.stats.map((stat, i) => (
             <div key={stat.label} className="flex items-center w-full justify-center">
               <div className="text-center px-8">

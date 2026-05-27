@@ -23,7 +23,7 @@ export function ImagePlaceholder({
         className={`relative overflow-hidden rounded-[var(--radius-md)] ${className}`}
         style={{ aspectRatio: aspect }}
       >
-        <Image src={src} alt={alt} fill className="object-cover" />
+        <Image src={src} alt={alt} fill className="object-cover" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" />
       </div>
     );
   }

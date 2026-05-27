@@ -36,7 +36,7 @@ export default function DonatePage() {
             <div className="lg:col-span-3 space-y-8">
               <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
                 <div>
-                  <h2 className="text-3xl font-extrabold font-heading mb-2 text-secondary">
+                  <h2 className="text-2xl sm:text-3xl font-extrabold font-heading mb-2 text-secondary">
                     Choose Your Impact
                   </h2>
                   <p className="text-text-muted">
@@ -46,7 +46,7 @@ export default function DonatePage() {
               </div>
 
               {/* Amount Grid */}
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
                 {AMOUNTS.map((amount) => (
                   <button
                     key={amount}
@@ -81,7 +81,7 @@ export default function DonatePage() {
                       setCustomAmount(e.target.value);
                       setSelectedAmount(null);
                     }}
-                    className="w-full pl-12 pr-5 py-4 bg-neutral-50 rounded-xl border border-border-light/60 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 text-xl font-bold transition-all shadow-inner"
+                    className="w-full pl-12 pr-5 py-4 bg-neutral-50 rounded-xl border border-border-light/60 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 text-lg sm:text-xl font-bold transition-all shadow-inner"
                   />
                 </div>
               </div>
@@ -116,7 +116,7 @@ export default function DonatePage() {
 
             {/* Right Sidebar */}
             <div className="lg:col-span-2 space-y-6">
-              <div className="bg-surface border border-border-light/60 rounded-2xl p-8 shadow-soft">
+              <div className="bg-surface border border-border-light/60 rounded-2xl p-5 sm:p-6 md:p-8 shadow-soft">
                 <h3 className="font-extrabold font-heading text-xl mb-6 flex items-center gap-3 text-secondary">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                     <Heart size={20} />
@@ -135,7 +135,7 @@ export default function DonatePage() {
                 </ul>
               </div>
 
-              <div className="bg-surface border border-border-light/60 rounded-2xl p-8 shadow-soft">
+              <div className="bg-surface border border-border-light/60 rounded-2xl p-5 sm:p-6 md:p-8 shadow-soft">
                 <h3 className="font-extrabold font-heading text-xl mb-6 flex items-center gap-3 text-secondary">
                   <div className="w-10 h-10 rounded-full bg-accent-green/10 flex items-center justify-center text-accent-green">
                     <ShieldCheck size={20} />

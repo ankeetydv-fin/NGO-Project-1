@@ -35,8 +35,8 @@ export default function ContactPage() {
           <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
             {/* Form */}
             <div className="lg:col-span-3">
-              <div className="bg-surface border border-border-light/60 rounded-2xl p-8 md:p-10 shadow-soft">
-                <h2 className="text-3xl font-extrabold font-heading mb-3 flex items-center gap-3 text-secondary">
+              <div className="bg-surface border border-border-light/60 rounded-2xl p-5 sm:p-8 md:p-10 shadow-soft">
+                <h2 className="text-2xl sm:text-3xl font-extrabold font-heading mb-3 flex items-center gap-3 text-secondary">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                     <MessageSquare size={20} />
                   </div>
@@ -137,8 +137,8 @@ export default function ContactPage() {
             className="absolute inset-0 grayscale contrast-125 opacity-90"
           />
           {/* Overlay label */}
-          <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 z-10">
-            <div className="bg-surface/95 backdrop-blur-md rounded-xl shadow-xl p-6 border border-white/20 max-w-sm">
+          <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 md:bottom-10 md:left-10 z-10">
+            <div className="bg-surface/95 backdrop-blur-md rounded-xl shadow-xl p-4 sm:p-6 border border-white/20 max-w-sm">
               <p className="font-extrabold font-heading text-lg text-secondary flex items-center gap-2 mb-2">
                 <MapPin size={20} className="text-primary" />
                 Shiv Prabha Foundation

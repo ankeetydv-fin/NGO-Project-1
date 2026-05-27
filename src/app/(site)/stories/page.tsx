@@ -15,7 +15,7 @@ export default function StoriesPage() {
 
       <Section spacing="lg" background="white">
         <Container size="lg">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {stories.map((story) => (
               <div key={story.title} className="group bg-surface border border-border-light/60 rounded-2xl overflow-hidden shadow-soft hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col h-full cursor-pointer">
                   {story.image ? (

@@ -170,14 +170,14 @@ export default function AboutPage() {
 
         {/* Content Card Lying Over the Banner */}
         <Container size="md" className="relative z-10 px-4">
-          <div className="bg-surface/95 backdrop-blur-md rounded-2xl border border-white/20 p-8 md:p-12 shadow-2xl text-center max-w-2xl mx-auto hover:translate-y-[-4px] transition-transform duration-300">
+          <div className="bg-surface/95 backdrop-blur-md rounded-2xl border border-white/20 p-5 sm:p-8 md:p-12 shadow-2xl text-center max-w-2xl mx-auto hover:translate-y-[-4px] transition-transform duration-300">
             <div className="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center mx-auto mb-6">
               <Eye size={24} />
             </div>
             <span className="text-xs font-bold uppercase tracking-widest text-primary mb-3 block">
               Our Dream &amp; Destination
             </span>
-            <h2 className="text-3xl md:text-4xl font-extrabold font-heading text-secondary mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold font-heading text-secondary mb-6">
               Our Vision
             </h2>
             <p className="text-base md:text-lg text-text-dark/90 leading-relaxed font-sans font-light italic mb-8">
@@ -211,7 +211,7 @@ export default function AboutPage() {
             <span className="inline-block px-3 py-1 rounded-md bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-3">
               Strategic Path
             </span>
-            <h2 className="text-3xl md:text-4xl font-extrabold font-heading text-secondary tracking-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold font-heading text-secondary tracking-tight">
               Our Mission Explorer
             </h2>
             <p className="text-sm md:text-base text-text-muted mt-3">
@@ -275,7 +275,7 @@ export default function AboutPage() {
 
             {/* Right Strategic Detail Card (7 columns) */}
             <div className="lg:col-span-7">
-              <div className="bg-surface border border-border-light rounded-[var(--radius-lg)] p-8 md:p-10 shadow-soft h-full flex flex-col justify-between min-h-[460px] relative overflow-hidden">
+              <div className="bg-surface border border-border-light rounded-[var(--radius-lg)] p-5 sm:p-8 md:p-10 shadow-soft h-full flex flex-col justify-between min-h-[460px] relative overflow-hidden">
                 {/* Visual accent subtle pattern */}
                 <div className="absolute -right-16 -bottom-16 w-48 h-48 rounded-full bg-primary/5 blur-2xl pointer-events-none" />
                 
@@ -427,12 +427,12 @@ export default function AboutPage() {
             title="Our Core Pillars"
             description="Three areas that define our work and our commitment to society."
           />
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             {aboutPillars.map((pillar) => {
               const Icon = ICON_MAP[pillar.iconName] || Heart;
               return (
                 <div key={pillar.title} className="text-center space-y-4 group">
-                  <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto transition-transform duration-300 group-hover:scale-110">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto transition-transform duration-300 group-hover:scale-110">
                     <Icon size={36} className="text-primary" />
                   </div>
                   <h3 className="text-2xl font-bold font-heading text-secondary">{pillar.title}</h3>
@@ -458,7 +458,7 @@ export default function AboutPage() {
               return (
                 <div
                   key={v.title}
-                  className="bg-surface border border-border-light/60 rounded-[var(--radius-md)] p-8 text-center shadow-soft hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                  className="bg-surface border border-border-light/60 rounded-[var(--radius-md)] p-5 sm:p-6 md:p-8 text-center shadow-soft hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
                 >
                   <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5">
                     <Icon size={26} className="text-primary" />
@@ -484,14 +484,14 @@ export default function AboutPage() {
             {teamMembers.map((member) => (
               <div
                 key={member.name}
-                className="bg-surface border border-border-light/60 rounded-[var(--radius-md)] p-8 text-center shadow-soft hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                className="bg-surface border border-border-light/60 rounded-[var(--radius-md)] p-5 sm:p-6 md:p-8 text-center shadow-soft hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
               >
                 {member.image ? (
-                  <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-5 relative border-2 border-primary/20">
+                  <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden mx-auto mb-5 relative border-2 border-primary/20">
                     <Image src={member.image} alt={member.name} fill className="object-cover" />
                   </div>
                 ) : (
-                  <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5 text-primary font-bold font-heading text-2xl border-2 border-primary/20">
+                  <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5 text-primary font-bold font-heading text-2xl border-2 border-primary/20">
                     {member.initials}
                   </div>
                 )}
@@ -507,7 +507,7 @@ export default function AboutPage() {
       <Section spacing="md" background="primary">
         <Container size="md">
           <div className="text-center space-y-8">
-            <h2 className="text-4xl md:text-5xl font-extrabold font-heading text-secondary leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold font-heading text-secondary leading-tight">
               Join the Movement
             </h2>
             <p className="text-secondary/80 text-lg max-w-xl mx-auto font-medium">

@@ -20,7 +20,7 @@ export function DonationCTA() {
               <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>
               Make a Difference
             </p>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold font-heading leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold font-heading leading-tight">
               Make a Meaningful<br className="hidden md:inline" /> Donation Today
             </h2>
           </div>

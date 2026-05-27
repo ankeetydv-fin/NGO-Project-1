@@ -19,7 +19,7 @@ export function MissionSummary() {
             <h2 className="text-primary font-bold text-2xl uppercase tracking-wider font-heading">
               About The Foundation
             </h2>
-            <h3 className="text-3xl md:text-4xl font-extrabold font-heading text-text-dark leading-tight">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold font-heading text-text-dark leading-tight">
               All children deserve to live in safe, nurturing environments to feel valued and loved.
             </h3>
             <p className="text-text-muted text-lg leading-relaxed font-light">
@@ -39,7 +39,7 @@ export function MissionSummary() {
             <h2 className="text-primary font-bold text-2xl uppercase tracking-wider font-heading lg:text-right">
               In A Mission Since 2025
             </h2>
-            <h3 className="text-3xl md:text-4xl font-extrabold font-heading text-text-dark leading-tight lg:text-right">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold font-heading text-text-dark leading-tight lg:text-right">
               To help the Helpless and uplift the Society
             </h3>
             <div className="flex justify-end pt-4">

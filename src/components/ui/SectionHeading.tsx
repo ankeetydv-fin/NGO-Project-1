@@ -33,13 +33,13 @@ export function SectionHeading({
           {align === "center" && <span className="w-1.5 h-1.5 rounded-full bg-primary"></span>}
         </p>
       )}
-      <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold font-heading text-text-dark mb-5 tracking-tight leading-tight">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold font-heading text-text-dark mb-5 tracking-tight leading-tight">
         {title}
       </h2>
       {description && (
         <p
           className={cn(
-            "text-lg text-text-muted leading-relaxed",
+            "text-base sm:text-lg text-text-muted leading-relaxed",
             align === "center" && "max-w-2xl mx-auto"
           )}
         >

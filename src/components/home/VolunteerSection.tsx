@@ -22,12 +22,12 @@ export function VolunteerSection() {
         </div>
         
         {/* Content Half */}
-        <div className="lg:w-1/2 bg-secondary text-surface p-12 lg:p-24 flex flex-col justify-center relative overflow-hidden">
+        <div className="lg:w-1/2 bg-secondary text-surface p-6 sm:p-8 md:p-12 lg:p-24 flex flex-col justify-center relative overflow-hidden">
           {/* Decorative Pattern */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
           
           <div className="relative z-10 max-w-xl">
-            <h2 className="text-4xl md:text-5xl font-extrabold font-heading mb-6 leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold font-heading mb-6 leading-tight">
               Become A Proud Volunteer Now
             </h2>
             <div className="w-16 h-1 bg-primary mb-8 rounded-full"></div>

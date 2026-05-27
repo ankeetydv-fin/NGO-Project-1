@@ -26,16 +26,16 @@ export function PageBanner({ title, subtitle, breadcrumb, tagline }: PageBannerP
               {breadcrumb}
             </p>
           )}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold font-heading leading-tight tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold font-heading leading-tight tracking-tight">
             {title}
           </h1>
           {tagline && (
-            <p className="text-xl md:text-2xl text-primary font-bold tracking-wide mt-2">
+            <p className="text-lg sm:text-xl md:text-2xl text-primary font-bold tracking-wide mt-2">
               {tagline}
             </p>
           )}
           {subtitle && (
-            <p className="text-lg md:text-xl text-surface/80 max-w-2xl leading-relaxed font-light mt-6">
+            <p className="text-base sm:text-lg md:text-xl text-surface/80 max-w-2xl leading-relaxed font-light mt-6">
               {subtitle}
             </p>
           )}

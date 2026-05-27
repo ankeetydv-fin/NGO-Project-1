@@ -146,7 +146,7 @@ export default function ImpactPage() {
                   <div className={`w-14 h-14 rounded-full ${stat.bg} flex items-center justify-center mx-auto mb-3`}>
                     <Icon size={26} className={stat.color} />
                   </div>
-                  <p className={`text-3xl md:text-4xl font-bold font-heading ${stat.color}`}>
+                  <p className={`text-2xl sm:text-3xl md:text-4xl font-bold font-heading ${stat.color}`}>
                     {stat.value}
                   </p>
                   <p className="text-text-muted text-sm mt-1">{stat.label}</p>
@@ -165,7 +165,7 @@ export default function ImpactPage() {
             title="Our Grassroots Causes"
             description="Direct, localized action plans designed to uplift rural classrooms, sports opportunities, and family welfare."
           />
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             <CauseCard
               category="Primary Education"
               badge="Active Initiative"
@@ -229,7 +229,7 @@ export default function ImpactPage() {
             title="Program Outcomes"
             description="Third-party verified results from our core programs."
           />
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             {impactOutcomes.map((outcome) => (
               <div
                 key={outcome.title}
@@ -265,7 +265,7 @@ export default function ImpactPage() {
       <Section spacing="lg" background="white">
         <Container size="lg">
           <SectionHeading label="Voices of Change" title="Stories from the Field" />
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
             {impactStories.map((story) => {
               const initials = story.name.split(" ").map((n) => n[0]).join("");
               const slug = story.name.toLowerCase().replace(/\s+/g, "-");
@@ -306,7 +306,7 @@ export default function ImpactPage() {
       <Section spacing="md" background="primary">
         <Container size="md">
           <div className="text-center space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading text-surface">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-heading text-surface">
               Sponsor Our Grassroots Initiatives
             </h2>
             <p className="text-surface/80 text-lg max-w-xl mx-auto">

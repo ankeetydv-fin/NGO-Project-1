@@ -48,7 +48,7 @@ export function HeroSlide({ slide, isActive, isPriority }: HeroSlideProps) {
 
             {/* Main Title with Staggered Animation */}
             <h2
-              className={`text-5xl md:text-7xl lg:text-8xl font-bold font-heading text-white leading-[1.1] transition-all duration-1000 delay-300 ${
+              className={`text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-heading text-white leading-[1.1] transition-all duration-1000 delay-300 ${
                 isActive ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
               }`}
             >
@@ -61,7 +61,7 @@ export function HeroSlide({ slide, isActive, isPriority }: HeroSlideProps) {
 
             {/* Description with Premium Typography */}
             <p
-              className={`max-w-2xl text-lg md:text-xl lg:text-2xl text-white/80 leading-relaxed font-light transition-all duration-1000 delay-500 ${
+              className={`max-w-2xl text-base sm:text-lg md:text-xl lg:text-2xl text-white/80 leading-relaxed font-light transition-all duration-1000 delay-500 ${
                 isActive ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
               }`}
             >
@@ -78,7 +78,7 @@ export function HeroSlide({ slide, isActive, isPriority }: HeroSlideProps) {
                 <Button
                   variant="accent"
                   size="xl"
-                  className="w-full sm:w-auto min-h-[64px] text-xl px-10 shadow-[0_20px_50px_rgba(200,169,81,0.3)] hover:shadow-[0_20px_50px_rgba(200,169,81,0.5)] hover:-translate-y-1 transition-all"
+                  className="w-full sm:w-auto min-h-[48px] sm:min-h-[56px] md:min-h-[64px] text-base sm:text-lg md:text-xl px-6 sm:px-8 md:px-10 shadow-[0_20px_50px_rgba(200,169,81,0.3)] hover:shadow-[0_20px_50px_rgba(200,169,81,0.5)] hover:-translate-y-1 transition-all"
                 >
                   {slide.ctaText}
                 </Button>
@@ -88,7 +88,7 @@ export function HeroSlide({ slide, isActive, isPriority }: HeroSlideProps) {
                 <Button
                   variant="outline"
                   size="xl"
-                  className="w-full sm:w-auto min-h-[64px] text-xl px-10 text-white border-white/30 hover:bg-white/10 backdrop-blur-sm transition-all"
+                  className="w-full sm:w-auto min-h-[48px] sm:min-h-[56px] md:min-h-[64px] text-base sm:text-lg md:text-xl px-6 sm:px-8 md:px-10 text-white border-white/30 hover:bg-white/10 backdrop-blur-sm transition-all"
                 >
                   Learn More
                 </Button>
