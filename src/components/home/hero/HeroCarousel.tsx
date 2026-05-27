@@ -65,13 +65,6 @@ export function HeroCarousel() {
         />
       </div>
 
-      <style jsx global>{`
-        @keyframes progress {
-          from { width: 0%; }
-          to { width: 100%; }
-        }
-      `}</style>
-
       <CarouselDots
         slidesCount={slides.length}
         selectedIndex={selectedIndex}

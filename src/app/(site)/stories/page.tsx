@@ -1,10 +1,7 @@
-"use client";
-
 import Image from "next/image";
 import { PageBanner } from "@/components/ui/PageBanner";
 import { Section } from "@/components/layout/Section";
 import { Container } from "@/components/layout/Container";
-import { Card } from "@/components/ui/Card";
 import { Calendar, Tag, Clock } from "lucide-react";
 import { stories } from "@/content";
 

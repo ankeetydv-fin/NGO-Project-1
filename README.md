@@ -34,3 +34,13 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+Next Step: What schemas do we need?
+Now that we understand how Sanity works, we can build the rest of your schemas. For an NGO website, we typically need these content structures:
+
+Stories / Testimonials: To display real-life impact stories.
+Impact Stats: Dynamic counter numbers on the home page (e.g., "10,000+ Lives Impacted").
+Gallery: To upload photos of events.
+Press / Reports: PDF files or links to transparency audit sheets.
+Let me know when you are ready to begin, and we can start building these schemas and integrating them onto your pages!

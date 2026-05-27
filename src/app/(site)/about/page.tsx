@@ -8,7 +8,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Section } from "@/components/layout/Section";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
-import { Card } from "@/components/ui/Card";
+import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import {
   Target,
   Eye,
@@ -99,43 +99,6 @@ const MISSION_STRATEGIES = [
   },
 ];
 
-/* ──────────────────────────────────────────────
- *  Image Placeholder — replace `src` with real
- *  photos when available. Uses next/image.
- * ────────────────────────────────────────────── */
-function ImagePlaceholder({
-  src,
-  alt,
-  aspect = "4/3",
-  className = "",
-}: {
-  src?: string;
-  alt: string;
-  aspect?: string;
-  className?: string;
-}) {
-  if (src) {
-    return (
-      <div className={`relative overflow-hidden rounded-[var(--radius-md)] ${className}`} style={{ aspectRatio: aspect }}>
-        <Image src={src} alt={alt} fill className="object-cover" />
-      </div>
-    );
-  }
-  return (
-    <div
-      className={`relative rounded-[var(--radius-md)] bg-border-light/40 border-2 border-dashed border-border-light flex flex-col items-center justify-center gap-3 ${className}`}
-      style={{ aspectRatio: aspect }}
-    >
-      <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
-        <svg className="w-8 h-8 text-primary/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
-        </svg>
-      </div>
-      <span className="text-sm text-text-muted/60 font-medium">{alt}</span>
-    </div>
-  );
-}
-
 export default function AboutPage() {
   const [activeMissionIndex, setActiveMissionIndex] = useState(0);
   return (
@@ -174,12 +137,12 @@ export default function AboutPage() {
             {/* Image side */}
             <div className="space-y-4">
               <ImagePlaceholder
-                src="/images/about/story.jpg"
+                src="/images/about/story.svg"
                 alt="Shiv Prabha Foundation community event"
                 aspect="4/3"
               />
               <ImagePlaceholder
-                src="/images/about/founding.jpg"
+                src="/images/about/founding.svg"
                 alt="Founding day — 13th February 2025"
                 aspect="16/9"
               />

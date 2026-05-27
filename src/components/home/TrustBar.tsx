@@ -2,8 +2,16 @@
 
 import React from "react";
 import { Container } from "@/components/layout/Container";
-import * as LucideIcons from "lucide-react";
+import { Building2, Globe, Handshake, Shield, Award } from "lucide-react";
 import { trustPartners } from "@/content";
+
+const ICON_MAP: Record<string, React.ElementType> = {
+  Building2,
+  Globe,
+  Handshake,
+  Shield,
+  Award,
+};
 
 export function TrustBar() {
   // Triplicating the partners list to create a seamless infinite scroll loop regardless of resolution
@@ -13,24 +21,23 @@ export function TrustBar() {
     <section className="relative py-12 md:py-16 bg-surface overflow-hidden border-b border-border-light/80">
       {/* Decorative top border line */}
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-border-light to-transparent" />
-      
+
       <Container size="xl">
         <div className="text-center mb-10">
           <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-primary bg-primary/5 border border-primary/10 px-4 py-1.5 rounded-full inline-block">
             Operational Transparency & Affiliations
           </p>
         </div>
-        
+
         {/* Infinite Horizontal Scroller Canvas */}
         <div className="relative w-full overflow-hidden py-2">
           {/* Glassmorphic edge fade filters */}
           <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-surface via-surface/75 to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-surface via-surface/75 to-transparent z-10 pointer-events-none" />
-          
+
           <div className="animate-marquee flex gap-6 md:gap-8">
             {marqueePartners.map((partner, index) => {
-              // Dynamically get the icon component from LucideIcons
-              const Icon = (LucideIcons as unknown as Record<string, React.ElementType>)[partner.iconName] || LucideIcons.Building2;
+              const Icon = ICON_MAP[partner.iconName] || Building2;
 
               return (
                 <div

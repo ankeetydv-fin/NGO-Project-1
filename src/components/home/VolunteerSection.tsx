@@ -12,7 +12,7 @@ export function VolunteerSection() {
         {/* Image Half */}
         <div className="lg:w-1/2 relative min-h-[400px] lg:min-h-full bg-neutral-800">
           <Image 
-            src="/images/impact/community-outreach.jpg" 
+            src="/images/impact/community-outreach.svg" 
             alt="Volunteer with us" 
             fill 
             className="object-cover" 

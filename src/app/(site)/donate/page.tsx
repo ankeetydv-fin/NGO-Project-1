@@ -25,7 +25,7 @@ export default function DonatePage() {
     <>
       <PageBanner
         title="Donate"
-        subtitle="Your generosity creates real, measurable change. Every rupee goes directly to our grassroots programs across India."
+        tagline="Your generosity creates real, measurable change. Every rupee goes directly to our grassroots programs across India."
         breadcrumb="Make a Difference"
       />
 

@@ -19,19 +19,19 @@ export const stories: StoryItem[] = [
     categoryColor: "bg-accent-green/10 text-accent-green",
     readTime: "5 min read",
     slug: "clean-water-rajasthan",
-    image: "/images/stories/clean-water-rajasthan.jpg",
+    image: "/images/stories/clean-water-rajasthan.svg",
   },
   {
-    title: "Annual Report 2024: A Year of Unprecedented Growth",
+    title: "Our First Quarter: A Rapid Start to 2025",
     excerpt:
-      "We reached 5,000 lives this year — a milestone made possible by our donors, volunteers, and partners. Explore the highlights and key numbers from our first full year.",
+      "In just a few months since founding, we have already impacted hundreds of lives across education, healthcare, and sports. Explore the highlights from our initial quarter of operations.",
     date: "April 15, 2025",
     author: "Communications",
     category: "Reports",
     categoryColor: "bg-primary/10 text-primary",
     readTime: "8 min read",
     slug: "annual-report-2024",
-    image: "/images/stories/annual-report-2024.jpg",
+    image: "/images/stories/annual-report-2024.svg",
   },
   {
     title: "Volunteer Spotlight: Meet Dr. Anjali Gupta",
@@ -43,19 +43,19 @@ export const stories: StoryItem[] = [
     categoryColor: "bg-secondary/10 text-secondary",
     readTime: "4 min read",
     slug: "volunteer-anjali-gupta",
-    image: "/images/stories/volunteer-anjali-gupta.jpg",
+    image: "/images/stories/volunteer-anjali-gupta.svg",
   },
   {
     title: "From Dropout to Engineer: Ravi's Scholarship Story",
     excerpt:
-      "Ravi was about to drop out of school when he received an NGO Foundation scholarship. Today, he's a software engineer — and he's giving back.",
+      "Ravi was about to drop out of school when he received a Shiv Prabha Foundation scholarship. Today, he's a software engineer — and he's giving back.",
     date: "March 15, 2025",
     author: "Field Team",
     category: "Impact Story",
     categoryColor: "bg-accent-green/10 text-accent-green",
     readTime: "6 min read",
     slug: "ravi-scholarship-story",
-    image: "/images/stories/ravi-scholarship-story.jpg",
+    image: "/images/stories/ravi-scholarship-story.svg",
   },
   {
     title: "Building Resilience: Our Disaster Relief in Bihar",
@@ -67,7 +67,7 @@ export const stories: StoryItem[] = [
     categoryColor: "bg-accent-orange/10 text-accent-orange",
     readTime: "7 min read",
     slug: "disaster-relief-bihar",
-    image: "/images/stories/disaster-relief-bihar.jpg",
+    image: "/images/stories/disaster-relief-bihar.svg",
   },
   {
     title: "Why Transparency Matters: Our Open Books Policy",
@@ -79,7 +79,7 @@ export const stories: StoryItem[] = [
     categoryColor: "bg-primary/10 text-primary",
     readTime: "5 min read",
     slug: "transparency-open-books",
-    image: "/images/stories/transparency-open-books.jpg",
+    image: "/images/stories/transparency-open-books.svg",
   },
 ];
 

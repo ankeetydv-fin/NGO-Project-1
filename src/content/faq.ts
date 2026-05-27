@@ -12,7 +12,7 @@ export const faqs: FAQItem[] = [
   {
     question: "Is my donation tax-deductible?",
     answer:
-      "Yes. NGO Foundation is registered under Section 80G of the Income Tax Act. All donations are eligible for tax deduction. You will receive an 80G receipt via email within 24 hours of your donation.",
+      "Yes. Shiv Prabha Foundation is registered under Section 80G of the Income Tax Act. All donations are eligible for tax deduction. You will receive an 80G receipt via email within 24 hours of your donation.",
   },
   {
     question: "How is my donation used?",
@@ -37,7 +37,7 @@ export const faqs: FAQItem[] = [
   {
     question: "How do I get my 80G tax receipt?",
     answer:
-      "Your 80G receipt is automatically emailed to you within 24 hours of a successful donation. If you provided your PAN number, it will be included on the receipt. For any issues, email support@ngofund.org.",
+      "Your 80G receipt is automatically emailed to you within 24 hours of a successful donation. If you provided your PAN number, it will be included on the receipt. For any issues, email us at our contact address.",
   },
   {
     question: "Can I donate more than once?",
@@ -45,7 +45,7 @@ export const faqs: FAQItem[] = [
       "Absolutely! You can visit our Donate page anytime to make another contribution. Each donation is processed securely via Razorpay and you will receive an 80G tax receipt for every donation.",
   },
   {
-    question: "Is NGO Foundation a registered organization?",
+    question: "Is Shiv Prabha Foundation a registered organization?",
     answer:
       "Yes. We are registered under the Societies Registration Act, hold FCRA certification for foreign contributions, have 80G and 12A registrations under the Income Tax Act, and are CSR-1 registered with the Ministry of Corporate Affairs.",
   },

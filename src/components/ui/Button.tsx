@@ -4,7 +4,6 @@ import { cn } from "@/lib/utils";
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "accent" | "outline" | "ghost" | "link";
   size?: "sm" | "md" | "lg" | "xl" | "icon";
-  asChild?: boolean;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -17,7 +16,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const variants = {
       primary: "bg-gradient-to-b from-[#fbbf24] to-primary text-secondary font-extrabold hover:from-primary hover:to-[#d97706] shadow-soft hover:shadow-lg transition-all",
       secondary: "bg-secondary text-surface hover:bg-secondary/90 shadow-soft",
-      accent: "bg-gradient-to-b from-[#fbbf24] to-primary text-secondary font-extrabold hover:from-primary hover:to-[#d97706] shadow-soft hover:shadow-lg transition-all",
+      accent: "bg-btn-blue text-white font-bold hover:bg-btn-blue/90 shadow-soft hover:shadow-lg transition-all",
       outline: "border-2 border-primary text-primary hover:bg-primary/10",
       ghost: "hover:bg-primary/10 text-primary",
       link: "underline-offset-4 hover:underline text-primary p-0 h-auto font-semibold",

@@ -17,8 +17,6 @@ export const teamMembers: TeamMember[] = [
 
 export const aboutPageMeta = {
   title: "About Us",
-  subtitle:
-    "Building a stronger, empowered, and inclusive society — one step at a time.",
   breadcrumb: "Our Story",
   tagline: `\u201CTransforming Lives\u2026 One Step at a Time\u201D \u2014 \u0938\u0902\u0938\u094D\u0915\u093E\u0930, \u0936\u093F\u0915\u094D\u0937\u093E \u0914\u0930 \u0938\u0947\u0935\u093E \u0915\u0940 \u0913\u0930 \u090F\u0915 \u0915\u0926\u092E`,
 };

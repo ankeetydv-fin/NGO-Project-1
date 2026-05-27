@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
 import { PageBanner } from "@/components/ui/PageBanner";
@@ -41,7 +39,7 @@ const PROGRAMS = [
     ],
     color: "text-primary",
     bg: "bg-primary/10",
-    image: "/images/programs/education.jpg",
+    image: "/images/programs/education.svg",
   },
   {
     id: "healthcare",
@@ -64,7 +62,7 @@ const PROGRAMS = [
     ],
     color: "text-accent-orange",
     bg: "bg-accent-orange/10",
-    image: "/images/programs/healthcare.jpg",
+    image: "/images/programs/healthcare.svg",
   },
   {
     id: "water",
@@ -87,7 +85,7 @@ const PROGRAMS = [
     ],
     color: "text-secondary",
     bg: "bg-secondary/10",
-    image: "/images/programs/water.jpg",
+    image: "/images/programs/water.svg",
   },
   {
     id: "livelihood",
@@ -110,7 +108,7 @@ const PROGRAMS = [
     ],
     color: "text-accent-green",
     bg: "bg-accent-green/10",
-    image: "/images/programs/livelihood.jpg",
+    image: "/images/programs/livelihood.svg",
   },
   {
     id: "shelter",
@@ -133,7 +131,7 @@ const PROGRAMS = [
     ],
     color: "text-primary",
     bg: "bg-primary/10",
-    image: "/images/programs/shelter.jpg",
+    image: "/images/programs/shelter.svg",
   },
   {
     id: "childcare",
@@ -156,7 +154,7 @@ const PROGRAMS = [
     ],
     color: "text-accent-orange",
     bg: "bg-accent-orange/10",
-    image: "/images/programs/childcare.jpg",
+    image: "/images/programs/childcare.svg",
   },
 ];
 

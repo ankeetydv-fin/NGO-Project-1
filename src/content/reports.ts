@@ -10,12 +10,12 @@ import type { ReportItem } from "@/types/content";
 
 export const annualReports: ReportItem[] = [
   { title: "Annual Report 2024–25", year: "2024-25", pages: "32 pages", size: "PDF • 2.8 MB", type: "annual" },
-  { title: "Annual Report 2023–24", year: "2023-24", pages: "24 pages", size: "PDF • 2.1 MB", type: "annual" },
+  { title: "Founding Year Report (Feb–Mar 2025)", year: "2025", pages: "16 pages", size: "PDF • 1.4 MB", type: "annual" },
 ];
 
 export const financialReports: ReportItem[] = [
   { title: "Audited Financial Statement FY 2024-25", year: "FY 2024-25", type: "financial" },
-  { title: "Audited Financial Statement FY 2023-24", year: "FY 2023-24", type: "financial" },
+  { title: "Initial Funding Report FY 2024-25", year: "FY 2024-25", type: "financial" },
 ];
 
 export const impactReports: ReportItem[] = [

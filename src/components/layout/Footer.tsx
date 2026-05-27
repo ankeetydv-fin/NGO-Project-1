@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/Button";
 import { Mail, Phone, MapPin } from "lucide-react";
 import {
   siteConfig,
+  footerQuickLinks,
+  footerLegalLinks,
 } from "@/content";
 
 /* Inline SVG social icons since lucide-react no longer ships brand icons */
@@ -69,7 +71,7 @@ export function Footer() {
               <p className="text-sm text-surface/90 font-medium leading-relaxed">
                 Transforming Lives… One Step at a Time
               </p>
-              <p className="text-sm text-surface/80 font-hindi leading-relaxed">
+              <p className="text-sm text-surface/80 leading-relaxed">
                 संस्कार, शिक्षा और सेवा की ओर एक कदम
               </p>
             </div>
@@ -84,13 +86,7 @@ export function Footer() {
           <div className="flex flex-col items-center md:items-start">
             <h3 className="text-lg font-bold font-heading mb-6 text-surface">Quick Links</h3>
             <ul className="space-y-3 text-center md:text-left">
-              {[
-                { label: "About Us", href: "/about" },
-                { label: "Our Programs", href: "/programs" },
-                { label: "Impact & Stories", href: "/stories" },
-                { label: "Become a Volunteer", href: "/volunteer" },
-                { label: "CSR Partnerships", href: "/contact" }
-              ].map((link) => (
+              {footerQuickLinks.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-surface/80 hover:text-surface hover:underline underline-offset-4 transition-colors text-sm font-medium">
                     {link.label}
@@ -104,13 +100,7 @@ export function Footer() {
           <div className="flex flex-col items-center md:items-start">
             <h3 className="text-lg font-bold font-heading mb-6 text-surface">Transparency</h3>
             <ul className="space-y-3 text-center md:text-left">
-              {[
-                { label: "Audited Financials", href: "/reports" },
-                { label: "Child Protection Policy", href: "#" },
-                { label: "Whistleblower Policy", href: "#" },
-                { label: "Privacy Policy", href: "#" },
-                { label: "Terms & Conditions", href: "#" }
-              ].map((link) => (
+              {footerLegalLinks.map((link) => (
                 <li key={link.label}>
                   <Link href={link.href} className="text-surface/80 hover:text-surface hover:underline underline-offset-4 transition-colors text-sm font-medium">
                     {link.label}

@@ -18,7 +18,7 @@ export function DonationCTA() {
           <div className="max-w-2xl">
             <p className="text-secondary/70 font-bold text-sm uppercase tracking-widest mb-3 flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>
-              PROGRAMS
+              Make a Difference
             </p>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold font-heading leading-tight">
               Make a Meaningful<br className="hidden md:inline" /> Donation Today

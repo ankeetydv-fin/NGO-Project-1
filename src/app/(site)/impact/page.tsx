@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { PageBanner } from "@/components/ui/PageBanner";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -23,6 +21,7 @@ import {
   Gift,
   Award,
 } from "lucide-react";
+import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { impactStatsExtended, impactOutcomes, impactStories } from "@/content";
 import type { LucideIcon } from "lucide-react";
 
@@ -37,43 +36,6 @@ const ICON_MAP: Record<string, LucideIcon> = {
   Gift,
   Award,
 };
-
-/* ──────────────────────────────────────────────
- *  Image Placeholder — replace `src` with real
- *  photos when available.
- * ────────────────────────────────────────────── */
-function ImagePlaceholder({
-  src,
-  alt,
-  aspect = "4/3",
-  className = "",
-}: {
-  src?: string;
-  alt: string;
-  aspect?: string;
-  className?: string;
-}) {
-  if (src) {
-    return (
-      <div className={`relative overflow-hidden rounded-[var(--radius-md)] ${className}`} style={{ aspectRatio: aspect }}>
-        <Image src={src} alt={alt} fill className="object-cover" />
-      </div>
-    );
-  }
-  return (
-    <div
-      className={`relative rounded-[var(--radius-md)] bg-border-light/40 border-2 border-dashed border-border-light flex flex-col items-center justify-center gap-2 ${className}`}
-      style={{ aspectRatio: aspect }}
-    >
-      <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-        <svg className="w-6 h-6 text-primary/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
-        </svg>
-      </div>
-      <span className="text-xs text-text-muted/60 font-medium">{alt}</span>
-    </div>
-  );
-}
 
 /* ──────────────────────────────────────────────
  *  CauseCard — A premium, asymmetrical storytelling
@@ -210,7 +172,7 @@ export default function ImpactPage() {
               iconName="BookOpen"
               title="Equitable Classrooms Drive"
               description="Supplying primary village schools with core learning sets, notebook kits, and interactive digital aids to support student retention."
-              src="/images/impact/education-drive.jpg"
+              src="/images/impact/education-drive.svg"
               alt="Equitable classrooms drive"
               aspect="4/3"
               className="md:col-span-2 md:row-span-2"
@@ -221,7 +183,7 @@ export default function ImpactPage() {
               iconName="Gift"
               title="Welfare Resource Drop-offs"
               description="Providing clothing bundles, direct nutrition packets, and basic home supplies to remote clusters in underserved districts."
-              src="/images/impact/community-outreach.jpg"
+              src="/images/impact/community-outreach.svg"
               alt="Welfare resource drop-offs"
               aspect="1/1"
             />
@@ -231,7 +193,7 @@ export default function ImpactPage() {
               iconName="HeartPulse"
               title="First-Aid & Hygiene Sessions"
               description="Collaborating with volunteer doctors to conduct health workshops and supply emergency diagnostic boxes to village blocks."
-              src="/images/impact/health-camp.jpg"
+              src="/images/impact/health-camp.svg"
               alt="First-aid and hygiene session"
               aspect="1/1"
             />
@@ -241,7 +203,7 @@ export default function ImpactPage() {
               iconName="Trophy"
               title="Grassroots Athletic Gear"
               description="Sponsoring high-quality athletic gear, football packages, and cricket trials support for young sports talents."
-              src="/images/impact/sports-event.jpg"
+              src="/images/impact/sports-event.svg"
               alt="Grassroots athletic gear support"
               aspect="1/1"
             />
@@ -251,7 +213,7 @@ export default function ImpactPage() {
               iconName="Award"
               title="Deserving Student Aid"
               description="Bridging tuition gaps and matching passionate school-goers with career mentors to ensure successful graduation."
-              src="/images/impact/water-project.jpg"
+              src="/images/impact/water-project.svg"
               alt="Deserving student aid"
               aspect="1/1"
             />
@@ -274,7 +236,7 @@ export default function ImpactPage() {
                 className="bg-surface border border-border-light rounded-[var(--radius-md)] overflow-hidden shadow-soft"
               >
                 <ImagePlaceholder
-                  src={`/images/impact/${outcome.title.toLowerCase()}.jpg`}
+                  src={`/images/impact/${outcome.title.toLowerCase()}.svg`}
                   alt={`${outcome.title} program in action`}
                   aspect="16/9"
                   className="rounded-none border-0"
@@ -313,7 +275,7 @@ export default function ImpactPage() {
                   className="bg-bg-off-white border border-border-light rounded-[var(--radius-md)] overflow-hidden shadow-soft"
                 >
                   <ImagePlaceholder
-                    src={`/images/impact/stories/${slug}.jpg`}
+                    src={`/images/impact/stories/${slug}.svg`}
                     alt={`${story.name}'s story`}
                     aspect="16/9"
                     className="rounded-none border-0"

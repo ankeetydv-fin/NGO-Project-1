@@ -71,23 +71,6 @@ export const missionContent = {
   },
 };
 
-export const donationCTAContent = {
-  label: "Make a Difference",
-  headline: "Your Generosity Can",
-  highlightedText: "Transform Lives",
-  description:
-    "A sincere act of support creates a ripple effect of change. Whether it's ₹500 or ₹10,000 — every contribution directly funds school writing aids, wellness kits, and youth sports kits in remote clusters.",
-  benefits: [
-    "100% of public donations go directly to causes",
-    "80G tax exemption certificate for all sponsors",
-    "Transparent updates and operational metrics",
-    "Fully secure local payment methods",
-  ],
-  amounts: ["₹500", "₹1,000", "₹2,500", "₹5,000", "₹10,000"],
-  securityNote:
-    "Secure payment via Razorpay. All sponsors eligible for 80G tax exemption certificate.",
-};
-
 export const donationTiers: DonationTier[] = [
   { amount: 500, impact: "Provides textbook sets and writing supplies for 5 kids" },
   { amount: 1000, impact: "Sponsors essential wellness & nutrition kit for 2 families" },

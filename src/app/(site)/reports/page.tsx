@@ -1,5 +1,3 @@
-"use client";
-
 import { PageBanner } from "@/components/ui/PageBanner";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Section } from "@/components/layout/Section";

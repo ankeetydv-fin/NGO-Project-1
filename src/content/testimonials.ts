@@ -11,7 +11,7 @@ import type { TestimonialItem } from "@/types/content";
 export const testimonials: TestimonialItem[] = [
   {
     quote:
-      "NGO Foundation ki wajah se meri beti ko scholarship mili aur aaj woh humare parivaar mein pehli hai jo college ja rahi hai. Is sansthan ne humare poore parivaar ka bhavishya badal diya.",
+      "Shiv Prabha Foundation ki wajah se meri beti ko scholarship mili aur aaj woh humare parivaar mein pehli hai jo college ja rahi hai. Is sansthan ne humare poore parivaar ka bhavishya badal diya.",
     name: "Priya Sharma",
     role: "Parent & Beneficiary",
     location: "Jodhpur, Rajasthan",

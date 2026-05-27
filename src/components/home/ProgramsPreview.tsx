@@ -8,7 +8,6 @@ import { Section } from "@/components/layout/Section";
 import { Button } from "@/components/ui/Button";
 import { ArrowRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
-import { urlForImage } from "@/sanity/lib/image";
 
 type Program = {
   _id: string;
@@ -48,7 +47,7 @@ export function ProgramsPreview({ programs }: { programs: Program[] }) {
     >
       <div className="relative w-full aspect-[4/3] overflow-hidden bg-neutral-100">
         <Image
-          src={program.imageUrl || "/images/placeholder.jpg"}
+          src={program.imageUrl || "/images/placeholder.svg"}
           alt={program.title}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
