@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { PageBanner } from "@/components/ui/PageBanner";
 import { Section } from "@/components/layout/Section";
 import { Container } from "@/components/layout/Container";
@@ -13,14 +13,19 @@ import {
   Send,
   CheckCircle,
   MessageSquare,
+  Loader2,
 } from "lucide-react";
 import { contactInfo } from "@/content";
+import { submitContactForm } from "@/app/actions/contact";
 import type { LucideIcon } from "lucide-react";
 
 const ICON_MAP: Record<string, LucideIcon> = { MapPin, Phone, Mail, Clock };
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const formRef = useRef<HTMLFormElement>(null);
 
   return (
     <>
@@ -54,19 +59,41 @@ export default function ContactPage() {
                   </div>
                 ) : (
                   <form
+                    ref={formRef}
                     className="space-y-5"
-                    onSubmit={(e) => {
+                    onSubmit={async (e) => {
                       e.preventDefault();
-                      setSubmitted(true);
+                      setError(null);
+                      const form = e.currentTarget;
+                      const formData = new FormData(form);
+                      setLoading(true);
+                      const result = await submitContactForm({
+                        name: formData.get("name") as string,
+                        email: formData.get("email") as string,
+                        phone: formData.get("phone") as string,
+                        subject: formData.get("subject") as string,
+                        message: formData.get("message") as string,
+                      });
+                      setLoading(false);
+                      if (result.error) {
+                        setError(result.error);
+                      } else {
+                        setSubmitted(true);
+                      }
                     }}
                   >
+                    {error && (
+                      <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl text-sm font-medium">
+                        {error}
+                      </div>
+                    )}
                     <div className="grid md:grid-cols-2 gap-5">
-                      <input type="text" placeholder="Full Name *" required className="w-full px-5 py-4 bg-neutral-50 rounded-xl border border-border-light/60 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all font-medium" />
-                      <input type="email" placeholder="Email Address *" required className="w-full px-5 py-4 bg-neutral-50 rounded-xl border border-border-light/60 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all font-medium" />
+                      <input name="name" type="text" placeholder="Full Name *" required className="w-full px-5 py-4 bg-neutral-50 rounded-xl border border-border-light/60 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all font-medium" />
+                      <input name="email" type="email" placeholder="Email Address *" required className="w-full px-5 py-4 bg-neutral-50 rounded-xl border border-border-light/60 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all font-medium" />
                     </div>
-                    <input type="tel" placeholder="Phone Number (Optional)" className="w-full px-5 py-4 bg-neutral-50 rounded-xl border border-border-light/60 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all font-medium" />
-                    <select className="w-full px-5 py-4 bg-neutral-50 rounded-xl border border-border-light/60 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all font-medium text-text-muted">
-                      <option>Subject</option>
+                    <input name="phone" type="tel" placeholder="Phone Number (Optional)" className="w-full px-5 py-4 bg-neutral-50 rounded-xl border border-border-light/60 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all font-medium" />
+                    <select name="subject" required className="w-full px-5 py-4 bg-neutral-50 rounded-xl border border-border-light/60 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all font-medium text-text-muted">
+                      <option value="">Select a subject *</option>
                       <option>General Inquiry</option>
                       <option>Donations &amp; Payments</option>
                       <option>Volunteering</option>
@@ -75,13 +102,14 @@ export default function ContactPage() {
                       <option>Other</option>
                     </select>
                     <textarea
+                      name="message"
                       placeholder="Your message... *"
                       rows={5}
                       required
                       className="w-full px-5 py-4 bg-neutral-50 rounded-xl border border-border-light/60 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all font-medium resize-none"
                     />
-                    <Button type="submit" variant="primary" size="lg" className="w-full gap-2 rounded-xl shadow-glow py-6 font-bold hover:-translate-y-1 transition-transform">
-                      <Send size={20} /> Send Message
+                    <Button type="submit" variant="primary" size="lg" disabled={loading} className="w-full gap-2 rounded-xl shadow-glow py-6 font-bold hover:-translate-y-1 transition-transform">
+                      {loading ? <><Loader2 size={20} className="animate-spin" /> Sending...</> : <><Send size={20} /> Send Message</>}
                     </Button>
                   </form>
                 )}

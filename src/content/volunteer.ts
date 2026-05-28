@@ -68,7 +68,6 @@ export const volunteerCommunityStats = {
 
 export const volunteerFormOptions = {
   interests: [
-    "Select Area of Interest",
     "Teaching & Education",
     "Healthcare",
     "Community Outreach",
@@ -77,7 +76,6 @@ export const volunteerFormOptions = {
     "Other",
   ],
   availability: [
-    "Availability",
     "A few hours per week",
     "Weekends only",
     "Full-time for a project",

@@ -5,12 +5,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Loader2 } from "lucide-react";
 import {
   siteConfig,
   footerQuickLinks,
   footerLegalLinks,
 } from "@/content";
+import { submitNewsletterForm } from "@/app/actions/newsletter";
 
 /* Inline SVG social icons since lucide-react no longer ships brand icons */
 const FacebookIcon = () => (
@@ -37,10 +38,22 @@ export function Footer() {
   const [newsletterName, setNewsletterName] = React.useState("");
   const [newsletterEmail, setNewsletterEmail] = React.useState("");
   const [subscribed, setSubscribed] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
+  const [error, setError] = React.useState<string | null>(null);
 
-  function handleSubscribe(e: React.FormEvent) {
+  async function handleSubscribe(e: React.FormEvent) {
     e.preventDefault();
-    if (newsletterName && newsletterEmail) {
+    if (!newsletterName || !newsletterEmail) return;
+    setError(null);
+    setLoading(true);
+    const result = await submitNewsletterForm({
+      name: newsletterName,
+      email: newsletterEmail,
+    });
+    setLoading(false);
+    if (result.error) {
+      setError(result.error);
+    } else {
       setSubscribed(true);
       setNewsletterName("");
       setNewsletterEmail("");
@@ -182,10 +195,13 @@ export function Footer() {
                     className="w-full bg-white/10 border-b border-surface/30 pb-2 text-surface placeholder:text-surface/50 text-sm focus:outline-none focus:border-primary transition-colors rounded-none px-2"
                   />
                 </div>
-                <Button type="submit" variant="primary" className="w-full md:w-auto px-10 py-3 shrink-0 font-bold tracking-widest text-xs rounded-lg">
-                  SUBSCRIBE
+                <Button type="submit" variant="primary" disabled={loading} className="w-full md:w-auto px-10 py-3 shrink-0 font-bold tracking-widest text-xs rounded-lg">
+                  {loading ? <Loader2 size={16} className="animate-spin" /> : "SUBSCRIBE"}
                 </Button>
               </form>
+            )}
+            {error && (
+              <p className="text-red-400 text-xs mt-2 text-center md:text-left">{error}</p>
             )}
           </div>
         </div>

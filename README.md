@@ -44,3 +44,6 @@ Impact Stats: Dynamic counter numbers on the home page (e.g., "10,000+ Lives Imp
 Gallery: To upload photos of events.
 Press / Reports: PDF files or links to transparency audit sheets.
 Let me know when you are ready to begin, and we can start building these schemas and integrating them onto your pages!
+
+
+we have to first run the build and get hte errors and bugs in the volunteer and other forms loading.

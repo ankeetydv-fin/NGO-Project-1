@@ -8,6 +8,7 @@ import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
 import {
   HandHeart,
+  Loader2,
   MapPin,
   Clock,
   Users,
@@ -25,6 +26,7 @@ import {
   volunteerCommunityStats,
   volunteerFormOptions,
 } from "@/content";
+import { submitVolunteerForm } from "@/app/actions/volunteer";
 import type { LucideIcon } from "lucide-react";
 
 const ICON_MAP: Record<string, LucideIcon> = {
@@ -36,6 +38,8 @@ const ICON_MAP: Record<string, LucideIcon> = {
 
 export default function VolunteerPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   return (
     <>
@@ -135,29 +139,53 @@ export default function VolunteerPage() {
                 ) : (
                   <form
                     className="space-y-5"
-                    onSubmit={(e) => {
+                    onSubmit={async (e) => {
                       e.preventDefault();
-                      setSubmitted(true);
+                      setError(null);
+                      const form = e.currentTarget;
+                      const formData = new FormData(form);
+                      setLoading(true);
+                      const result = await submitVolunteerForm({
+                        name: formData.get("name") as string,
+                        email: formData.get("email") as string,
+                        phone: formData.get("phone") as string,
+                        role: formData.get("role") as string,
+                        availability: formData.get("availability") as string,
+                        motivation: formData.get("motivation") as string,
+                      });
+                      setLoading(false);
+                      if (result.error) {
+                        setError(result.error);
+                      } else {
+                        setSubmitted(true);
+                      }
                     }}
                   >
+                    {error && (
+                      <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl text-sm font-medium">
+                        {error}
+                      </div>
+                    )}
                     <div className="grid md:grid-cols-2 gap-5">
-                      <input type="text" placeholder="Full Name *" required className="w-full px-5 py-4 bg-neutral-50 rounded-xl border border-border-light/60 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all font-medium" />
-                      <input type="email" placeholder="Email *" required className="w-full px-5 py-4 bg-neutral-50 rounded-xl border border-border-light/60 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all font-medium" />
+                      <input name="name" type="text" placeholder="Full Name *" required className="w-full px-5 py-4 bg-neutral-50 rounded-xl border border-border-light/60 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all font-medium" />
+                      <input name="email" type="email" placeholder="Email *" required className="w-full px-5 py-4 bg-neutral-50 rounded-xl border border-border-light/60 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all font-medium" />
                     </div>
-                    <input type="tel" placeholder="Phone Number" className="w-full px-5 py-4 bg-neutral-50 rounded-xl border border-border-light/60 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all font-medium" />
-                    <select className="w-full px-5 py-4 bg-neutral-50 rounded-xl border border-border-light/60 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all font-medium text-text-muted">
+                    <input name="phone" type="tel" placeholder="Phone Number *" required className="w-full px-5 py-4 bg-neutral-50 rounded-xl border border-border-light/60 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all font-medium" />
+                    <select name="role" required className="w-full px-5 py-4 bg-neutral-50 rounded-xl border border-border-light/60 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all font-medium text-text-muted">
+                      <option value="">Select an area of interest *</option>
                       {volunteerFormOptions.interests.map((opt) => (
                         <option key={opt}>{opt}</option>
                       ))}
                     </select>
-                    <select className="w-full px-5 py-4 bg-neutral-50 rounded-xl border border-border-light/60 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all font-medium text-text-muted">
+                    <select name="availability" className="w-full px-5 py-4 bg-neutral-50 rounded-xl border border-border-light/60 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all font-medium text-text-muted">
+                      <option value="">Select availability</option>
                       {volunteerFormOptions.availability.map((opt) => (
                         <option key={opt}>{opt}</option>
                       ))}
                     </select>
-                    <textarea placeholder="Tell us about yourself and why you want to volunteer..." rows={4} className="w-full px-5 py-4 bg-neutral-50 rounded-xl border border-border-light/60 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all font-medium resize-none" />
-                    <Button type="submit" variant="primary" size="lg" className="w-full gap-2 rounded-xl shadow-glow py-6 font-bold hover:-translate-y-1 transition-transform">
-                      <Send size={20} /> Submit Application
+                    <textarea name="motivation" placeholder="Tell us about yourself and why you want to volunteer... *" rows={4} required className="w-full px-5 py-4 bg-neutral-50 rounded-xl border border-border-light/60 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all font-medium resize-none" />
+                    <Button type="submit" variant="primary" size="lg" disabled={loading} className="w-full gap-2 rounded-xl shadow-glow py-6 font-bold hover:-translate-y-1 transition-transform">
+                      {loading ? <><Loader2 size={20} className="animate-spin" /> Submitting...</> : <><Send size={20} /> Submit Application</>}
                     </Button>
                   </form>
                 )}

@@ -1,0 +1,66 @@
+import { defineField, defineType } from 'sanity'
+
+export const contactMessageType = defineType({
+  name: 'contactMessage',
+  title: 'Contact Message',
+  type: 'document',
+  icon: () => '✉️',
+  fields: [
+    defineField({
+      name: 'name',
+      title: 'Name',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'email',
+      title: 'Email',
+      type: 'string',
+      validation: (Rule) => Rule.required().email(),
+    }),
+    defineField({
+      name: 'phone',
+      title: 'Phone',
+      type: 'string',
+    }),
+    defineField({
+      name: 'subject',
+      title: 'Subject',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'message',
+      title: 'Message',
+      type: 'text',
+      validation: (Rule) => Rule.required().min(10),
+    }),
+    defineField({
+      name: 'submittedAt',
+      title: 'Submitted At',
+      type: 'datetime',
+      initialValue: () => new Date().toISOString(),
+    }),
+    defineField({
+      name: 'status',
+      title: 'Status',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'New', value: 'new' },
+          { title: 'Read', value: 'read' },
+          { title: 'Replied', value: 'replied' },
+          { title: 'Archived', value: 'archived' },
+        ],
+      },
+      initialValue: 'new',
+    }),
+  ],
+  preview: {
+    select: {
+      title: 'name',
+      subtitle: 'subject',
+      description: 'email',
+    },
+  },
+})
