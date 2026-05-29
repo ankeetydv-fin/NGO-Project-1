@@ -11,68 +11,68 @@ import type { VolunteerRole } from "@/types/content";
 export const volunteerRoles: VolunteerRole[] = [
   {
     iconName: "GraduationCap",
-    title: "Teaching Assistant",
+    title: "Teach a Child",
     location: "Rajasthan & MP Villages",
     commitment: "10 hrs/week",
     description:
-      "Help children in our learning centers with reading, math, and digital literacy across rural schools.",
+      "Sit beside a child who has never owned a book. Teach them to read, write, and see a future beyond poverty and labor.",
   },
   {
     iconName: "HeartPulse",
-    title: "Health Camp Organizer",
+    title: "Medical Camp Assistant",
     location: "Mobile Clinics, UP & Bihar",
     commitment: "Weekend Events",
     description:
-      "Assist doctors during medical camps — registration, logistics, and patient support in underserved communities.",
+      "Help us save lives. Walk alongside doctors to distribute medicine, clean water tablets, and basic hygiene kits to sick kids.",
   },
   {
     iconName: "Megaphone",
-    title: "Community Outreach",
+    title: "Voice for the Voiceless",
     location: "Delhi NCR & Metro Cities",
     commitment: "Flexible",
     description:
-      "Spread awareness, organize fundraisers, and connect urban communities with our grassroots programs.",
+      "Be the advocate they need. Tell their stories, gather critical donations, and connect kind hearts with families fighting for survival.",
   },
   {
     iconName: "Camera",
-    title: "Media & Documentation",
+    title: "Storyteller & Photographer",
     location: "Field & Remote",
     commitment: "Project-Based",
     description:
-      "Capture stories, photograph events, and help create content for reports and social media campaigns.",
+      "Give a face to the struggle. Capture the joy of a village tasting clean water for the first time and share their hope with the world.",
   },
 ];
 
 export const volunteerBenefits: string[] = [
-  "Make a direct, tangible impact",
-  "Gain field experience in social development",
-  "Receive a certificate of volunteering",
-  "Join a supportive community of 200+ volunteers",
-  "Flexible commitment — from hours to months",
-  "Professional development and training",
+  "Save lives and witness immediate, real-world change",
+  "Work directly on the frontlines of humanitarian action",
+  "Earn a certificate honoring your service and dedication",
+  "Join 200+ active volunteers standing up for others",
+  "Give whatever hours you can spare — every second counts",
+  "Learn hands-on grassroots coordination and community relief",
 ];
 
 export const volunteerPageMeta = {
-  title: "Volunteer",
+  title: "Join the Frontlines",
   subtitle:
-    "Your time can change someone's life. Join 200+ volunteers making a real difference.",
-  breadcrumb: "Join Our Team",
+    "Your hands can dig a well. Your voice can teach a child. Join 200+ volunteers standing up for families in need right now.",
+  breadcrumb: "Volunteer With Us",
 };
 
 export const volunteerCommunityStats = {
   count: "200+",
   label: "Active Volunteers",
   description:
-    "Join a growing community of volunteers across India who have collectively contributed over 5,000 hours of service.",
+    "Join a dedicated team across India who refused to stand by, giving over 5,000 hours of direct, life-saving action to communities in need.",
 };
 
 export const volunteerFormOptions = {
   interests: [
     "Teaching & Education",
-    "Healthcare",
+    "Healthcare & Medical Aid",
     "Community Outreach",
-    "Media & Documentation",
-    "Fundraising",
+    "Media & Storytelling",
+    "Fundraising & Drives",
     "Other",
   ],
   availability: [

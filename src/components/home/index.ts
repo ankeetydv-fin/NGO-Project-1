@@ -1,7 +1,6 @@
-export { HeroCarousel } from "./hero";
+export { EditorialHero } from "./hero/EditorialHero";
 export { TrustBar } from "./TrustBar";
-export { MissionSummary } from "./MissionSummary";
-export { ImpactStats } from "./ImpactStats";
+export { EditorialMission } from "./EditorialMission";
 export { ProgramsPreview } from "./ProgramsPreview";
 export { Testimonials } from "./Testimonials";
 export { LatestUpdates } from "./LatestUpdates";

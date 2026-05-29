@@ -2,27 +2,29 @@
 @source "../../";
 
 @theme {
-  --color-primary: #f59e0b;
-  --color-secondary: #0f172a;
-  --color-accent-orange: #ea580c;
-  --color-accent-green: #16a34a;
-  --color-btn-blue: #2563EB;
-  --color-bg-off-white: #f8fafc;
-  --color-surface: #ffffff;
-  --color-text-dark: #0f172a;
-  --color-text-muted: #475569;
-  --color-border-light: #e2e8f0;
+  /* ── Sharp Editorial NGO Palette (YourStory Inspired) ── */
+  --color-primary: #E53935;           /* Bright Coral Red (YourStory vibe) */
+  --color-secondary: #F8FAFC;         /* Very Light Slate/Gray for soft backgrounds */
+  --color-accent-orange: #F97316;     /* Vibrant Accent Orange */
+  --color-bg-off-white: #FBFBFB;      /* Crisp Off-White */
+  --color-surface: #FFFFFF;           /* Pure White */
+  --color-footer-bg: #F3F4F6;         /* YourStory Light Grey for Footer */
+  --color-text-dark: #1E293B;         /* Dark Slate for high contrast text (not pure black) */
+  --color-text-muted: #64748B;        /* Medium slate gray for secondary text */
+  --color-border-light: #E2E8F0;      /* Crisp border color */
 
+  /* ── Typography ── */
   --font-sans: var(--font-inter);
-  --font-heading: var(--font-poppins);
+  --font-heading: var(--font-lora);   /* Serif — editorial authority */
 
+  /* ── Radii ── */
   --radius-sm: 8px;
   --radius-md: 16px;
   --radius-lg: 24px;
   --radius-full: 9999px;
 
-  --shadow-soft: 0 4px 20px -2px rgba(0, 0, 0, 0.08);
-  --shadow-glow: 0 0 20px rgba(245, 158, 11, 0.3);
+  /* ── Shadows ── */
+  --shadow-soft: 0 4px 20px -2px rgba(43, 42, 41, 0.08);
 }
 
 :root {
@@ -34,6 +36,7 @@ body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+  line-height: 1.75;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -42,48 +45,22 @@ h1, h2, h3, h4, h5, h6 {
 
 @layer utilities {
   .text-h1 {
-    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight;
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-[1.2];
   }
   .text-h2 {
-    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight;
+    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-[1.25];
   }
   .text-h3 {
-    @apply text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold leading-snug;
+    @apply text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold leading-[1.3];
   }
   .text-body-large {
-    @apply text-base sm:text-lg leading-relaxed;
+    @apply text-base sm:text-lg leading-[1.8];
   }
   .text-body-base {
-    @apply text-sm sm:text-base leading-relaxed;
+    @apply text-sm sm:text-base leading-[1.75];
   }
   .text-body-small {
-    @apply text-xs sm:text-sm leading-relaxed;
+    @apply text-xs sm:text-sm leading-[1.7];
   }
-}
-
-/* ──────────────────────────────────────────────
- * Infinite Horizontal Marquee Scroller Animation
- * ────────────────────────────────────────────── */
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.animate-marquee {
-  display: flex;
-  width: max-content;
-  animation: marquee 30s linear infinite;
-}
-
-.animate-marquee:hover {
-  animation-play-state: paused;
-}
-
-/* ──────────────────────────────────────────────
- * Hero Carousel Progress Bar Animation
- * ────────────────────────────────────────────── */
-@keyframes progress {
-  from { width: 0%; }
-  to { width: 100%; }
 }
 

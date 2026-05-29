@@ -1,13 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
-import { Button } from "@/components/ui/Button";
 import { ArrowRight } from "lucide-react";
-import useEmblaCarousel from "embla-carousel-react";
 
 type Program = {
   _id: string;
@@ -19,103 +16,68 @@ type Program = {
 };
 
 export function ProgramsPreview({ programs }: { programs: Program[] }) {
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    align: "center",
-    loop: false,
-    containScroll: false,
-  });
-  
-  const [selectedIndex, setSelectedIndex] = useState(0);
-
-  useEffect(() => {
-    if (!emblaApi) return;
-    const onSelect = () => {
-      setSelectedIndex(emblaApi.selectedScrollSnap());
-    };
-    emblaApi.on("select", onSelect);
-    emblaApi.on("reInit", onSelect);
-    onSelect();
-  }, [emblaApi]);
-
-  const ProgramCard = ({ program, isMobileActive = true }: { program: Program, isMobileActive?: boolean }) => (
-    <div 
-      className={`group flex flex-col bg-surface border border-border-light/60 shadow-sm rounded-[var(--radius-md)] overflow-hidden transition-all duration-500 h-full ${
-        isMobileActive 
-          ? "opacity-100 scale-100 hover:shadow-xl" 
-          : "opacity-40 scale-[0.85]"
-      }`}
-    >
-      <div className="relative w-full aspect-[4/3] overflow-hidden bg-neutral-100">
-        <Image
-          src={program.imageUrl || "/images/placeholder.svg"}
-          alt={program.title}
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover transition-transform duration-700 group-hover:scale-110"
-        />
-        <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-primary text-[10px] font-bold uppercase px-3 py-1 rounded-sm shadow-sm">
-          {program.title}
-        </div>
-      </div>
-      <div className="p-6 flex flex-col flex-grow">
-        <h3 className="text-lg font-bold font-heading text-text-dark mb-3 leading-tight group-hover:text-primary transition-colors">
-          {program.tagline}
-        </h3>
-        <p className="text-sm text-text-muted mb-5 line-clamp-3 leading-relaxed">
-          {program.description}
-        </p>
-        <div className="mt-auto pt-4 border-t border-border-light/60">
-          <Link href={program.link || "#"} tabIndex={isMobileActive ? 0 : -1} className="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-accent-orange transition-colors uppercase tracking-wider">
-            Read More <ArrowRight size={14} />
-          </Link>
-        </div>
-      </div>
-    </div>
-  );
+  if (!programs || programs.length === 0) return null;
 
   return (
-    <Section spacing="lg" background="default">
-      <Container size="lg">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12">
-          <div className="max-w-2xl">
-            <h2 className="text-3xl md:text-4xl font-extrabold font-heading text-text-dark mb-4">
-              Our Sectors
+    <Section spacing="xl" background="white" className="border-b border-border-light/40">
+      <Container size="xl">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16">
+          <div className="max-w-3xl">
+            <div className="flex items-center gap-2 mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-orange" />
+              <span className="text-sm font-bold uppercase tracking-[0.2em] text-text-dark/60">
+                Focus Areas
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold font-heading text-text-dark leading-tight">
+              Where we direct your impact.
             </h2>
-            <p className="text-body-large text-text-muted">
-              Organization set up to provide help and raise money for those in need. Support our grassroots initiatives today.
-            </p>
           </div>
-          <div className="mt-6 md:mt-0">
-            <Link href="/programs" tabIndex={-1}>
-              <Button variant="outline" className="gap-2 rounded-full border-border-light text-text-dark hover:border-primary hover:text-primary transition-colors">
-                View All Programs <ArrowRight size={18} />
-              </Button>
+          <div className="mt-8 md:mt-0 pb-2">
+            <Link href="/programs" className="group inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-primary hover:text-accent-orange transition-colors">
+              Explore All Sectors <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
         </div>
 
-        {/* Mobile Carousel View */}
-        <div className="md:hidden w-full overflow-hidden -mx-4 px-4 py-4" ref={emblaRef}>
-          <div className="flex touch-pan-y items-stretch">
-            {programs.map((program, index) => (
+        {/* Editorial Masonry / Staggered Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 sm:gap-x-12 gap-y-10 sm:gap-y-16">
+          {programs.map((program, index) => {
+            // Create a staggered effect by pushing even items down on desktop
+            const isEven = index % 2 !== 0;
+            return (
               <div 
                 key={program._id} 
-                className="flex-[0_0_80%] min-w-0 px-2"
-                onClick={() => emblaApi?.scrollTo(index)}
+                className={`group flex flex-col ${isEven ? 'md:mt-24' : ''}`}
               >
-                <ProgramCard program={program} isMobileActive={index === selectedIndex} />
+                <Link href={program.link || "#"} className="flex flex-col h-full">
+                  <div className={`relative w-full overflow-hidden bg-neutral-100 mb-6 ${isEven ? 'aspect-[4/5]' : 'aspect-[4/3]'}`}>
+                    <Image
+                      src={program.imageUrl || "/images/placeholder.svg"}
+                      alt={program.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="flex flex-col flex-1 pr-8">
+                    <span className="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-3">
+                      {program.title}
+                    </span>
+                    <h3 className="text-2xl md:text-3xl font-bold font-heading text-text-dark mb-4 leading-snug group-hover:text-primary transition-colors">
+                      {program.tagline || `Supporting ${program.title} Initiatives`}
+                    </h3>
+                    <p className="text-base text-text-muted mb-6 leading-relaxed line-clamp-3">
+                      {program.description}
+                    </p>
+                    <div className="mt-auto flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-text-dark group-hover:text-primary transition-colors">
+                      Read More <span className="w-6 h-[1px] bg-current transform origin-left transition-transform group-hover:scale-x-150" />
+                    </div>
+                  </div>
+                </Link>
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Desktop Grid View */}
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {programs.map((program) => (
-            <div key={program._id} className="h-full">
-              <ProgramCard program={program} isMobileActive={true} />
-            </div>
-          ))}
+            );
+          })}
         </div>
       </Container>
     </Section>

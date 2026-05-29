@@ -2,62 +2,36 @@
 
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
-import { Button } from "@/components/ui/Button";
+import { ArrowRight } from "lucide-react";
 
 export function DonationCTA() {
   return (
-    <section className="relative py-16 md:py-24 bg-primary overflow-hidden text-secondary">
-      {/* Background decorations */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-white/10 blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-black/5 blur-3xl" />
-      </div>
-
-      <Container size="lg" className="relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
-          <div className="max-w-2xl">
-            <p className="text-secondary/70 font-bold text-sm uppercase tracking-widest mb-3 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>
-              Make a Difference
-            </p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold font-heading leading-tight">
-              Make a Meaningful<br className="hidden md:inline" /> Donation Today
-            </h2>
-          </div>
-          <div className="mt-6 md:mt-0 text-secondary/80 max-w-sm md:text-right font-medium">
-            Transparent funding. Real impact. Every contribution moves a community forward.
-          </div>
+    <section className="relative py-16 sm:py-24 md:py-32 lg:py-40 bg-secondary border-t border-border-light/40 text-text-dark overflow-hidden">
+      {/* Editorial aesthetic: minimal background, strong typography */}
+      
+      <Container size="md" className="relative z-10 text-center">
+        <div className="flex items-center gap-2 mb-8 justify-center">
+          <span className="w-1.5 h-1.5 rounded-full bg-accent-orange" />
+          <span className="text-sm font-bold uppercase tracking-[0.2em] text-text-dark/60">
+            Fund The Impact
+          </span>
         </div>
-
-        <div className="grid md:grid-cols-3 gap-6">
-          {[
-            { title: "Education Aid Package", desc: "Supply textbooks, learning materials, and basic stationery kits directly to rural schools.", raised: "₹89,900", goal: "₹240,000", progress: "37%" },
-            { title: "Healthcare Wellness", desc: "Distribute nutrition kits and basic healthcare support to remote families.", raised: "₹98,090", goal: "₹260,000", progress: "37%" },
-            { title: "Grassroots Sports Gear", desc: "Sponsoring sports gear and athletic supplies to promising local children.", raised: "₹70,980", goal: "₹220,000", progress: "32%" },
-          ].map((item, i) => (
-            <div key={i} className="bg-white/20 backdrop-blur-sm border border-white/30 rounded-2xl p-8 flex flex-col hover:bg-white/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-              <h3 className="text-2xl font-bold font-heading mb-3 text-secondary">{item.title}</h3>
-              <p className="text-secondary/80 text-sm mb-8 leading-relaxed">
-                {item.desc}
-              </p>
-              <div className="mt-auto">
-                <div className="flex justify-between text-[10px] font-bold uppercase tracking-wider mb-2">
-                  <span className="text-secondary/70">Raised<br /><span className="text-secondary text-lg font-heading">{item.raised}</span></span>
-                  <span className="text-secondary/70 text-right">Goal<br /><span className="text-secondary text-lg font-heading">{item.goal}</span></span>
-                </div>
-                <div className="h-2 w-full bg-secondary/10 rounded-full mb-6 overflow-hidden">
-                  <div className="h-full bg-secondary rounded-full relative overflow-hidden" style={{ width: item.progress }}>
-                    <div className="absolute inset-0 bg-white/20 w-full h-full animate-[shimmer_2s_infinite]"></div>
-                  </div>
-                </div>
-                <Link href="/donate" tabIndex={-1}>
-                  <Button variant="outline" className="w-full sm:w-auto rounded-xl border-secondary/30 text-secondary hover:bg-secondary hover:text-primary hover:border-secondary transition-all font-bold">
-                    Fund Program
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          ))}
+        
+        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold font-heading leading-tight mb-8 text-text-dark">
+          The stories above don't change without <span className="text-accent-orange italic">your action.</span>
+        </h2>
+        
+        <p className="text-lg md:text-xl text-text-muted max-w-2xl mx-auto font-light leading-relaxed mb-12">
+          We operate on a zero-waste, direct-to-field model. Every rupee you send is traced, photographed, and turned into clean water, school books, or medical care within 48 hours.
+        </p>
+        
+        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+          <Link href="/donate" className="group flex items-center justify-center gap-3 bg-primary text-white font-bold text-lg px-8 py-5 rounded-sm hover:bg-primary/90 transition-all hover:scale-[1.02] w-full sm:w-auto uppercase tracking-wider">
+            Donate Now <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+          </Link>
+          <Link href="/transparency" className="group flex items-center justify-center gap-3 bg-transparent border-2 border-text-dark/20 text-text-dark font-bold text-lg px-8 py-5 rounded-sm hover:border-text-dark hover:bg-text-dark/5 transition-all w-full sm:w-auto uppercase tracking-wider">
+            See Our Financials
+          </Link>
         </div>
       </Container>
     </section>

@@ -9,40 +9,40 @@
 import type { HeroContent, TrustPartner, DonationTier } from "@/types/content";
 
 export const heroContent: HeroContent = {
-  badge: "Shiv Prabha Foundation • Direct Grassroots Action",
+  badge: "Shiv Prabha Foundation • Real People. Real Lives. Immediate Action.",
   slides: [
     {
       id: "slide-1",
-      subtitle: "Empowering Futures",
-      title: "Education is a Right",
-      description: "We empower children in underprivileged clusters through complete writing aid packages and direct support, ensuring every youth has a sincere opportunity to learn and grow.",
+      subtitle: "Rani used to walk 5 km under a scorching sun for a single bucket of muddy water.",
+      title: "Clean Water is Survival",
+      description: "No mother should have to watch her children drink water that will make them sick. We build wells directly in forgotten village blocks, bringing clean water and safety right to their doorstep.",
       image: "/images/hero/education.png",
-      ctaText: "Support Education",
-      ctaLink: "/donate?cause=education"
+      ctaText: "Build a Well Now",
+      ctaLink: "/donate?cause=water"
     },
     {
       id: "slide-2",
-      subtitle: "Compassion in Action",
-      title: "Essential Healthcare",
-      description: "Delivering first-aid awareness and direct hygiene kit drives to remote blocks. Your support funds local wellness workshops and basic medical guidance panels.",
+      subtitle: "A little girl reads under a flickering streetlamp because her home has no light.",
+      title: "Keep a Child in School",
+      description: "Without basic pens, notebooks, and support, children are forced out of classrooms and into manual labor. We get supplies directly to children so they can stay in school and write their own future.",
       image: "/images/hero/healthcare.png",
-      ctaText: "Fund Healthcare",
-      ctaLink: "/donate?cause=healthcare"
+      ctaText: "Send School Books Now",
+      ctaLink: "/donate?cause=education"
     },
     {
       id: "slide-3",
-      subtitle: "Sports Excellence",
-      title: "Nurturing Athletic Talents",
-      description: "Sponsoring training stipends, active sportswear, and athletic kits for passionate, underprivileged local young talents to dream big on and off the field.",
+      subtitle: "He plays barefoot on rocky soil, dreaming of wearing real shoes.",
+      title: "Nurture Raw Athletic Talent",
+      description: "Underprivileged children with immense champion potential play in the dirt with broken gear. We give them real athletic kits, shoes, and direct coaching so they can run, compete, and escape poverty.",
       image: "/images/hero/water.png",
-      ctaText: "Support Sports",
+      ctaText: "Equip a Young Champion",
       ctaLink: "/donate?cause=sports"
     }
   ],
   stats: [
-    { value: "2025", label: "Year Established" },
-    { value: "3", label: "Focus Pillars" },
-    { value: "100%", label: "Direct-to-Cause" },
+    { value: "2025", label: "Year We Began Rescuing Lives" },
+    { value: "3", label: "Core Lifelines we Provide" },
+    { value: "100%", label: "Direct-to-Child Grassroots Action" },
   ],
   recentDonation: { amount: "₹2,500", donor: "Anonymous", time: "Just now" },
 };
@@ -56,25 +56,25 @@ export const trustPartners: TrustPartner[] = [
 ];
 
 export const missionContent = {
-  label: "Who We Are",
-  headline: "Empowering Communities,",
-  highlightedText: "Transforming Futures",
+  label: "Our Urgent Mission",
+  headline: "No child should be left in the dark,",
+  highlightedText: "waiting for help to arrive.",
   description:
-    "Founded on February 13, 2025, we are an India-based nonprofit dedicated to creating sustainable change in underserved communities. Our programs focus on primary education drives, healthcare awareness, and grassroots sports excellence — because every child deserves the chance to thrive.",
+    "We don't wait for endless committee meetings or red tape. Founded on February 13, 2025, we are on the ground in India's most neglected village blocks. We deliver clean drinking water, protect families from deadly preventable sickness, and put learning books and sports gear directly into the hands of children who have nothing.",
   mission: {
     title: "Our Mission",
-    text: "To provide direct support and resources that uplift communities through primary learning aids, healthcare wellness workshops, and youth athletic gear sponsorships.",
+    text: "To rescue children from hunger, ignorance, and neglect by delivering clean water wells, school supplies, and athletic training directly to families who need them today.",
   },
   vision: {
     title: "Our Vision",
-    text: "A world where every child has the core supplies, support networks, and sporting opportunities to shape a self-sufficient and dignified future.",
+    text: "A society where no family is left without drinking water, no child drops out of school to survive, and every rural talent has a chance to play and win.",
   },
 };
 
 export const donationTiers: DonationTier[] = [
-  { amount: 500, impact: "Provides textbook sets and writing supplies for 5 kids" },
-  { amount: 1000, impact: "Sponsors essential wellness & nutrition kit for 2 families" },
-  { amount: 2500, impact: "Sponsors complete athletic kit and shoes for a local sports talent" },
-  { amount: 5000, impact: "Sponsors primary educational aid for a classroom block" },
-  { amount: 10000, impact: "Funds an entire community hygiene drives event in a village block" },
+  { amount: 500, impact: "Provides full sets of textbooks and pens for 5 children so they can stay in school" },
+  { amount: 1000, impact: "Delivers an emergency nutrition and hygiene pack to keep 2 families safe from disease" },
+  { amount: 2500, impact: "Sponsors a complete athletic kit and proper running shoes for a talented rural runner" },
+  { amount: 5000, impact: "Funds all school desks, writing slates, and books for a village classroom block" },
+  { amount: 10000, impact: "Builds a safe water filtration setup for 50 families to drink without fear" },
 ];

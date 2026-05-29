@@ -1,72 +1,97 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
-import { Button } from "@/components/ui/Button";
-import { Card } from "@/components/ui/Card";
-import { Calendar, ArrowRight, Tag } from "lucide-react";
+import { ArrowRight, Clock } from "lucide-react";
 import { homepageStories } from "@/content";
 
 export function LatestUpdates() {
+  if (!homepageStories || homepageStories.length === 0) return null;
+
+  const leadStory = homepageStories[0];
+  const secondaryStories = homepageStories.slice(1, 4);
+
   return (
-    <Section spacing="lg" background="white">
-      <Container size="lg">
-        <div className="text-center mb-12 md:mb-16">
-          <p className="text-secondary font-semibold text-sm uppercase tracking-wider mb-3">
-            From the Field
-          </p>
-          <h2 className="text-h2 text-text-dark mb-4">
-            Latest Updates & Stories
-          </h2>
-          <p className="text-body-large text-text-muted max-w-2xl mx-auto">
-            Stay connected with our latest news, impact stories, and community updates.
-          </p>
+    <Section spacing="xl" background="default" className="border-b border-border-light/40">
+      <Container size="xl">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-12">
+          <div>
+             <div className="flex items-center gap-2 mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-orange" />
+              <span className="text-sm font-bold uppercase tracking-[0.2em] text-text-dark/60">
+                Latest From The Ground
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-extrabold font-heading text-text-dark">
+              Dispatches & Reports
+            </h2>
+          </div>
+          <div className="mt-6 md:mt-0 pb-2">
+            <Link href="/stories" className="group inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-primary hover:text-accent-orange transition-colors">
+              Read All Stories <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-          {homepageStories.map((post) => (
-            <div key={post.title}>
-              <Card interactive padding="none" className="h-full flex flex-col">
-                {/* Image placeholder */}
-                <div className="w-full h-48 bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
-                  <div className="text-primary/30">
-                    <Tag size={40} />
-                  </div>
-                </div>
-                <div className="p-6 flex flex-col flex-1">
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className={`text-xs font-semibold px-3 py-1 rounded-full ${post.categoryColor}`}>
-                      {post.category}
+        <div className="grid lg:grid-cols-12 gap-12 items-start">
+          
+          {/* Lead Story (Left) */}
+          <div className="lg:col-span-7 group">
+            <Link href={`/stories`} className="flex flex-col">
+              <div className="relative w-full aspect-[16/10] overflow-hidden bg-neutral-100 mb-6">
+                 <Image
+                    src={leadStory.image || "/images/placeholder.svg"}
+                    alt={leadStory.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 1024px) 100vw, 60vw"
+                  />
+              </div>
+              <div className="flex items-center gap-4 text-xs font-bold text-text-muted mb-4 uppercase tracking-wider">
+                <span className={leadStory.categoryColor.replace('bg-', 'text-').split(' ')[1] || 'text-primary'}>
+                  {leadStory.category}
+                </span>
+                <span className="w-1 h-1 rounded-full bg-border-light" />
+                <span className="flex items-center gap-1.5">
+                  <Clock size={14} /> {leadStory.readTime}
+                </span>
+              </div>
+              <h3 className="text-3xl md:text-4xl font-bold font-heading text-text-dark mb-4 leading-tight group-hover:text-primary transition-colors">
+                {leadStory.title}
+              </h3>
+              <p className="text-lg text-text-muted leading-relaxed mb-6">
+                {leadStory.excerpt}
+              </p>
+            </Link>
+          </div>
+
+          {/* Secondary Stories (Right) */}
+          <div className="lg:col-span-5 flex flex-col gap-8 mt-8 lg:mt-0 pt-8 lg:pt-0 lg:pl-8 lg:border-l lg:border-border-light/40">
+            {secondaryStories.map((story) => (
+              <div key={story.slug} className="group flex gap-6 items-start border-b border-border-light/40 pb-8 last:border-0 last:pb-0">
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 text-[10px] font-bold text-text-muted mb-2 uppercase tracking-wider">
+                    <span className={story.categoryColor.replace('bg-', 'text-').split(' ')[1] || 'text-primary'}>
+                      {story.category}
                     </span>
-                    <span className="text-text-muted text-xs flex items-center gap-1">
-                      <Calendar size={12} /> {post.date}
-                    </span>
+                    <span className="w-1 h-1 rounded-full bg-border-light" />
+                    <span>{story.date}</span>
                   </div>
-                  <h3 className="text-lg font-bold font-heading text-text-dark mb-2 line-clamp-2 hover:text-primary transition-colors">
-                    {post.title}
-                  </h3>
-                  <p className="text-text-muted text-sm leading-relaxed flex-1 line-clamp-3">
-                    {post.excerpt}
-                  </p>
-                  <Link
-                    href="/stories"
-                    className="inline-flex items-center gap-1 text-primary text-sm font-semibold mt-4 hover:underline underline-offset-4"
-                  >
-                    Read More <ArrowRight size={14} />
+                  <Link href={`/stories`}>
+                    <h4 className="text-xl font-bold font-heading text-text-dark leading-snug group-hover:text-primary transition-colors mb-2">
+                      {story.title}
+                    </h4>
+                    <p className="text-sm text-text-muted line-clamp-2 leading-relaxed">
+                      {story.excerpt}
+                    </p>
                   </Link>
                 </div>
-              </Card>
-            </div>
-          ))}
-        </div>
+              </div>
+            ))}
+          </div>
 
-        <div className="text-center mt-10">
-          <Link href="/stories" tabIndex={-1}>
-            <Button variant="primary" className="gap-2">
-              View All Stories <ArrowRight size={18} />
-            </Button>
-          </Link>
         </div>
       </Container>
     </Section>

@@ -2,26 +2,27 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 
 export interface SectionProps extends React.HTMLAttributes<HTMLElement> {
-  spacing?: "none" | "sm" | "md" | "lg";
+  spacing?: "none" | "sm" | "md" | "lg" | "xl";
   background?: "default" | "white" | "primary" | "secondary";
 }
 
 const Section = React.forwardRef<HTMLElement, SectionProps>(
   ({ className, spacing = "md", background = "default", ...props }, ref) => {
     
-    // 80–120px desktop, 48–72px mobile
+    // Generous editorial spacing to avoid congestion
     const spacings = {
       none: "py-0",
-      sm: "py-8 md:py-12",
-      md: "py-12 md:py-20 lg:py-24", // roughly 48-96px
-      lg: "py-16 md:py-24 lg:py-32", // roughly 64-128px
+      sm: "py-12 md:py-16",
+      md: "py-16 md:py-24 lg:py-32", 
+      lg: "py-24 md:py-32 lg:py-40", 
+      xl: "py-32 md:py-40 lg:py-48",
     };
 
     const backgrounds = {
-      default: "bg-bg-off-white",
-      white: "bg-surface",
+      default: "bg-bg-off-white text-text-dark",
+      white: "bg-surface text-text-dark",
       primary: "bg-primary text-surface",
-      secondary: "bg-secondary text-surface",
+      secondary: "bg-secondary text-text-dark",
     };
 
     return (

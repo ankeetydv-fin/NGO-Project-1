@@ -10,7 +10,7 @@ export function VolunteerSection() {
     <Section spacing="none" background="default">
       <div className="flex flex-col lg:flex-row w-full min-h-[500px]">
         {/* Image Half */}
-        <div className="lg:w-1/2 relative min-h-[400px] lg:min-h-full bg-neutral-800">
+        <div className="lg:w-1/2 relative min-h-[280px] sm:min-h-[350px] lg:min-h-full bg-neutral-800">
           <Image 
             src="/images/impact/community-outreach.svg" 
             alt="Volunteer with us" 

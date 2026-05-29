@@ -10,11 +10,11 @@ import type { StoryItem } from "@/types/content";
 
 export const stories: StoryItem[] = [
   {
-    title: "How Clean Water Changed an Entire Village in Rajasthan",
+    title: "How Clean Water Gave Rani's Twin Girls Their First Day at School",
     excerpt:
-      "When the first borewell was installed in Kumbha village, women no longer had to walk 5 km each day. Here is the full story of how clean water transformed health, education, and daily life.",
+      "Rani used to spend 5 hours a day hauling dirty water. The moment our field crew drilled a clean borewell in Kumbha village, she stopped walking, and her daughters went to school for the first time.",
     date: "April 28, 2025",
-    author: "Field Team",
+    author: "Field Crew",
     category: "Impact Story",
     categoryColor: "bg-accent-green/10 text-accent-green",
     readTime: "5 min read",
@@ -22,11 +22,11 @@ export const stories: StoryItem[] = [
     image: "/images/stories/clean-water-rajasthan.svg",
   },
   {
-    title: "Our First Quarter: A Rapid Start to 2025",
+    title: "First Quarter Action: 300 Rural Children Rescued from Dropouts",
     excerpt:
-      "In just a few months since founding, we have already impacted hundreds of lives across education, healthcare, and sports. Explore the highlights from our initial quarter of operations.",
+      "In just three months, we skipped the paperwork and delivered 1,200 school kits, set up 2 village wellness booths, and equipped 50 young athletes. Here is what your donations built.",
     date: "April 15, 2025",
-    author: "Communications",
+    author: "Operations",
     category: "Reports",
     categoryColor: "bg-primary/10 text-primary",
     readTime: "8 min read",
@@ -34,11 +34,11 @@ export const stories: StoryItem[] = [
     image: "/images/stories/annual-report-2024.svg",
   },
   {
-    title: "Volunteer Spotlight: Meet Dr. Anjali Gupta",
+    title: "Saving Lives in Rajasthan: Meet Volunteer Doctor Anjali Gupta",
     excerpt:
-      "A volunteer doctor from Mumbai shares her life-changing experience running health camps in remote communities across Rajasthan and Madhya Pradesh.",
+      "A volunteer pediatrician from Mumbai describes the desperate conditions in rural medical camps, and how basic health kits are saving babies from critical winter illnesses.",
     date: "March 30, 2025",
-    author: "Volunteer Team",
+    author: "Medical Team",
     category: "Volunteer",
     categoryColor: "bg-secondary/10 text-secondary",
     readTime: "4 min read",
@@ -46,11 +46,11 @@ export const stories: StoryItem[] = [
     image: "/images/stories/volunteer-anjali-gupta.svg",
   },
   {
-    title: "From Dropout to Engineer: Ravi's Scholarship Story",
+    title: "From Broken Bat to District Coach: Ravi's Scholarship Victory",
     excerpt:
-      "Ravi was about to drop out of school when he received a Shiv Prabha Foundation scholarship. Today, he's a software engineer — and he's giving back.",
+      "Ravi worked 8 hours a day in a cement yard to pay his school fees. We gave him proper sports gear, a learning stipend, and a clean place to sleep. Now he's a certified sports mentor.",
     date: "March 15, 2025",
-    author: "Field Team",
+    author: "Field Crew",
     category: "Impact Story",
     categoryColor: "bg-accent-green/10 text-accent-green",
     readTime: "6 min read",
@@ -58,9 +58,9 @@ export const stories: StoryItem[] = [
     image: "/images/stories/ravi-scholarship-story.svg",
   },
   {
-    title: "Building Resilience: Our Disaster Relief in Bihar",
+    title: "Floodwaters Took Their Home. You Sent Safe Shelters Within 24 Hours.",
     excerpt:
-      "When floods devastated villages in Bihar, our team was on the ground within 24 hours. Here is how we helped 200 families recover.",
+      "When the river broke its banks in Bihar, families slept on muddy roads with zero food. Our team arrived with dry rations, water filters, and tarps to protect 200 shivering children.",
     date: "February 28, 2025",
     author: "Relief Team",
     category: "Field Update",
@@ -70,9 +70,9 @@ export const stories: StoryItem[] = [
     image: "/images/stories/disaster-relief-bihar.svg",
   },
   {
-    title: "Why Transparency Matters: Our Open Books Policy",
+    title: "Where Does Your Money Go? Behind Our Zero-Waste Commitment",
     excerpt:
-      "Every rupee you donate is tracked and reported. Learn about our commitment to financial transparency and how we ensure accountability at every level.",
+      "Every single rupee you send is traced, photographed, and posted. We show you the exact school packages and water wells your hard-earned money bought. No executive salaries, no wastes.",
     date: "February 10, 2025",
     author: "Leadership",
     category: "Organization",

@@ -1,9 +1,8 @@
 import { Metadata } from "next";
 import {
-  HeroCarousel,
+  EditorialHero,
   TrustBar,
-  MissionSummary,
-  ImpactStats,
+  EditorialMission,
   ProgramsPreview,
   Testimonials,
   LatestUpdates,
@@ -41,10 +40,9 @@ export default async function Home() {
 
   return (
     <>
-      <HeroCarousel />
+      <EditorialHero />
       <TrustBar />
-      <MissionSummary />
-      <ImpactStats />
+      <EditorialMission />
       <ProgramsPreview programs={programsData} />
       <Testimonials />
       <LatestUpdates />

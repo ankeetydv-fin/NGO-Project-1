@@ -11,21 +11,21 @@ import type { TestimonialItem } from "@/types/content";
 export const testimonials: TestimonialItem[] = [
   {
     quote:
-      "Shiv Prabha Foundation ki wajah se meri beti ko scholarship mili aur aaj woh humare parivaar mein pehli hai jo college ja rahi hai. Is sansthan ne humare poore parivaar ka bhavishya badal diya.",
+      "Hum apne bacchon ko padhane ki haalat mein nahi the, unhe khet mein kaam par lagana padta. Par Shiv Prabha Foundation ne humari beti ko kitaabein, kapde aur hausla diya. Aaj woh humare khandaan mein pehli ladki hai jo college ja rahi hai.",
     name: "Priya Sharma",
-    role: "Parent & Beneficiary",
+    role: "Parent & Mother",
     location: "Jodhpur, Rajasthan",
   },
   {
     quote:
-      "Humare gaon mein jab se handpump laga hai, paani se hone waali bimaariyaan 80% kam ho gayi hain. Bacche sehatmand hain, aur auraton ko paani bharne 5 km nahi jaana padta.",
+      "Pehle humare bacchon ko ganda paani peena padta tha, jisse woh lagatar bimaar rehte the. Jab se gaon mein saaf paani ka well khula hai, humari pareshaniyan khatam ho gayi hain aur auraton ko milo door nahi chalna padta.",
     name: "Ramesh Meena",
-    role: "Sarpanch",
+    role: "Village Leader",
     location: "Kumbha Village, Rajasthan",
   },
   {
     quote:
-      "I have been volunteering with Shiv Prabha Foundation since its early days. The transparency and dedication of this team is remarkable. Every rupee truly goes where it is needed most.",
+      "In remote hamlets, a simple throat infection or fever can turn fatal because there is no clinic. I volunteer here to ensure no mother has to watch her child suffer and wither away from a disease that a simple kit can cure.",
     name: "Dr. Anjali Gupta",
     role: "Volunteer Doctor",
     location: "Mumbai, Maharashtra",
@@ -36,13 +36,13 @@ export const testimonials: TestimonialItem[] = [
 export const impactStories = [
   {
     quote:
-      "My daughter is now the first person in our family to attend college. This would never have been possible without the scholarship.",
+      "We were going to pull my daughter out of school to work in the fields. A simple learning scholarship gave her books, tuition, and hope. Now she is the first person in our family to ever attend college.",
     name: "Priya Sharma",
     location: "Rajasthan, India",
   },
   {
     quote:
-      "Jab se gaon mein handpump laga hai, bacche sehatmand hain aur auraton ko 5 km paani bharne nahi jaana padta. Poora gaon badal gaya hai.",
+      "Before the clean water well was dug, our children were constantly sick from drinking dirty pond water. Now they are healthy, and the women no longer walk 5 km under the blazing sun.",
     name: "Ramesh Meena",
     location: "Kumbha Village, Rajasthan",
   },

@@ -2,49 +2,45 @@
 
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
-import { Quote } from "lucide-react";
 import { testimonials } from "@/content";
 
 export function Testimonials() {
+  if (!testimonials || testimonials.length === 0) return null;
+
   return (
-    <Section spacing="lg" background="white">
-      <Container size="lg">
-        <div
-          className="text-center mb-12 md:mb-16"
-        >
-          <p className="text-secondary font-semibold text-sm uppercase tracking-wider mb-3">
-            Stories of Impact
-          </p>
-          <h2 className="text-h2 text-text-dark mb-4">
-            Voices from the Ground
-          </h2>
-          <p className="text-body-large text-text-muted max-w-2xl mx-auto">
-            Real stories from real people whose lives have been transformed
-            through the generosity of our donors and the hard work of our team.
-          </p>
+    <Section spacing="xl" background="white" className="border-b border-border-light/40 relative overflow-hidden">
+      {/* Decorative large quote mark in the background */}
+      <div className="absolute -top-12 left-0 text-[150px] sm:text-[200px] md:text-[250px] font-heading font-extrabold text-neutral-50/80 leading-none select-none pointer-events-none z-0 overflow-hidden">
+        "
+      </div>
+
+      <Container size="md" className="relative z-10">
+        <div className="flex items-center gap-2 mb-12 justify-center">
+          <span className="w-1.5 h-1.5 rounded-full bg-accent-orange" />
+          <span className="text-sm font-bold uppercase tracking-[0.2em] text-text-dark/60">
+            Voices from the ground
+          </span>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-          {testimonials.map((testimonial) => (
-            <div
-              key={testimonial.name}
-              className="bg-bg-off-white border border-border-light rounded-[var(--radius-md)] p-6 md:p-8 shadow-soft flex flex-col"
-            >
-              <Quote size={32} className="text-accent-orange/40 mb-4" />
-              <blockquote className="text-text-dark leading-relaxed flex-1 italic">
-                &ldquo;{testimonial.quote}&rdquo;
+        <div className="space-y-24">
+          {testimonials.map((testimonial, i) => (
+            <div key={testimonial.name} className={`flex flex-col ${i % 2 === 0 ? 'md:items-start text-left' : 'md:items-end text-right md:text-left'}`}>
+               <blockquote className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-text-dark leading-snug mb-8 relative">
+                <span className="text-primary absolute -left-6 md:-left-8 top-0">"</span>
+                {testimonial.quote}
+                <span className="text-primary">"</span>
               </blockquote>
-              <div className="mt-6 pt-4 border-t border-border-light">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold font-heading text-sm">
-                    {testimonial.name.split(" ").map((n) => n[0]).join("")}
-                  </div>
-                  <div>
-                    <p className="font-semibold text-text-dark text-sm">{testimonial.name}</p>
-                    <p className="text-text-muted text-xs">
-                      {testimonial.role} • {testimonial.location}
-                    </p>
-                  </div>
+              <div className="flex items-center gap-4">
+                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold font-heading text-lg">
+                  {testimonial.name.split(" ").map((n) => n[0]).join("")}
+                </div>
+                <div className="flex flex-col text-left">
+                  <span className="font-bold uppercase tracking-widest text-text-dark text-sm">
+                    {testimonial.name}
+                  </span>
+                  <span className="text-xs text-text-muted font-semibold uppercase tracking-wider">
+                    {testimonial.role} • {testimonial.location}
+                  </span>
                 </div>
               </div>
             </div>

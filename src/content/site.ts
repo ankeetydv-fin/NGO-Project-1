@@ -10,9 +10,9 @@ import type { SiteConfig, NavLink, ContactInfoBlock } from "@/types/content";
 
 export const siteConfig: SiteConfig = {
   name: "Shiv Prabha Foundation",
-  tagline: "Transforming lives..One Step At A Time | संस्कार, शिक्षा और सेवा की ओर एक कदम",
+  tagline: "Helping children survive, learn, and play | संस्कार, शिक्षा और सेवा की ओर एक कदम",
   description:
-    "We empower communities across India through education, awareness, opportunity, and empowerment. Every contribution creates lasting impact.",
+    "We work directly on the ground in India's most remote blocks to rescue families from dirty water, keep children in school, and equip young talent to escape poverty.",
   url: "https://shivprabhafoundation.org",
   email: "hello@shivprabhafoundation.org",
   phone: ["+91 11 4567 8900", "+91 98765 43210"],
@@ -45,19 +45,19 @@ export const navLinks: NavLink[] = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Programs", href: "/programs" },
-  { label: "Impact", href: "/impact" },
-  { label: "Stories", href: "/stories" },
+  { label: "Our Impact", href: "/impact" },
+  { label: "Stories of Hope", href: "/stories" },
   { label: "Gallery", href: "/gallery" },
   { label: "Reports", href: "/reports" },
-  { label: "Contact", href: "/contact" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 export const footerQuickLinks: NavLink[] = [
-  { label: "About Us", href: "/about" },
+  { label: "About Our Work", href: "/about" },
   { label: "Our Programs", href: "/programs" },
-  { label: "Impact & Stories", href: "/impact" },
-  { label: "Become a Volunteer", href: "/volunteer" },
-  { label: "Annual Reports", href: "/reports" },
+  { label: "Stories of Hope", href: "/impact" },
+  { label: "Join the Frontlines", href: "/volunteer" },
+  { label: "Transparency & Reports", href: "/reports" },
 ];
 
 export const footerLegalLinks: NavLink[] = [
@@ -69,22 +69,22 @@ export const footerLegalLinks: NavLink[] = [
 export const contactInfo: ContactInfoBlock[] = [
   {
     iconName: "MapPin",
-    title: "Visit Us",
+    title: "Visit Our Office",
     lines: [siteConfig.address.line1, siteConfig.address.line2],
   },
   {
     iconName: "Phone",
-    title: "Call Us",
+    title: "Call Us Directly",
     lines: siteConfig.phone,
   },
   {
     iconName: "Mail",
-    title: "Email Us",
+    title: "Email Our Team",
     lines: [siteConfig.email, "support@ngofund.org"],
   },
   {
     iconName: "Clock",
-    title: "Working Hours",
+    title: "Office Hours",
     lines: siteConfig.workingHours,
   },
 ];
