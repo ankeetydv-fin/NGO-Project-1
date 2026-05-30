@@ -55,7 +55,7 @@ export const navLinks: NavLink[] = [
 export const footerQuickLinks: NavLink[] = [
   { label: "About Our Work", href: "/about" },
   { label: "Our Programs", href: "/programs" },
-  { label: "Stories of Hope", href: "/impact" },
+  { label: "Stories of Hope", href: "/stories" },
   { label: "Join the Frontlines", href: "/volunteer" },
   { label: "Transparency & Reports", href: "/reports" },
 ];

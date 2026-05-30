@@ -29,7 +29,7 @@ export function DonationCTA() {
           <Link href="/donate" className="group flex items-center justify-center gap-3 bg-primary text-white font-bold text-lg px-8 py-5 rounded-sm hover:bg-primary/90 transition-all hover:scale-[1.02] w-full sm:w-auto uppercase tracking-wider">
             Donate Now <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
           </Link>
-          <Link href="/transparency" className="group flex items-center justify-center gap-3 bg-transparent border-2 border-text-dark/20 text-text-dark font-bold text-lg px-8 py-5 rounded-sm hover:border-text-dark hover:bg-text-dark/5 transition-all w-full sm:w-auto uppercase tracking-wider">
+          <Link href="/reports" className="group flex items-center justify-center gap-3 bg-transparent border-2 border-text-dark/20 text-text-dark font-bold text-lg px-8 py-5 rounded-sm hover:border-text-dark hover:bg-text-dark/5 transition-all w-full sm:w-auto uppercase tracking-wider">
             See Our Financials
           </Link>
         </div>

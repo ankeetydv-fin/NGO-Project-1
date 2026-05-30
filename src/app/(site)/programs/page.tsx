@@ -179,7 +179,7 @@ export default function ProgramsPage() {
           >
             <div className={`flex flex-col lg:flex-row w-full ${isEven ? "" : "lg:flex-row-reverse"}`}>
               {/* Image Half */}
-              <div className="lg:w-1/2 relative min-h-[400px] lg:min-h-auto bg-neutral-100">
+              <div className="lg:w-1/2 relative min-h-[400px] bg-neutral-100">
                 {program.image ? (
                   <Image
                     src={program.image}

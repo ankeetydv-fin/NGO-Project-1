@@ -177,7 +177,7 @@ export default function AboutPage() {
             <span className="text-xs font-bold uppercase tracking-widest text-primary mb-3 block">
               Our Dream &amp; Destination
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold font-heading text-secondary mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold font-heading text-text-dark mb-6">
               Our Vision
             </h2>
             <p className="text-base md:text-lg text-text-dark/90 leading-relaxed font-sans font-light italic mb-8">
@@ -211,7 +211,7 @@ export default function AboutPage() {
             <span className="inline-block px-3 py-1 rounded-md bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-3">
               Strategic Path
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold font-heading text-secondary tracking-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold font-heading text-text-dark tracking-tight">
               Our Mission Explorer
             </h2>
             <p className="text-sm md:text-base text-text-muted mt-3">
@@ -254,7 +254,7 @@ export default function AboutPage() {
                         {meta.philosophy}
                       </span>
                       <span className={`font-bold text-base transition-colors duration-200 block truncate ${
-                        isActive ? "text-secondary" : "text-text-muted group-hover:text-secondary"
+                        isActive ? "text-text-dark" : "text-text-muted group-hover:text-text-dark"
                       }`}>
                         {meta.title}
                       </span>
@@ -275,6 +275,10 @@ export default function AboutPage() {
 
             {/* Right Strategic Detail Card (7 columns) */}
             <div className="lg:col-span-7">
+              {(() => {
+                // Guard: when mobile accordion closes all (activeMissionIndex = -1), default to first item
+                const detailIdx = activeMissionIndex >= 0 ? activeMissionIndex : 0;
+                return (
               <div className="bg-surface border border-border-light rounded-[var(--radius-lg)] p-5 sm:p-8 md:p-10 shadow-soft h-full flex flex-col justify-between min-h-[460px] relative overflow-hidden">
                 {/* Visual accent subtle pattern */}
                 <div className="absolute -right-16 -bottom-16 w-48 h-48 rounded-full bg-primary/5 blur-2xl pointer-events-none" />
@@ -285,16 +289,16 @@ export default function AboutPage() {
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
                         {(() => {
-                          const IconComponent = ICON_MAP[MISSION_STRATEGIES[activeMissionIndex]?.iconName] || Target;
+                          const IconComponent = ICON_MAP[MISSION_STRATEGIES[detailIdx]?.iconName] || Target;
                           return <IconComponent size={20} />;
                         })()}
                       </div>
-                      <span className="font-heading font-extrabold text-lg text-secondary">
-                        {MISSION_STRATEGIES[activeMissionIndex]?.title}
+                      <span className="font-heading font-extrabold text-lg text-text-dark">
+                        {MISSION_STRATEGIES[detailIdx]?.title}
                       </span>
                     </div>
                     <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 border border-primary/20 px-3 py-1 rounded-full select-none">
-                      {MISSION_STRATEGIES[activeMissionIndex]?.focus}
+                      {MISSION_STRATEGIES[detailIdx]?.focus}
                     </span>
                   </div>
 
@@ -304,8 +308,8 @@ export default function AboutPage() {
                       <h4 className="text-xs font-bold text-primary uppercase tracking-widest mb-1.5">
                         Our Objective
                       </h4>
-                      <p className="text-lg text-secondary leading-relaxed font-medium">
-                        {aboutMission.points[activeMissionIndex]}
+                      <p className="text-lg text-text-dark leading-relaxed font-medium">
+                        {aboutMission.points[detailIdx]}
                       </p>
                     </div>
 
@@ -314,7 +318,7 @@ export default function AboutPage() {
                         Action Plan &amp; Strategy
                       </h4>
                       <p className="text-sm md:text-base text-text-muted leading-relaxed font-light">
-                        {MISSION_STRATEGIES[activeMissionIndex]?.strategy}
+                        {MISSION_STRATEGIES[detailIdx]?.strategy}
                       </p>
                     </div>
                   </div>
@@ -324,18 +328,20 @@ export default function AboutPage() {
                 <div className="mt-8 pt-6 border-t border-border-light/60 flex flex-wrap gap-4 items-center justify-between">
                   <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-neutral-50 border border-border-light/40 text-[11px] text-text-muted max-w-[340px]">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-                    <span>Focus area: {MISSION_STRATEGIES[activeMissionIndex]?.focus}</span>
+                    <span>Focus area: {MISSION_STRATEGIES[detailIdx]?.focus}</span>
                   </div>
 
                   <Link 
-                    href={MISSION_STRATEGIES[activeMissionIndex]?.link || "#"}
-                    className="inline-flex items-center gap-1.5 text-xs md:text-sm font-extrabold text-primary hover:text-secondary transition-colors duration-200"
+                    href={MISSION_STRATEGIES[detailIdx]?.link || "#"}
+                    className="inline-flex items-center gap-1.5 text-xs md:text-sm font-extrabold text-primary hover:text-text-dark transition-colors duration-200"
                   >
-                    <span>{MISSION_STRATEGIES[activeMissionIndex]?.linkText}</span>
+                    <span>{MISSION_STRATEGIES[detailIdx]?.linkText}</span>
                     <ArrowRight size={14} className="transition-transform duration-200 hover:translate-x-1" />
                   </Link>
                 </div>
               </div>
+            );
+            })()}
             </div>
           </div>
 
@@ -365,7 +371,7 @@ export default function AboutPage() {
                       </div>
                       <div>
                         <span className="text-[10px] text-text-muted font-semibold block uppercase">{meta.focus}</span>
-                        <span className="font-bold text-secondary text-sm md:text-base">{meta.title}</span>
+                        <span className="font-bold text-text-dark text-sm md:text-base">{meta.title}</span>
                       </div>
                     </div>
                     <span className={`text-text-muted transition-transform duration-300 ${isOpen ? 'rotate-180 text-primary' : ''}`}>
@@ -507,10 +513,10 @@ export default function AboutPage() {
       <Section spacing="md" background="primary">
         <Container size="md">
           <div className="text-center space-y-8">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold font-heading text-secondary leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold font-heading text-surface leading-tight">
               Join the Movement
             </h2>
-            <p className="text-secondary/80 text-lg max-w-xl mx-auto font-medium">
+            <p className="text-surface/80 text-lg max-w-xl mx-auto font-medium">
               Be part of a brighter tomorrow. Support Shiv Prabha Foundation and
               help us create lasting change for those who need it most.
             </p>
