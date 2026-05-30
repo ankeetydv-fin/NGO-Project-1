@@ -26,7 +26,7 @@ export interface SiteConfig {
     youtube?: string;
   };
   legal: {
-    registrations: string[];
+    registrations?: string[];
     taxId?: string;
   };
 }

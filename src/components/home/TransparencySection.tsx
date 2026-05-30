@@ -5,12 +5,19 @@ import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
 import { Button } from "@/components/ui/Button";
 import { FileText, Download, ShieldCheck, Award, ArrowRight } from "lucide-react";
-import { transparencyReports, certifications } from "@/content";
+import { transparencyReports as staticTransparencyReports, certifications as staticCertifications } from "@/content";
 import type { LucideIcon } from "lucide-react";
 
 const ICON_MAP: Record<string, LucideIcon> = { FileText, Download, ShieldCheck };
 
-export function TransparencySection() {
+interface TransparencySectionProps {
+  transparencyReports?: { title: string; description: string; iconName: string; year: string }[];
+  certifications?: string[];
+}
+
+export function TransparencySection({ transparencyReports: sanityReports, certifications: sanityCerts }: TransparencySectionProps) {
+  const reports = sanityReports ?? staticTransparencyReports;
+  const certs = sanityCerts ?? staticCertifications;
   return (
     <Section spacing="xl" background="default" className="border-b border-border-light/40">
       <Container size="xl">
@@ -38,7 +45,7 @@ export function TransparencySection() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-12 mb-16">
-          {transparencyReports.map((report) => {
+          {reports.map((report) => {
             const Icon = ICON_MAP[report.iconName] || FileText;
             return (
               <div
@@ -81,7 +88,7 @@ export function TransparencySection() {
             </div>
           </div>
           <div className="flex flex-wrap items-center justify-center md:justify-end gap-x-8 gap-y-4">
-            {certifications.map((cert) => (
+            {certs.map((cert) => (
               <span
                 key={cert}
                 className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-text-dark/80"

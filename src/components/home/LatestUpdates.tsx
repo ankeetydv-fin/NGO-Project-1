@@ -5,13 +5,19 @@ import Image from "next/image";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
 import { ArrowRight, Clock } from "lucide-react";
-import { homepageStories } from "@/content";
+import { homepageStories as staticHomepageStories } from "@/content";
+import type { StoryItem } from "@/types/content";
 
-export function LatestUpdates() {
-  if (!homepageStories || homepageStories.length === 0) return null;
+interface LatestUpdatesProps {
+  homepageStories?: StoryItem[];
+}
 
-  const leadStory = homepageStories[0];
-  const secondaryStories = homepageStories.slice(1, 4);
+export function LatestUpdates({ homepageStories: sanityStories }: LatestUpdatesProps) {
+  const stories = sanityStories ?? staticHomepageStories;
+  if (!stories || stories.length === 0) return null;
+
+  const leadStory = stories[0];
+  const secondaryStories = stories.slice(1, 4);
 
   return (
     <Section spacing="xl" background="default" className="border-b border-border-light/40">

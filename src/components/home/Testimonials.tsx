@@ -2,10 +2,16 @@
 
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
-import { testimonials } from "@/content";
+import { testimonials as staticTestimonials } from "@/content";
+import type { TestimonialItem } from "@/types/content";
 
-export function Testimonials() {
-  if (!testimonials || testimonials.length === 0) return null;
+interface TestimonialsProps {
+  testimonials?: TestimonialItem[];
+}
+
+export function Testimonials({ testimonials: sanityTestimonials }: TestimonialsProps) {
+  const items = sanityTestimonials ?? staticTestimonials;
+  if (!items || items.length === 0) return null;
 
   return (
     <Section spacing="xl" background="white" className="border-b border-border-light/40 relative overflow-hidden">
@@ -23,7 +29,7 @@ export function Testimonials() {
         </div>
 
         <div className="space-y-24">
-          {testimonials.map((testimonial, i) => (
+          {items.map((testimonial, i) => (
             <div key={testimonial.name} className={`flex flex-col ${i % 2 === 0 ? 'md:items-start text-left' : 'md:items-end text-right md:text-left'}`}>
                <blockquote className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-text-dark leading-snug mb-8 relative">
                 <span className="text-primary absolute -left-6 md:-left-8 top-0">"</span>

@@ -11,14 +11,21 @@ import {
   Calendar,
 } from "lucide-react";
 import {
-  reportsPageMeta,
-  annualReports,
-  financialReports,
-  impactReports,
-  certifications,
+  reportsPageMeta as staticReportsPageMeta,
+  annualReports as staticAnnualReports,
+  financialReports as staticFinancialReports,
+  impactReports as staticImpactReports,
+  certifications as staticCertifications,
 } from "@/content";
+import { getReports, type ReportData } from "@/sanity/lib/queries";
 
-export default function ReportsPage() {
+export default async function ReportsPage() {
+  const sanityData: ReportData[] | undefined = await getReports();
+  const annualReports = sanityData?.filter((r) => r.reportType === "annual") ?? staticAnnualReports;
+  const financialReports = sanityData?.filter((r) => r.reportType === "financial") ?? staticFinancialReports;
+  const impactReports = sanityData?.filter((r) => r.reportType === "impact") ?? staticImpactReports;
+  const certifications = staticCertifications; // Keep static until Sanity schema has certification type
+  const reportsPageMeta = staticReportsPageMeta;
   return (
     <>
       <PageBanner

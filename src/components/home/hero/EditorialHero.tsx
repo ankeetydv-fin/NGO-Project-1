@@ -2,13 +2,21 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { heroContent, homepageStories } from "@/content";
+import { heroContent as staticHeroContent, homepageStories as staticHomepageStories } from "@/content";
 import { Container } from "@/components/layout/Container";
 import { ArrowRight, Clock } from "lucide-react";
+import type { HeroContent, StoryItem } from "@/types/content";
 
-export function EditorialHero() {
-  const mainStory = heroContent.slides[0];
-  const sideStories = homepageStories.slice(0, 2);
+interface EditorialHeroProps {
+  heroContent?: HeroContent;
+  homepageStories?: StoryItem[];
+}
+
+export function EditorialHero({ heroContent: sanityHero, homepageStories: sanityStories }: EditorialHeroProps) {
+  const heroData = sanityHero ?? staticHeroContent;
+  const storiesData = sanityStories ?? staticHomepageStories;
+  const mainStory = heroData.slides[0];
+  const sideStories = storiesData.slice(0, 2);
 
   return (
     <section className="relative pt-28 pb-12 md:pt-36 md:pb-20 bg-surface border-b border-border-light/40">

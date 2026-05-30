@@ -6,14 +6,17 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/layout/Container";
 import { cn } from "@/lib/utils";
-import { navLinks } from "@/content";
+import { navLinks as staticNavLinks } from "@/content";
 
 import Image from "next/image";
 
-const NAV_LINKS = navLinks.map((l) => ({ name: l.label, href: l.href }));
+interface NavbarProps {
+  links?: { name: string; href: string }[];
+}
 
-export function Navbar() {
+export function Navbar({ links }: NavbarProps) {
   const [isOpen, setIsOpen] = React.useState(false);
+  const NAV_LINKS = (links ?? staticNavLinks.map((l) => ({ name: l.label, href: l.href })));
 
   return (
     <header className="sticky top-0 z-50 w-full bg-surface/90 backdrop-blur-md border-b border-border-light shadow-sm">

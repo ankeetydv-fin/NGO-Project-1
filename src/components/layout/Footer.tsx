@@ -7,9 +7,9 @@ import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
 import { Mail, Phone, MapPin, Loader2 } from "lucide-react";
 import {
-  siteConfig,
-  footerQuickLinks,
-  footerLegalLinks,
+  siteConfig as staticSiteConfig,
+  footerQuickLinks as staticFooterQuickLinks,
+  footerLegalLinks as staticFooterLegalLinks,
 } from "@/content";
 import { submitNewsletterForm } from "@/app/actions/newsletter";
 
@@ -38,7 +38,18 @@ const socialIcons: Record<string, React.FC> = {
   youtube: YouTubeIcon,
 };
 
-export function Footer() {
+import type { SiteConfig, NavLink } from "@/types/content";
+
+interface FooterProps {
+  siteConfig?: SiteConfig;
+  footerQuickLinks?: NavLink[];
+  footerLegalLinks?: NavLink[];
+}
+
+export function Footer({ siteConfig: sanitySiteConfig, footerQuickLinks: sanityQuickLinks, footerLegalLinks: sanityLegalLinks }: FooterProps) {
+  const siteConfig = sanitySiteConfig ?? staticSiteConfig;
+  const footerQuickLinks = sanityQuickLinks ?? staticFooterQuickLinks;
+  const footerLegalLinks = sanityLegalLinks ?? staticFooterLegalLinks;
   const [newsletterName, setNewsletterName] = React.useState("");
   const [newsletterEmail, setNewsletterEmail] = React.useState("");
   const [subscribed, setSubscribed] = React.useState(false);

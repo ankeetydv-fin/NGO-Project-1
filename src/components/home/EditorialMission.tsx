@@ -2,10 +2,22 @@
 
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
-import { missionContent, impactStats } from "@/content";
+import { missionContent as staticMissionContent, impactStats as staticImpactStats } from "@/content";
+import type { ImpactStat } from "@/types/content";
 
-export function EditorialMission() {
-  const c = missionContent;
+interface EditorialMissionProps {
+  missionContent?: {
+    label: string;
+    headline: string;
+    highlightedText: string;
+    description: string;
+  };
+  impactStats?: ImpactStat[];
+}
+
+export function EditorialMission({ missionContent: sanityMission, impactStats: sanityStats }: EditorialMissionProps) {
+  const c = sanityMission ?? staticMissionContent;
+  const stats = sanityStats ?? staticImpactStats;
 
   return (
     <Section spacing="xl" background="secondary" className="border-b border-border-light/40 relative overflow-hidden">
@@ -34,7 +46,7 @@ export function EditorialMission() {
 
           {/* Stats Grid - Clean, no borders, typography focused */}
           <div className="pt-12 grid grid-cols-3 gap-4 sm:gap-4 mt-8 border-t border-border-light/60">
-            {impactStats.map((stat) => (
+            {stats.map((stat) => (
               <div key={stat.label} className="flex flex-col items-center justify-center">
                 <span className={`text-4xl md:text-5xl font-heading font-bold mb-2 ${stat.color.replace('text-', 'text-').replace('-600', '')} text-primary`}>
                   {stat.value}

@@ -1,10 +1,15 @@
 import React from "react";
-import { trustPartners } from "@/content";
+import { trustPartners as staticTrustPartners } from "@/content";
 
-export function TrustBar() {
+interface TrustBarProps {
+  trustPartners?: { name: string }[];
+}
+
+export function TrustBar({ trustPartners: sanityPartners }: TrustBarProps) {
+  const partners = sanityPartners ?? staticTrustPartners;
   const tickerItems = [
     "Operational Transparency & Affiliations: Explore our impact reports and financial disclosures",
-    ...trustPartners.map(p => p.name),
+    ...partners.map(p => p.name),
     "Verified & Audited Financials",
     "100% Commitment to Grassroots Change"
   ];

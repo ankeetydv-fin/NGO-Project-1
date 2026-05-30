@@ -22,7 +22,8 @@ import {
   Award,
 } from "lucide-react";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
-import { impactStatsExtended, impactOutcomes, impactStories } from "@/content";
+import { impactStatsExtended as staticImpactStatsExtended, impactOutcomes as staticImpactOutcomes, impactStories as staticImpactStories } from "@/content";
+import { getImpactPage, type ImpactPageData } from "@/sanity/lib/queries";
 import type { LucideIcon } from "lucide-react";
 
 const ICON_MAP: Record<string, LucideIcon> = {
@@ -119,7 +120,12 @@ function CauseCard({
   );
 }
 
-export default function ImpactPage() {
+export default async function ImpactPage() {
+  const sanityData: ImpactPageData | undefined = await getImpactPage();
+  const stats = sanityData?.stats && sanityData.stats.length > 0 ? sanityData.stats : staticImpactStatsExtended;
+  const outcomes = sanityData?.outcomes && sanityData.outcomes.length > 0 ? sanityData.outcomes : staticImpactOutcomes;
+  const stories = sanityData?.stories && sanityData.stories.length > 0 ? sanityData.stories : staticImpactStories;
+
   return (
     <>
       <PageBanner
@@ -136,7 +142,7 @@ export default function ImpactPage() {
             description="Every strategic parameter represents a direct, transparent commitment to building real social opportunities."
           />
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-            {impactStatsExtended.map((stat) => {
+            {stats.map((stat) => {
               const Icon = ICON_MAP[stat.iconName] || Target;
               return (
                 <div
@@ -230,7 +236,7 @@ export default function ImpactPage() {
             description="Third-party verified results from our core programs."
           />
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
-            {impactOutcomes.map((outcome) => (
+            {outcomes.map((outcome) => (
               <div
                 key={outcome.title}
                 className="bg-surface border border-border-light rounded-[var(--radius-md)] overflow-hidden shadow-soft"
@@ -266,7 +272,7 @@ export default function ImpactPage() {
         <Container size="lg">
           <SectionHeading label="Voices of Change" title="Stories from the Field" />
           <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
-            {impactStories.map((story) => {
+            {stories.map((story) => {
               const initials = story.name.split(" ").map((n) => n[0]).join("");
               const slug = story.name.toLowerCase().replace(/\s+/g, "-");
               return (

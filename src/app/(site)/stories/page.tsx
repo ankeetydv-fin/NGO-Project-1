@@ -3,9 +3,19 @@ import { PageBanner } from "@/components/ui/PageBanner";
 import { Section } from "@/components/layout/Section";
 import { Container } from "@/components/layout/Container";
 import { Calendar, Tag, Clock } from "lucide-react";
-import { stories } from "@/content";
+import { stories as staticStories } from "@/content";
+import { getStories, type StoryData } from "@/sanity/lib/queries";
 
-export default function StoriesPage() {
+export default async function StoriesPage() {
+  const sanityData: StoryData[] | undefined = await getStories();
+  const stories = sanityData && sanityData.length > 0
+    ? sanityData.map((s) => ({
+        ...s,
+        slug: s.slug?.current,
+        image: s.image?.asset?.url,
+        _id: s._id,
+      }))
+    : staticStories;
   return (
     <>
       <PageBanner
