@@ -307,3 +307,36 @@ const faqItemsQuery = `*[_type == "faqItem"] {
 export async function getFAQItems() {
   return fetchData<FAQData[]>(faqItemsQuery)
 }
+
+// ─── Programs ───
+export interface ProgramData {
+  _id: string
+  title: string
+  description: string
+  imageUrl?: string
+  tagline?: string
+  link?: string
+  iconName?: string
+  stats?: { label: string; value: string }[]
+  highlights?: string[]
+  color?: string
+  bg?: string
+}
+
+const programsQuery = `*[_type == "program" && isActive == true] | order(_createdAt asc) {
+  _id,
+  title,
+  description,
+  "imageUrl": image.asset->url,
+  tagline,
+  link,
+  iconName,
+  stats,
+  highlights,
+  color,
+  bg
+}`
+
+export async function getPrograms() {
+  return fetchData<ProgramData[]>(programsQuery)
+}

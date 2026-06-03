@@ -4,8 +4,9 @@ import { useState } from "react";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
 import { ChevronDown } from "lucide-react";
+import type { FAQData } from "@/sanity/lib/queries";
 
-const faqs = [
+const FALLBACK_FAQS = [
   {
     question: "How does the 80G tax exemption work?",
     answer: "Contributions made to our organization are eligible for tax deduction under Section 80G of the Income Tax Act, 1961. You can claim a deduction of 50% of the donated amount when you file your income tax return."
@@ -24,7 +25,12 @@ const faqs = [
   }
 ];
 
-export function FAQAccordion() {
+interface FAQAccordionProps {
+  faqItems?: FAQData[];
+}
+
+export function FAQAccordion({ faqItems }: FAQAccordionProps) {
+  const faqs = faqItems?.length ? faqItems.map((f) => ({ question: f.question, answer: f.answer })) : FALLBACK_FAQS;
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (

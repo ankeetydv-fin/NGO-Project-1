@@ -11,16 +11,14 @@ import {
   DonationCTA,
 } from "@/components/home";
 
-import { client } from "@/sanity/lib/client";
 import {
   getHomepage,
   getStories,
   getTestimonials,
-  getReports,
+  getPrograms,
   type HomepageData,
   type StoryData,
   type TestimonialData,
-  type ReportData,
 } from "@/sanity/lib/queries";
 import { heroContent as staticHeroContent, trustPartners as staticTrustPartners, missionContent as staticMissionContent, impactStats as staticImpactStats, homepageStories as staticHomepageStories } from "@/content";
 import type { HeroContent, HeroSlide, StoryItem, TestimonialItem, ImpactStat } from "@/types/content";
@@ -29,24 +27,6 @@ export const metadata: Metadata = {
   title: "Home",
   description: "Join us in our mission to empower communities and create sustainable positive change across India.",
 };
-
-// ─── Fetch helpers ───
-async function getPrograms() {
-  try {
-    const query = `*[_type == "program" && isActive == true] | order(_createdAt asc)[0...4] {
-      _id,
-      title,
-      description,
-      "imageUrl": image.asset->url,
-      tagline,
-      link
-    }`;
-    return (await client.fetch(query, {}, { next: { revalidate: 3600 } })) ?? [];
-  } catch {
-    console.error("Failed to fetch programs from Sanity");
-    return [];
-  }
-}
 
 // ─── Mappers ───
 function mapHeroContent(data: HomepageData | undefined): HeroContent {
@@ -115,12 +95,11 @@ function mapImpactStats(data: HomepageData | undefined): ImpactStat[] {
 }
 
 export default async function Home() {
-  const [programsData, homepageData, storiesData, testimonialsData, reportsData] = await Promise.all([
+  const [programsData, homepageData, storiesData, testimonialsData] = await Promise.all([
     getPrograms(),
     getHomepage(),
     getStories(),
     getTestimonials(),
-    getReports(),
   ]);
 
   const heroContent = mapHeroContent(homepageData);
@@ -130,8 +109,6 @@ export default async function Home() {
   const mission = mapMissionContent(homepageData);
   const stats = mapImpactStats(homepageData);
   const trustPartners = homepageData?.trustPartners ?? staticTrustPartners;
-  const transparencyReports = homepageData?.donationTiers ? [] : [];
-  const certifications: string[] = [];
 
   return (
     <>
@@ -141,7 +118,7 @@ export default async function Home() {
       <ProgramsPreview programs={programsData} />
       <Testimonials testimonials={testimonials} />
       <LatestUpdates homepageStories={homepageStories} />
-      <TransparencySection transparencyReports={undefined} certifications={undefined} />
+      <TransparencySection />
       <VolunteerSection />
       <DonationCTA />
     </>

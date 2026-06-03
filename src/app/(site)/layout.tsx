@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import { Inter, Lora } from "next/font/google";
+import { cache } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { getSiteSettings, type SiteSettingsData } from "@/sanity/lib/queries";
 import { siteConfig as staticSiteConfig } from "@/content/site";
 import "./globals.css";
+
+const getCachedSiteSettings = cache(getSiteSettings);
 
 const inter = Inter({
   variable: "--font-inter",
@@ -20,7 +23,7 @@ const lora = Lora({
 });
 
 export async function generateMetadata(): Promise<Metadata> {
-  const settings: SiteSettingsData | undefined = await getSiteSettings();
+  const settings: SiteSettingsData | undefined = await getCachedSiteSettings();
   const name = settings?.name ?? staticSiteConfig.name;
   const tagline = settings?.tagline ?? staticSiteConfig.tagline;
   const description = settings?.description ?? staticSiteConfig.description;
@@ -68,7 +71,7 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const settings: SiteSettingsData | undefined = await getSiteSettings();
+  const settings: SiteSettingsData | undefined = await getCachedSiteSettings();
   const navLinks = settings?.navLinks?.map(l => ({ name: l.label, href: l.href })) ?? [];
 
   return (

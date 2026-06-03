@@ -5,9 +5,12 @@ import { Button } from "@/components/ui/Button";
 import { Loader2, CheckCircle } from "lucide-react";
 import { submitDonationForm } from "@/app/actions/donation";
 
-const AMOUNTS = [1000, 2500, 5000];
+interface DonationWidgetProps {
+  donationTiers?: { amount: number; impact: string }[];
+}
 
-export function DonationWidget() {
+export function DonationWidget({ donationTiers }: DonationWidgetProps) {
+  const AMOUNTS = donationTiers?.length ? donationTiers.map((t) => t.amount) : [1000, 2500, 5000];
   const [frequency, setFrequency] = useState<"monthly" | "one-time">("monthly");
   const [selectedAmount, setSelectedAmount] = useState<number | null>(2500);
   const [customAmount, setCustomAmount] = useState("");

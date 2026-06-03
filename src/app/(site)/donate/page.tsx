@@ -9,21 +9,28 @@ import {
   BeneficiaryStory, 
   FAQAccordion 
 } from "@/components/donate";
+import { getHomepage, getFAQItems, type HomepageData, type FAQData } from "@/sanity/lib/queries";
+import { donationTiers as staticDonationTiers } from "@/content";
 
 export const metadata: Metadata = {
   title: "Donate Now | Secure Their Future",
   description: "Your donation creates real change. Claim 50% tax exemption under Section 80G instantly.",
 };
 
-export default function DonatePage() {
+export default async function DonatePage() {
+  const [homepageData, faqItems] = await Promise.all([
+    getHomepage(),
+    getFAQItems(),
+  ]);
+
+  const donationTiers = homepageData?.donationTiers?.length ? homepageData.donationTiers : staticDonationTiers;
+
   return (
     <>
-      {/* Section 1: Split-Hero Conversion Engine */}
       <Section spacing="none" className="pt-24 pb-16 bg-surface">
         <Container size="xl">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             
-            {/* Left Column: The Hook */}
             <div className="flex flex-col h-full pt-4 lg:pt-8">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold font-heading text-text-dark leading-tight mb-6">
                 Secure Their Future.<br/>
@@ -44,26 +51,18 @@ export default function DonatePage() {
               </div>
             </div>
 
-            {/* Right Column: The Widget */}
             <div className="lg:pl-8">
-              <DonationWidget />
+              <DonationWidget donationTiers={donationTiers} />
             </div>
 
           </div>
         </Container>
       </Section>
 
-      {/* Section 2: Trust & Tax Authority Banner */}
       <TaxBanner />
-
-      {/* Section 3: Tangible Impact Mapping */}
       <ImpactGrid />
-
-      {/* Section 4: Social Proof / Beneficiary Story */}
       <BeneficiaryStory />
-
-      {/* Section 5: The Donation FAQ Accordion */}
-      <FAQAccordion />
+      <FAQAccordion faqItems={faqItems} />
     </>
   );
 }

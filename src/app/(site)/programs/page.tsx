@@ -1,11 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { PageBanner } from "@/components/ui/PageBanner";
-
 import { Section } from "@/components/layout/Section";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
-
 import {
   GraduationCap,
   HeartPulse,
@@ -15,16 +13,22 @@ import {
   Baby,
   ArrowRight,
   CheckCircle,
+  Target,
 } from "lucide-react";
+import { getPrograms, type ProgramData } from "@/sanity/lib/queries";
+import type { LucideIcon } from "lucide-react";
 
-const PROGRAMS = [
+const ICON_MAP: Record<string, LucideIcon> = {
+  GraduationCap, HeartPulse, Droplets, Wheat, Home, Baby, Target,
+};
+
+const FALLBACK_PROGRAMS = [
   {
     id: "education",
-    icon: GraduationCap,
+    iconName: "GraduationCap",
     title: "Education for All",
     tagline: "Building futures through learning",
-    description:
-      "Our education programs provide quality schooling, scholarships, after-school tutoring, and digital literacy to underprivileged children in rural and urban areas. We operate 45 learning centers across 3 countries.",
+    description: "Our education programs provide quality schooling, scholarships, after-school tutoring, and digital literacy to underprivileged children in rural and urban areas. We operate 45 learning centers across 3 countries.",
     stats: [
       { label: "Children Enrolled", value: "12,000+" },
       { label: "Learning Centers", value: "45" },
@@ -40,14 +44,14 @@ const PROGRAMS = [
     color: "text-primary",
     bg: "bg-primary/10",
     image: "/images/programs/education.svg",
+    link: "/donate?cause=education",
   },
   {
     id: "healthcare",
-    icon: HeartPulse,
+    iconName: "HeartPulse",
     title: "Healthcare Access",
     tagline: "Healthy communities, stronger futures",
-    description:
-      "We run mobile health clinics, maternal care programs, vaccination drives, and mental health awareness campaigns. Our goal is to ensure no community is left without essential healthcare.",
+    description: "We run mobile health clinics, maternal care programs, vaccination drives, and mental health awareness campaigns. Our goal is to ensure no community is left without essential healthcare.",
     stats: [
       { label: "Medical Checkups", value: "35,000+" },
       { label: "Mobile Clinics", value: "12" },
@@ -63,14 +67,14 @@ const PROGRAMS = [
     color: "text-accent-orange",
     bg: "bg-accent-orange/10",
     image: "/images/programs/healthcare.svg",
+    link: "/donate?cause=healthcare",
   },
   {
     id: "water",
-    icon: Droplets,
+    iconName: "Droplets",
     title: "Clean Water Initiative",
     tagline: "Every drop counts",
-    description:
-      "We build bore wells, install filtration systems, and implement rainwater harvesting in drought-affected communities. Clean water reduces disease, frees up time for education, and transforms entire villages.",
+    description: "We build bore wells, install filtration systems, and implement rainwater harvesting in drought-affected communities. Clean water reduces disease, frees up time for education, and transforms entire villages.",
     stats: [
       { label: "Wells Built", value: "200+" },
       { label: "People Served", value: "25,000+" },
@@ -86,14 +90,14 @@ const PROGRAMS = [
     color: "text-secondary",
     bg: "bg-secondary/10",
     image: "/images/programs/water.svg",
+    link: "/donate?cause=water",
   },
   {
     id: "livelihood",
-    icon: Wheat,
+    iconName: "Wheat",
     title: "Livelihood Support",
     tagline: "Self-reliance through skill",
-    description:
-      "Our livelihood programs empower families through vocational training, micro-finance, sustainable agriculture, and small business support — building self-reliance and long-term stability.",
+    description: "Our livelihood programs empower families through vocational training, micro-finance, sustainable agriculture, and small business support — building self-reliance and long-term stability.",
     stats: [
       { label: "Families Supported", value: "4,500+" },
       { label: "Micro-Loans Given", value: "2,100" },
@@ -109,14 +113,14 @@ const PROGRAMS = [
     color: "text-accent-green",
     bg: "bg-accent-green/10",
     image: "/images/programs/livelihood.svg",
+    link: "/donate?cause=livelihood",
   },
   {
     id: "shelter",
-    icon: Home,
+    iconName: "Home",
     title: "Shelter & Relief",
     tagline: "A safe place to call home",
-    description:
-      "During natural disasters and crises, we provide emergency shelter, food, and supplies. We also run long-term housing assistance for displaced families.",
+    description: "During natural disasters and crises, we provide emergency shelter, food, and supplies. We also run long-term housing assistance for displaced families.",
     stats: [
       { label: "Families Sheltered", value: "1,800+" },
       { label: "Emergency Responses", value: "25" },
@@ -132,14 +136,14 @@ const PROGRAMS = [
     color: "text-primary",
     bg: "bg-primary/10",
     image: "/images/programs/shelter.svg",
+    link: "/donate?cause=shelter",
   },
   {
     id: "childcare",
-    icon: Baby,
+    iconName: "Baby",
     title: "Child Welfare",
     tagline: "Protecting childhood, nurturing potential",
-    description:
-      "We protect vulnerable children through nutrition programs, early childhood development centers, child protection services, and safe community spaces.",
+    description: "We protect vulnerable children through nutrition programs, early childhood development centers, child protection services, and safe community spaces.",
     stats: [
       { label: "Children Supported", value: "8,000+" },
       { label: "Nutrition Centers", value: "30" },
@@ -155,10 +159,34 @@ const PROGRAMS = [
     color: "text-accent-orange",
     bg: "bg-accent-orange/10",
     image: "/images/programs/childcare.svg",
+    link: "/donate?cause=childcare",
   },
 ];
 
-export default function ProgramsPage() {
+function mapProgram(p: ProgramData, fallback: typeof FALLBACK_PROGRAMS[number]) {
+  return {
+    id: p._id,
+    iconName: p.iconName ?? fallback.iconName,
+    title: p.title,
+    tagline: p.tagline ?? fallback.tagline,
+    description: p.description,
+    stats: p.stats?.length ? p.stats : fallback.stats,
+    highlights: p.highlights?.length ? p.highlights : fallback.highlights,
+    color: p.color ?? fallback.color,
+    bg: p.bg ?? fallback.bg,
+    image: p.imageUrl ?? fallback.image,
+    link: p.link ?? fallback.link,
+  };
+}
+
+export default async function ProgramsPage() {
+  const sanityData: ProgramData[] | undefined = await getPrograms();
+  const hasSanityData = sanityData && sanityData.length > 0;
+
+  const programs = hasSanityData
+    ? sanityData.map((p, i) => mapProgram(p, FALLBACK_PROGRAMS[i % FALLBACK_PROGRAMS.length]))
+    : FALLBACK_PROGRAMS;
+
   return (
     <>
       <PageBanner
@@ -167,8 +195,8 @@ export default function ProgramsPage() {
         breadcrumb="What We Do"
       />
 
-      {PROGRAMS.map((program, i) => {
-        const Icon = program.icon;
+      {programs.map((program, i) => {
+        const Icon = ICON_MAP[program.iconName] || Target;
         const isEven = i % 2 === 0;
         return (
           <Section
@@ -178,7 +206,6 @@ export default function ProgramsPage() {
             id={program.id}
           >
             <div className={`flex flex-col lg:flex-row w-full ${isEven ? "" : "lg:flex-row-reverse"}`}>
-              {/* Image Half */}
               <div className="lg:w-1/2 relative min-h-[400px] bg-neutral-100">
                 {program.image ? (
                   <Image
@@ -196,13 +223,12 @@ export default function ProgramsPage() {
                 <div className="absolute inset-0 bg-secondary/10 mix-blend-multiply" />
               </div>
 
-              {/* Content Half */}
               <div className="lg:w-1/2 p-6 sm:p-10 md:p-16 lg:p-20 xl:p-24 flex flex-col justify-center">
                 <div className="max-w-xl mx-auto lg:mx-0">
                   <div className={`w-14 h-14 rounded-2xl ${program.bg} flex items-center justify-center mb-6`}>
                     <Icon size={28} className={program.color} />
                   </div>
-                  
+
                   <p className={`text-xs font-bold uppercase tracking-widest ${program.color} mb-2`}>
                     {program.tagline}
                   </p>
@@ -213,7 +239,6 @@ export default function ProgramsPage() {
                     {program.description}
                   </p>
 
-                  {/* Highlights */}
                   <ul className="space-y-3 mb-10">
                     {program.highlights.map((h) => (
                       <li key={h} className="flex items-start gap-3 text-text-muted font-medium">
@@ -223,7 +248,6 @@ export default function ProgramsPage() {
                     ))}
                   </ul>
 
-                  {/* Stats Grid */}
                   <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-8 border-t border-border-light/60 mb-8">
                     {program.stats.map((stat) => (
                       <div key={stat.label}>
@@ -247,7 +271,6 @@ export default function ProgramsPage() {
         );
       })}
 
-      {/* Bottom CTA */}
       <Section spacing="md" background="primary">
         <Container size="md">
           <div className="text-center space-y-8">

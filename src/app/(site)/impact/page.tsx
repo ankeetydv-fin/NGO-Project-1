@@ -120,6 +120,12 @@ function CauseCard({
   );
 }
 
+const OUTCOME_IMG_MAP: Record<string, string> = {
+  "Keeping Kids in School": "education",
+  "Clean Water & Survival Care": "water-project",
+  "Grassroots Sports & Opportunity": "sports-event",
+};
+
 export default async function ImpactPage() {
   const sanityData: ImpactPageData | undefined = await getImpactPage();
   const stats = sanityData?.stats && sanityData.stats.length > 0 ? sanityData.stats : staticImpactStatsExtended;
@@ -242,7 +248,7 @@ export default async function ImpactPage() {
                 className="bg-surface border border-border-light rounded-[var(--radius-md)] overflow-hidden shadow-soft"
               >
                 <ImagePlaceholder
-                  src={`/images/impact/${outcome.title.toLowerCase()}.svg`}
+                  src={`/images/impact/${OUTCOME_IMG_MAP[outcome.title] ?? outcome.title.toLowerCase()}.svg`}
                   alt={`${outcome.title} program in action`}
                   aspect="16/9"
                   className="rounded-none border-0"
