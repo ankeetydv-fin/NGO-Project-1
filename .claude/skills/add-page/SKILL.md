@@ -15,7 +15,7 @@ Ask the user for:
 - **Page title** (e.g., "Events", "Our Partners")
 - **Tagline** (short subtitle shown in the banner)
 - **Number of content sections** (default: 3)
-- **Whether the page needs a form** (if yes, also create a server action and Sanity schema)
+- **Whether the page needs a form** (if yes, also create a server action)
 
 ### Step 2: Create the route directory
 

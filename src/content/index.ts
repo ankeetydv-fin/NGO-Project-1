@@ -19,3 +19,4 @@ export * from "./volunteer";
 export * from "./reports";
 export * from "./gallery";
 export * from "./faq";
+export * from "./programs";

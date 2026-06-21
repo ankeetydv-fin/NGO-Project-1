@@ -11,39 +11,20 @@ import {
   DonationCTA,
 } from "@/components/home";
 
-import { client } from "@/sanity/lib/client";
+import { programs } from "@/content";
 
 export const metadata: Metadata = {
   title: "Home",
   description: "Join us in our mission to empower communities and create sustainable positive change across India.",
 };
 
-async function getPrograms() {
-  try {
-    const query = `*[_type == "program" && isActive == true] | order(_createdAt asc)[0...4] {
-      _id,
-      title,
-      description,
-      "imageUrl": image.asset->url,
-      tagline,
-      link
-    }`;
-    return (await client.fetch(query, {}, { next: { revalidate: 3600 } })) ?? [];
-  } catch {
-    console.error("Failed to fetch programs from Sanity");
-    return [];
-  }
-}
-
-export default async function Home() {
-  const programsData: Awaited<ReturnType<typeof getPrograms>> = await getPrograms();
-
+export default function Home() {
   return (
     <>
       <EditorialHero />
       <TrustBar />
       <EditorialMission />
-      <ProgramsPreview programs={programsData} />
+      <ProgramsPreview programs={programs} />
       <Testimonials />
       <LatestUpdates />
       <TransparencySection />
