@@ -7,7 +7,6 @@ import { Container } from "@/components/layout/Container";
 import { ArrowRight, Clock } from "lucide-react";
 
 export function EditorialHero() {
-  const mainStory = heroContent.slides[0];
   const sideStories = homepageStories.slice(0, 2);
 
   return (
@@ -17,11 +16,11 @@ export function EditorialHero() {
           
           {/* ── Main Cover Story (Left / Top) ── */}
           <div className="lg:col-span-8 group cursor-pointer flex flex-col h-full">
-            <Link href={mainStory.ctaLink || "/stories"} className="flex flex-col h-full">
+            <Link href={heroContent.ctaLink || "/stories"} className="flex flex-col h-full">
               <div className="relative w-full aspect-[16/9] md:aspect-[21/9] lg:aspect-[2.2/1] overflow-hidden rounded-xl mb-4 bg-neutral-100">
                 <Image
-                  src={mainStory.image}
-                  alt={mainStory.title}
+                  src={heroContent.image}
+                  alt={heroContent.title}
                   fill
                   priority
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -35,10 +34,10 @@ export function EditorialHero() {
               
               <div className="flex flex-col flex-1">
                 <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-text-dark leading-tight mb-3 group-hover:text-primary transition-colors decoration-primary/30 group-hover:underline underline-offset-[8px]">
-                  {mainStory.title}
+                  {heroContent.title}
                 </h1>
                 <p className="font-sans text-base md:text-lg text-text-muted leading-relaxed mb-4 max-w-3xl">
-                  {mainStory.description}
+                  {heroContent.description}
                 </p>
                 
                 <div className="flex items-center gap-4 text-sm font-bold text-text-dark mt-auto">

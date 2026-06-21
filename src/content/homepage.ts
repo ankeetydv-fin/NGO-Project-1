@@ -10,35 +10,12 @@ import type { HeroContent, TrustPartner, DonationTier } from "@/types/content";
 
 export const heroContent: HeroContent = {
   badge: "Shiv Prabha Foundation • Real People. Real Lives. Immediate Action.",
-  slides: [
-    {
-      id: "slide-1",
-      subtitle: "Rani used to walk 5 km under a scorching sun for a single bucket of muddy water.",
-      title: "Clean Water is Survival",
-      description: "No mother should have to watch her children drink water that will make them sick. We build wells directly in forgotten village blocks, bringing clean water and safety right to their doorstep.",
-      image: "/images/hero/education.png",
-      ctaText: "Build a Well Now",
-      ctaLink: "/donate?cause=water"
-    },
-    {
-      id: "slide-2",
-      subtitle: "A little girl reads under a flickering streetlamp because her home has no light.",
-      title: "Keep a Child in School",
-      description: "Without basic pens, notebooks, and support, children are forced out of classrooms and into manual labor. We get supplies directly to children so they can stay in school and write their own future.",
-      image: "/images/hero/healthcare.png",
-      ctaText: "Send School Books Now",
-      ctaLink: "/donate?cause=education"
-    },
-    {
-      id: "slide-3",
-      subtitle: "He plays barefoot on rocky soil, dreaming of wearing real shoes.",
-      title: "Nurture Raw Athletic Talent",
-      description: "Underprivileged children with immense champion potential play in the dirt with broken gear. We give them real athletic kits, shoes, and direct coaching so they can run, compete, and escape poverty.",
-      image: "/images/hero/water.png",
-      ctaText: "Equip a Young Champion",
-      ctaLink: "/donate?cause=sports"
-    }
-  ],
+  title: "Clean Water is Survival",
+  subtitle: "Rani used to walk 5 km under a scorching sun for a single bucket of muddy water.",
+  description: "No mother should have to watch her children drink water that will make them sick. We build wells directly in forgotten village blocks, bringing clean water and safety right to their doorstep.",
+  image: "/images/hero/education.png",
+  ctaText: "Build a Well Now",
+  ctaLink: "/donate?cause=water",
   stats: [
     { value: "2025", label: "Year We Began Rescuing Lives" },
     { value: "3", label: "Core Lifelines we Provide" },

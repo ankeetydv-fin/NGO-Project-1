@@ -38,19 +38,14 @@ export interface NavLink {
 }
 
 /* ─── Hero ─── */
-export interface HeroSlide {
-  id: string;
+export interface HeroContent {
+  badge: string;
   title: string;
   subtitle: string;
   description: string;
   image: string;
   ctaText: string;
   ctaLink: string;
-}
-
-export interface HeroContent {
-  badge: string;
-  slides: HeroSlide[];
   stats: { value: string; label: string }[];
   recentDonation: { amount: string; donor: string; time: string };
 }
