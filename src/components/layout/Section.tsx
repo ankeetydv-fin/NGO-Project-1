@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 export interface SectionProps extends React.HTMLAttributes<HTMLElement> {
   spacing?: "none" | "sm" | "md" | "lg" | "xl";
-  background?: "default" | "white" | "primary" | "secondary";
+  background?: "default" | "white" | "primary" | "secondary" | "off-white-light";
 }
 
 const Section = React.forwardRef<HTMLElement, SectionProps>(
@@ -23,6 +23,7 @@ const Section = React.forwardRef<HTMLElement, SectionProps>(
       white: "bg-surface text-text-dark",
       primary: "bg-primary text-surface",
       secondary: "bg-secondary text-text-dark",
+      "off-white-light": "bg-off-white-light text-text-dark",
     };
 
     return (

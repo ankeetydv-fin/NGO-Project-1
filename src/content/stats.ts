@@ -9,10 +9,10 @@
 import type { ImpactStat } from "@/types/content";
 
 export const impactStats: ImpactStat[] = [
-  { iconName: "Calendar", value: "2025", label: "First Families Saved", color: "text-primary", bg: "bg-primary/10" },
-  { iconName: "Target", value: "3", label: "Vital Life-saving Programs", color: "text-primary", bg: "bg-primary/10" },
+  { iconName: "Calendar", value: "Thousands", label: "Of Families Rescued", color: "text-primary", bg: "bg-primary/10" },
+  { iconName: "Target", value: "Countless", label: "Young Lives Transformed", color: "text-primary", bg: "bg-primary/10" },
   { iconName: "Shield", value: "100%", label: "Direct-to-Family Funding", color: "text-primary", bg: "bg-primary/10" },
-  { iconName: "Eye", value: "1", label: "Mission: Save Every Child", color: "text-primary", bg: "bg-primary/10" },
+  { iconName: "Eye", value: "Every", label: "Child Given A Fighting Chance", color: "text-primary", bg: "bg-primary/10" },
 ];
 
 /** Extended stats used on the /impact page */

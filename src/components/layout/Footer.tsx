@@ -65,7 +65,7 @@ export function Footer() {
   }
 
   return (
-    <footer className="bg-footer-bg text-text-dark pt-10 sm:pt-12 md:pt-16 pb-6 sm:pb-8 border-t border-border-light/60">
+    <footer className="bg-black text-white pt-10 sm:pt-12 md:pt-16 pb-6 sm:pb-8 border-t border-neutral-800">
       <Container size="xl">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           
@@ -79,32 +79,32 @@ export function Footer() {
                 height={64}
                 className="object-contain w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16"              />
               <div className="flex flex-col items-start text-left">
-                <span className="text-2xl font-bold text-text-dark leading-tight tracking-tight">Shiv Prabha</span>
-                <span className="text-sm font-semibold text-text-muted leading-none mt-0.5">Foundation</span>
+                <span className="text-2xl font-bold text-white leading-tight tracking-tight">Shiv Prabha</span>
+                <span className="text-sm font-semibold text-gray-400 leading-none mt-0.5">Foundation</span>
               </div>
             </Link>
             <div className="space-y-1 mb-8 text-center md:text-left">
-              <p className="text-sm text-text-dark/90 font-medium leading-relaxed">
+              <p className="text-sm text-white/90 font-medium leading-relaxed">
                 Transforming Lives… One Step at a Time
               </p>
-              <p className="text-sm text-text-muted leading-relaxed">
+              <p className="text-sm text-gray-400 leading-relaxed">
                 संस्कार, शिक्षा और सेवा की ओर एक कदम
               </p>
             </div>
             <div className="flex items-center justify-center md:justify-start gap-4 opacity-70 grayscale">
-              <div className="w-12 h-12 bg-text-dark/5 rounded flex items-center justify-center"><span className="text-[9px] text-text-dark font-bold text-center leading-tight">GuideStar<br/>India</span></div>
-              <div className="w-12 h-12 bg-text-dark/5 rounded flex items-center justify-center"><span className="text-[9px] text-text-dark font-bold text-center leading-tight">Credibility<br/>Alliance</span></div>
-              <div className="w-12 h-12 bg-text-dark/5 rounded flex items-center justify-center"><span className="text-[9px] text-text-dark font-bold text-center leading-tight">ISO<br/>Cert</span></div>
+              <div className="w-12 h-12 bg-white/10 rounded flex items-center justify-center"><span className="text-[9px] text-white font-bold text-center leading-tight">GuideStar<br/>India</span></div>
+              <div className="w-12 h-12 bg-white/10 rounded flex items-center justify-center"><span className="text-[9px] text-white font-bold text-center leading-tight">Credibility<br/>Alliance</span></div>
+              <div className="w-12 h-12 bg-white/10 rounded flex items-center justify-center"><span className="text-[9px] text-white font-bold text-center leading-tight">ISO<br/>Cert</span></div>
             </div>
           </div>
 
           {/* Column 2: Discover & Engage */}
           <div className="flex flex-col items-center md:items-start">
-            <h3 className="text-lg font-bold font-heading mb-6 text-text-dark">Quick Links</h3>
+            <h3 className="text-lg font-bold font-heading mb-6 text-white">Quick Links</h3>
             <ul className="space-y-3 text-center md:text-left">
               {footerQuickLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-text-muted hover:text-primary hover:underline underline-offset-4 transition-colors text-sm font-medium">
+                  <Link href={link.href} className="text-gray-400 hover:text-[#E53935] hover:underline underline-offset-4 transition-colors text-sm font-medium">
                     {link.label}
                   </Link>
                 </li>
@@ -114,17 +114,17 @@ export function Footer() {
 
           {/* Column 3: Governance & Compliance */}
           <div className="flex flex-col items-center md:items-start">
-            <h3 className="text-lg font-bold font-heading mb-6 text-text-dark">Transparency</h3>
+            <h3 className="text-lg font-bold font-heading mb-6 text-white">Transparency</h3>
             <ul className="space-y-3 text-center md:text-left">
               {footerLegalLinks.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-text-muted hover:text-primary hover:underline underline-offset-4 transition-colors text-sm font-medium">
+                  <Link href={link.href} className="text-gray-400 hover:text-[#E53935] hover:underline underline-offset-4 transition-colors text-sm font-medium">
                     {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
-            <div className="mt-8 pt-6 border-t border-border-light w-full space-y-2 text-xs text-text-muted font-medium text-center md:text-left">
+            <div className="mt-8 pt-6 border-t border-neutral-800 w-full space-y-2 text-xs text-gray-400 font-medium text-center md:text-left">
               <p>FCRA Registered Organization</p>
               <p>80G Tax Exemption Certificate</p>
               <p>12A Registration under IT Act</p>
@@ -133,21 +133,21 @@ export function Footer() {
 
           {/* Column 4: Connect & Action */}
           <div className="flex flex-col items-center md:items-start w-full">
-            <h3 className="text-lg font-bold font-heading mb-6 text-text-dark">Contact Us</h3>
+            <h3 className="text-lg font-bold font-heading mb-6 text-white">Contact Us</h3>
             <ul className="space-y-4 mb-8 w-full text-center md:text-left">
               <li className="flex flex-col md:flex-row items-center md:items-start gap-3">
-                <MapPin size={18} className="text-primary shrink-0 mt-0.5" />
-                <span className="text-text-muted text-sm font-medium">
+                <MapPin size={18} className="text-[#E53935] shrink-0 mt-0.5" />
+                <span className="text-gray-400 text-sm font-medium">
                   42, Lodhi Road, Institutional Area,<br />New Delhi, Delhi 110003
                 </span>
               </li>
               <li className="flex flex-col md:flex-row items-center md:items-start gap-3">
-                <Phone size={18} className="text-primary shrink-0" />
-                <span className="text-text-muted text-sm font-medium">+91 11 4567 8900</span>
+                <Phone size={18} className="text-[#E53935] shrink-0" />
+                <span className="text-gray-400 text-sm font-medium">+91 11 4567 8900</span>
               </li>
               <li className="flex flex-col md:flex-row items-center md:items-start gap-3">
-                <Mail size={18} className="text-primary shrink-0" />
-                <a href="mailto:hello@shivprabhafoundation.org" className="text-text-muted hover:text-primary text-sm font-medium transition-colors">
+                <Mail size={18} className="text-[#E53935] shrink-0" />
+                <a href="mailto:hello@shivprabhafoundation.org" className="text-gray-400 hover:text-[#E53935] text-sm font-medium transition-colors">
                   hello@shivprabhafoundation.org
                 </a>
               </li>
@@ -155,33 +155,33 @@ export function Footer() {
 
 
             <div className="flex items-center justify-center gap-3 w-full opacity-60 grayscale">
-              <div className="bg-text-dark/5 px-2 py-1 rounded text-text-dark text-[10px] font-bold">UPI</div>
-              <div className="bg-text-dark/5 px-2 py-1 rounded text-text-dark text-[10px] font-bold">RuPay</div>
-              <div className="bg-text-dark/5 px-2 py-1 rounded text-text-dark text-[10px] font-bold">VISA</div>
-              <div className="bg-text-dark/5 px-2 py-1 rounded text-text-dark text-[10px] font-bold">MC</div>
+              <div className="bg-white/10 px-2 py-1 rounded text-white text-[10px] font-bold">UPI</div>
+              <div className="bg-white/10 px-2 py-1 rounded text-white text-[10px] font-bold">RuPay</div>
+              <div className="bg-white/10 px-2 py-1 rounded text-white text-[10px] font-bold">VISA</div>
+              <div className="bg-white/10 px-2 py-1 rounded text-white text-[10px] font-bold">MC</div>
             </div>
           </div>
 
         </div>
 
         {/* Newsletter Horizontal Block */}
-        <div className="mt-20 pt-16 border-t border-border-light/60">
+        <div className="mt-20 pt-16 border-t border-neutral-800">
           <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-12 items-start md:items-end justify-between">
             <div className="max-w-md">
               <div className="flex items-center gap-2 mb-3">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent-orange" />
-                <span className="text-xs font-bold uppercase tracking-[0.2em] text-text-dark/60">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#E53935]" />
+                <span className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400">
                   Stay Updated
                 </span>
               </div>
-              <h3 className="text-2xl font-bold font-heading text-text-dark mb-2 leading-tight">
+              <h3 className="text-2xl font-bold font-heading text-white mb-2 leading-tight">
                 Get stories of impact delivered to your inbox.
               </h3>
             </div>
 
             <div className="w-full md:max-w-xl">
               {subscribed ? (
-                <p className="text-accent-orange text-lg font-bold font-heading">Thank you for joining our mission!</p>
+                <p className="text-[#E53935] text-lg font-bold font-heading">Thank you for joining our mission!</p>
               ) : (
                 <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row items-stretch gap-4 w-full">
                   <div className="flex-1">
@@ -191,7 +191,7 @@ export function Footer() {
                       value={newsletterName}
                       onChange={(e) => setNewsletterName(e.target.value)}
                       required
-                      className="w-full bg-surface border border-border-light text-text-dark placeholder:text-text-muted text-sm px-4 h-12 focus:outline-none focus:border-primary transition-colors focus:bg-white"
+                      className="w-full bg-neutral-900 border border-neutral-800 text-white placeholder:text-gray-500 text-sm px-4 h-12 focus:outline-none focus:border-[#E53935] transition-colors focus:bg-black"
                     />
                   </div>
                   <div className="flex-1">
@@ -201,10 +201,10 @@ export function Footer() {
                       value={newsletterEmail}
                       onChange={(e) => setNewsletterEmail(e.target.value)}
                       required
-                      className="w-full bg-surface border border-border-light text-text-dark placeholder:text-text-muted text-sm px-4 h-12 focus:outline-none focus:border-primary transition-colors focus:bg-white"
+                      className="w-full bg-neutral-900 border border-neutral-800 text-white placeholder:text-gray-500 text-sm px-4 h-12 focus:outline-none focus:border-[#E53935] transition-colors focus:bg-black"
                     />
                   </div>
-                  <Button type="submit" variant="primary" disabled={loading} className="h-12 px-8 shrink-0 rounded-sm w-full sm:w-auto">
+                  <Button type="submit" variant="primary" disabled={loading} className="h-12 px-8 shrink-0 rounded-sm w-full sm:w-auto bg-[#E53935] hover:bg-[#c62828] text-white border-none">
                     {loading ? <Loader2 size={16} className="animate-spin" /> : "SUBSCRIBE"}
                   </Button>
                 </form>
@@ -217,8 +217,8 @@ export function Footer() {
         </div>
 
         {/* Bottom Copyright Bar */}
-        <div className="mt-16 pt-6 border-t border-border-light/60 flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="text-text-muted text-sm font-medium text-center md:text-left">
+        <div className="mt-16 pt-6 border-t border-neutral-800 flex flex-col md:flex-row items-center justify-between gap-6">
+          <p className="text-gray-400 text-sm font-medium text-center md:text-left">
             © 2026 Shiv Prabha Foundation. All rights reserved.
           </p>
           <div className="flex items-center gap-3">
@@ -231,7 +231,7 @@ export function Footer() {
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-full bg-text-dark/5 flex items-center justify-center hover:bg-primary transition-colors text-text-dark hover:text-white"
+                  className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#E53935] transition-colors text-white hover:text-white"
                   aria-label={key}
                 >
                   <IconComp />

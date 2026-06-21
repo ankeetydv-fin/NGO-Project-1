@@ -60,7 +60,7 @@ export const missionContent = {
   headline: "No child should be left in the dark,",
   highlightedText: "waiting for help to arrive.",
   description:
-    "We don't wait for endless committee meetings or red tape. Founded on February 13, 2025, we are on the ground in India's most neglected village blocks. We deliver clean drinking water, protect families from deadly preventable sickness, and put learning books and sports gear directly into the hands of children who have nothing.",
+    "We refuse to let another mother watch her child suffer from drinking toxic water. We cannot look away when bright young minds are forced into grueling child labor simply because they cannot afford a single notebook. We are on the ground in forgotten village blocks, racing against time to deliver clean water, life-saving medicine, and a glimmer of hope to children who have absolutely nothing.",
   mission: {
     title: "Our Mission",
     text: "To rescue children from hunger, ignorance, and neglect by delivering clean water wells, school supplies, and athletic training directly to families who need them today.",
