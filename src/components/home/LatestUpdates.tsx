@@ -108,9 +108,9 @@ export function LatestUpdates() {
         </div>
 
         {/* Read All Stories Button at the end of the section */}
-        <div className="mt-12 flex justify-end">
-          <Link href="/stories" className="group inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-primary hover:text-white transition-colors">
-            Read All Stories <ArrowRight size={18} className="group-hover:translate-x-1.5 transition-transform" />
+        <div className="mt-12 flex justify-center lg:justify-end">
+          <Link href="/stories" className="group inline-flex items-center gap-2 px-5 py-2.5 border border-primary/30 hover:border-primary/80 text-xs font-bold uppercase tracking-widest text-primary hover:text-white rounded-full transition-all duration-300">
+            Read All Stories <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
       </Container>

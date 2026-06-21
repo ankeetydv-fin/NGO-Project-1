@@ -36,7 +36,7 @@ export function VolunteerSection() {
             </p>
             <div>
               <Link href="/volunteer" tabIndex={-1}>
-                <Button variant="primary" size="lg" className="rounded-full px-10 font-bold shadow-glow hover:-translate-y-1 transition-all bg-[#E53935] hover:bg-[#c62828] text-white border-none">
+                <Button variant="primary" size="md" className="rounded-full px-8 font-bold shadow-glow hover:-translate-y-1 transition-all bg-[#E53935] hover:bg-[#c62828] text-white border-none">
                   Apply Now
                 </Button>
               </Link>
