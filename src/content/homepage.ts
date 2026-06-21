@@ -15,7 +15,7 @@ export const heroContent: HeroContent = {
   description: "No mother should have to watch her children drink water that will make them sick. We build wells directly in forgotten village blocks, bringing clean water and safety right to their doorstep.",
   image: "/images/hero/education.png",
   ctaText: "Build a Well Now",
-  ctaLink: "/donate?cause=water",
+  ctaLink: "/campaigns/clean-water-is-survival",
   stats: [
     { value: "2025", label: "Year We Began Rescuing Lives" },
     { value: "3", label: "Core Lifelines we Provide" },

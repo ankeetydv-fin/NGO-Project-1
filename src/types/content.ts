@@ -87,6 +87,25 @@ export interface TestimonialItem {
   location: string;
 }
 
+/* ─── Campaign ─── */
+export interface CampaignItem {
+  id: string;
+  slug: string;
+  title: string;
+  subtitle: string;
+  coverImage: string;
+  description: string;
+  problem: string;
+  solution: string;
+  impact: string;
+  location: string;
+  beneficiaries: string;
+  goalAmount: number;
+  raisedAmount: number;
+  stats: { label: string; value: string }[];
+  testimonials: { quote: string; name: string; role: string }[];
+}
+
 /* ─── Story / Blog Post ─── */
 export interface StoryItem {
   title: string;

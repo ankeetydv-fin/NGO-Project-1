@@ -24,7 +24,7 @@ export function Testimonials() {
 
         <div className="space-y-24">
           {testimonials.map((testimonial, i) => (
-            <div key={testimonial.name} className={`flex flex-col ${i % 2 === 0 ? 'md:items-start text-left' : 'md:items-end text-right md:text-left'}`}>
+            <div key={testimonial.name} className="flex flex-col items-start text-left">
                <blockquote className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-text-dark leading-snug mb-8 relative">
                 <span className="text-primary absolute -left-6 md:-left-8 top-0">"</span>
                 {testimonial.quote}
