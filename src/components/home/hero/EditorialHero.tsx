@@ -10,7 +10,7 @@ export function EditorialHero() {
   const sideStories = homepageStories.slice(0, 2);
 
   return (
-    <section className="relative pt-24 pb-8 md:pt-28 md:pb-12 bg-surface border-b border-border-light/40 lg:min-h-[calc(100vh-160px)] lg:flex lg:flex-col lg:justify-center">
+    <section className="relative pt-12 pb-8 md:pt-16 md:pb-12 lg:pt-20 lg:pb-16 bg-surface border-b border-border-light/40">
       <Container size="xl">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           

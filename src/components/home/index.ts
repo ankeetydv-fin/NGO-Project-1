@@ -1,9 +1,11 @@
 export { EditorialHero } from "./hero/EditorialHero";
 export { TrustBar } from "./TrustBar";
 export { EditorialMission } from "./EditorialMission";
-export { ProgramsPreview } from "./ProgramsPreview";
 export { Testimonials } from "./Testimonials";
 export { LatestUpdates } from "./LatestUpdates";
 export { TransparencySection } from "./TransparencySection";
 export { VolunteerSection } from "./VolunteerSection";
 export { DonationCTA } from "./DonationCTA";
+export { GallerySection } from "./GallerySection";
+export { WelfareProjects } from "./WelfareProjects";
+export { EventsSection } from "./EventsSection";

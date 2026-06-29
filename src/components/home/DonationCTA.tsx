@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 
 export function DonationCTA() {
   return (
-    <section className="relative py-16 sm:py-24 md:py-32 lg:py-40 bg-secondary border-t border-border-light/40 text-text-dark overflow-hidden">
+    <section className="relative py-16 sm:py-24 md:py-32 lg:py-40 bg-[#FAF6EE] border-t border-border-light/40 text-text-dark overflow-hidden">
       {/* Editorial aesthetic: minimal background, strong typography */}
       
       <Container size="md" className="relative z-10 text-center">

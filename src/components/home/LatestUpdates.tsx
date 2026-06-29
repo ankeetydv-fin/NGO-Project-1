@@ -14,20 +14,20 @@ export function LatestUpdates() {
   const secondaryStories = homepageStories.slice(1, 4);
 
   return (
-    <Section spacing="lg" background="white" className="bg-black text-white border-b border-neutral-900 relative overflow-hidden">
+    <Section spacing="lg" background="default" className="bg-[#FAF6EE] border-b border-border-light/40 relative overflow-hidden">
       {/* Subtle background element */}
-      <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-r from-primary/10 to-transparent pointer-events-none" />
+      <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-r from-primary/5 to-transparent pointer-events-none" />
 
       <Container size="xl" className="relative z-10">
         <div className="mb-10">
           <div className="inline-flex items-center gap-2 mb-4">
             <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-primary">
+            <span className="text-sm font-bold uppercase tracking-[0.2em] text-text-dark/60">
               Latest From The Ground
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-heading font-black text-primary">
-            Dispatches & Reports
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-text-dark leading-tight tracking-tight">
+            Echoes of Hope
           </h2>
         </div>
 
@@ -36,7 +36,7 @@ export function LatestUpdates() {
           {/* Lead Story (Left) */}
           <div className="lg:col-span-7 group">
             <Link href={`/stories`} className="flex flex-col">
-              <div className="relative w-full aspect-[16/10] overflow-hidden bg-neutral-900 border border-white/5 rounded-xl mb-6">
+              <div className="relative w-full aspect-[16/10] overflow-hidden bg-neutral-100 border border-border-light/60 rounded-xl mb-6 shadow-sm">
                  <Image
                     src={leadStory.image || "/images/placeholder.svg"}
                     alt={leadStory.title}
@@ -45,19 +45,19 @@ export function LatestUpdates() {
                     sizes="(max-width: 1024px) 100vw, 60vw"
                   />
               </div>
-              <div className="flex items-center gap-4 text-xs font-bold text-neutral-400 mb-4 uppercase tracking-wider">
+              <div className="flex items-center gap-4 text-xs font-bold text-text-muted mb-4 uppercase tracking-wider">
                 <span className="text-primary font-extrabold">
                   {leadStory.category}
                 </span>
-                <span className="w-1 h-1 rounded-full bg-neutral-800" />
+                <span className="w-1 h-1 rounded-full bg-border-light" />
                 <span className="flex items-center gap-1.5">
                   <Clock size={14} /> {leadStory.readTime}
                 </span>
               </div>
-              <h3 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4 leading-tight group-hover:text-primary transition-colors">
+              <h3 className="text-3xl md:text-4xl font-heading font-extrabold text-text-dark mb-4 leading-tight group-hover:text-primary transition-colors decoration-primary/30 group-hover:underline underline-offset-[6px]">
                 {leadStory.title}
               </h3>
-              <p className="text-lg text-neutral-300 leading-relaxed mb-6">
+              <p className="text-lg text-text-muted leading-relaxed mb-6">
                 {leadStory.excerpt}
               </p>
             </Link>
@@ -70,7 +70,7 @@ export function LatestUpdates() {
             <div className="lg:pl-8 mb-4">
               <div className="inline-flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                <span className="text-xs font-bold uppercase tracking-[0.2em] text-primary">
+                <span className="text-sm font-bold uppercase tracking-[0.2em] text-text-dark/60">
                   Latest Updates
                 </span>
               </div>
@@ -78,24 +78,24 @@ export function LatestUpdates() {
 
             <div className="flex flex-col gap-8 lg:pl-8 lg:border-l-2 lg:border-primary relative">
               {secondaryStories.map((story) => (
-                <div key={story.slug} className="group flex gap-6 items-start border-b border-neutral-900 pb-8 last:border-0 last:pb-0 relative">
+                <div key={story.slug} className="group flex gap-6 items-start border-b border-border-light/40 pb-8 last:border-0 last:pb-0 relative">
                   
                   {/* Timeline Node */}
-                  <div className="hidden lg:block absolute w-4 h-4 rounded-full bg-black border-[3px] border-primary top-1.5 -left-[41px] group-hover:scale-125 group-hover:bg-primary transition-all shadow-[0_0_10px_rgba(229,57,53,0.5)] z-10" />
+                  <div className="hidden lg:block absolute w-4 h-4 rounded-full bg-[#FAF6EE] border-[3px] border-primary top-1.5 -left-[41px] group-hover:scale-125 group-hover:bg-primary transition-all shadow-[0_0_10px_rgba(229,57,53,0.3)] z-10" />
 
                   <div className="flex-1">
-                    <div className="flex items-center gap-3 text-[10px] font-bold text-neutral-400 mb-2 uppercase tracking-wider">
+                    <div className="flex items-center gap-3 text-xs font-bold text-text-muted mb-2 uppercase tracking-wider">
                       <span className="text-primary font-extrabold">
                         {story.category}
                       </span>
-                      <span className="w-1 h-1 rounded-full bg-neutral-800" />
+                      <span className="w-1 h-1 rounded-full bg-border-light" />
                       <span>{story.date}</span>
                     </div>
                     <Link href={`/stories`}>
-                      <h4 className="text-xl font-heading font-bold text-white leading-snug group-hover:text-primary transition-colors mb-2">
+                      <h4 className="text-xl font-heading font-bold text-text-dark leading-snug group-hover:text-primary transition-colors mb-2">
                         {story.title}
                       </h4>
-                      <p className="text-sm text-neutral-400 line-clamp-2 leading-relaxed">
+                      <p className="text-sm text-text-muted line-clamp-2 leading-relaxed">
                         {story.excerpt}
                       </p>
                     </Link>
@@ -109,7 +109,7 @@ export function LatestUpdates() {
 
         {/* Read All Stories Button at the end of the section */}
         <div className="mt-12 flex justify-center lg:justify-end">
-          <Link href="/stories" className="group inline-flex items-center gap-2 px-5 py-2.5 border border-primary/30 hover:border-primary/80 text-xs font-bold uppercase tracking-widest text-primary hover:text-white rounded-full transition-all duration-300">
+          <Link href="/stories" className="group inline-flex items-center gap-3 bg-primary text-white font-bold px-8 py-3 rounded-sm hover:bg-primary/90 transition-all hover:scale-[1.02] uppercase tracking-wider text-xs shadow-md">
             Read All Stories <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>

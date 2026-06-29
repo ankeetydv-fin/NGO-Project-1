@@ -3,15 +3,14 @@ import {
   EditorialHero,
   TrustBar,
   EditorialMission,
-  ProgramsPreview,
+  WelfareProjects,
+  EventsSection,
+  GallerySection,
   Testimonials,
   LatestUpdates,
-  TransparencySection,
   VolunteerSection,
   DonationCTA,
 } from "@/components/home";
-
-import { programs } from "@/content";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -24,11 +23,12 @@ export default function Home() {
       <EditorialHero />
       <TrustBar />
       <EditorialMission />
-      <ProgramsPreview programs={programs} />
-      <Testimonials />
       <LatestUpdates />
-      <TransparencySection />
+      <EventsSection />
+      <WelfareProjects />
       <VolunteerSection />
+      <Testimonials />
+      <GallerySection />
       <DonationCTA />
     </>
   );
