@@ -11,7 +11,7 @@ export function Testimonials() {
     <Section spacing="xl" background="white" className="border-b border-border-light/40 relative overflow-hidden">
       {/* Decorative large quote mark in the background */}
       <div className="absolute -top-12 left-0 text-[150px] sm:text-[200px] md:text-[250px] font-heading font-extrabold text-neutral-50/80 leading-none select-none pointer-events-none z-0 overflow-hidden">
-        "
+        {'\u201C'}
       </div>
 
       <Container size="md" className="relative z-10">
@@ -23,12 +23,12 @@ export function Testimonials() {
         </div>
 
         <div className="space-y-24">
-          {testimonials.map((testimonial, i) => (
+          {testimonials.map((testimonial) => (
             <div key={testimonial.name} className="flex flex-col items-start text-left">
                <blockquote className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-text-dark leading-snug mb-8 relative">
-                <span className="text-primary absolute -left-6 md:-left-8 top-0">"</span>
+                <span className="text-primary absolute -left-6 md:-left-8 top-0">{'\u201C'}</span>
                 {testimonial.quote}
-                <span className="text-primary">"</span>
+                <span className="text-primary">{'\u201D'}</span>
               </blockquote>
               <div className="flex items-center gap-4">
                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold font-heading text-lg">

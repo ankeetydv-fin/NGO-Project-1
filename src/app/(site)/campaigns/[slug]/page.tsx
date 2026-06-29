@@ -139,7 +139,7 @@ export default async function CampaignPage({ params }: { params: Promise<{ slug:
                 
                 <div className="bg-primary/5 border-l-4 border-primary p-6 sm:p-8 rounded-r-2xl my-10 text-left">
                   <h3 className="text-xl font-bold text-text-dark mb-4 mt-0">The Tangible Impact</h3>
-                  <p className="mb-0 text-text-dark/80 italic">"{campaign.impact}"</p>
+                  <p className="mb-0 text-text-dark/80 italic">{'\u201C'}{campaign.impact}{'\u201D'}</p>
                 </div>
               </div>
               
@@ -153,7 +153,7 @@ export default async function CampaignPage({ params }: { params: Promise<{ slug:
                     {campaign.testimonials.map((test, idx) => (
                       <div key={idx} className="bg-white border border-border-light rounded-2xl p-6 md:p-8 shadow-sm flex flex-col gap-5 text-left">
                         <blockquote className="text-lg italic text-text-dark/95 leading-relaxed pl-4 border-l-2 border-primary/30 relative m-0">
-                          "{test.quote}"
+                          {'\u201C'}{test.quote}{'\u201D'}
                         </blockquote>
                         <div className="flex items-center gap-4 mt-1">
                           <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-lg shrink-0">

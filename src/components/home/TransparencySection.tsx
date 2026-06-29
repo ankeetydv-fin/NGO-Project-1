@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
-import { Button } from "@/components/ui/Button";
 import { FileText, Download, ShieldCheck, Award, ArrowRight } from "lucide-react";
 import { transparencyReports, certifications } from "@/content";
 import type { LucideIcon } from "lucide-react";

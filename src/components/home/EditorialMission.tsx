@@ -9,31 +9,34 @@ import { missionContent, impactStats } from "@/content";
 export function EditorialMission() {
   const c = missionContent;
 
-  const words = ["a voice", "protection", "support", "guidance", "hope"];
   const [wordIndex, setWordIndex] = useState(0);
   const [currentText, setCurrentText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
+    const words = ["a voice", "protection", "support", "guidance", "hope"];
     let timer: NodeJS.Timeout;
     const activeWord = words[wordIndex];
 
     if (isDeleting) {
-      timer = setTimeout(() => {
-        setCurrentText((prev) => prev.slice(0, -1));
-      }, 50); // fast deletion speed
+      if (currentText === "") {
+        timer = setTimeout(() => {
+          setIsDeleting(false);
+          setWordIndex((prev) => (prev + 1) % words.length);
+        }, 100);
+      } else {
+        timer = setTimeout(() => {
+          setCurrentText((prev) => prev.slice(0, -1));
+        }, 50);
+      }
     } else {
-      timer = setTimeout(() => {
-        setCurrentText(activeWord.slice(0, currentText.length + 1));
-      }, 100); // typing speed
-    }
-
-    if (!isDeleting && currentText === activeWord) {
-      clearTimeout(timer);
-      timer = setTimeout(() => setIsDeleting(true), 1500); // pause before deleting
-    } else if (isDeleting && currentText === "") {
-      setIsDeleting(false);
-      setWordIndex((prev) => (prev + 1) % words.length);
+      if (currentText === activeWord) {
+        timer = setTimeout(() => setIsDeleting(true), 1500);
+      } else {
+        timer = setTimeout(() => {
+          setCurrentText(activeWord.slice(0, currentText.length + 1));
+        }, 100);
+      }
     }
 
     return () => clearTimeout(timer);
@@ -59,7 +62,7 @@ export function EditorialMission() {
 
             {/* Massive Blockquote */}
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-black leading-[1.1] text-primary tracking-tight">
-              "No child should be left in the dark,
+              {'\u201C'}No child should be left in the dark,
               <br />
               <span className="whitespace-nowrap">
                 without{" "}
@@ -67,7 +70,7 @@ export function EditorialMission() {
                   {currentText}
                 </span>
                 <span className="inline-block w-[3px] h-[0.85em] bg-primary ml-1 animate-pulse align-middle" />
-                ."
+                .{'\u201D'}
               </span>
             </h2>
 

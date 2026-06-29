@@ -6,7 +6,7 @@
  * ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
  */
 
-import type { HeroContent, TrustPartner, DonationTier } from "@/types/content";
+import type { HeroContent, TrustPartner } from "@/types/content";
 
 export const heroContent: HeroContent = {
   badge: "Shiv Prabha Foundation • Real People. Real Lives. Immediate Action.",
@@ -48,10 +48,3 @@ export const missionContent = {
   },
 };
 
-export const donationTiers: DonationTier[] = [
-  { amount: 500, impact: "Provides full sets of textbooks and pens for 5 children so they can stay in school" },
-  { amount: 1000, impact: "Delivers an emergency nutrition and hygiene pack to keep 2 families safe from disease" },
-  { amount: 2500, impact: "Sponsors a complete athletic kit and proper running shoes for a talented rural runner" },
-  { amount: 5000, impact: "Funds all school desks, writing slates, and books for a village classroom block" },
-  { amount: 10000, impact: "Builds a safe water filtration setup for 50 families to drink without fear" },
-];

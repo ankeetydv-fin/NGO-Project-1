@@ -1,1 +1,0 @@
-export { EditorialHero } from "./EditorialHero";

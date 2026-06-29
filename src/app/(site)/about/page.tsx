@@ -4,14 +4,12 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { PageBanner } from "@/components/ui/PageBanner";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Section } from "@/components/layout/Section";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import {
   Target,
-  Eye,
   Heart,
   ArrowRight,
   GraduationCap,
@@ -19,6 +17,7 @@ import {
   Users,
   Shield,
   Award,
+  HandHeart,
 } from "lucide-react";
 import {
   aboutPageMeta,
@@ -33,7 +32,7 @@ import type { LucideIcon } from "lucide-react";
 
 const ICON_MAP: Record<string, LucideIcon> = {
   Heart,
-  Eye,
+  HandHeart,
   Users,
   Award,
   Shield,

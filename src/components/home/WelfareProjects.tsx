@@ -40,7 +40,7 @@ export function WelfareProjects() {
             </div>
 
             <p className="text-text-muted leading-relaxed mb-10 font-sans text-base sm:text-lg">
-              We refuse to turn away when a family cries out for help. Our organization is deeply dedicated to uplifting those whom society has forgotten—whether it’s bringing clean water to drought-stricken villages or ensuring a child doesn't have to choose between working in fields and going to school. We understand that with the passage of time, the needs of our society change. Therefore, we keep our horizons open, adapting our approach to heal communities and make our nation shine brighter.
+              We refuse to turn away when a family cries out for help. Our organization is deeply dedicated to uplifting those whom society has forgotten—whether it’s bringing clean water to drought-stricken villages or ensuring a child doesn&apos;t have to choose between working in fields and going to school. We understand that with the passage of time, the needs of our society change. Therefore, we keep our horizons open, adapting our approach to heal communities and make our nation shine brighter.
             </p>
 
             <div className="text-center lg:text-left">

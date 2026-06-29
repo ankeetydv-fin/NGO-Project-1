@@ -18,7 +18,7 @@ export function DonationCTA() {
         </div>
         
         <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold font-heading leading-tight mb-8 text-text-dark">
-          The stories above don't change without <span className="text-accent-orange italic">your action.</span>
+          The stories above don&apos;t change without <span className="text-accent-orange italic">your action.</span>
         </h2>
         
         <p className="text-lg md:text-xl text-text-muted max-w-2xl mx-auto font-light leading-relaxed mb-12">

@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Menu, X, Mail, Phone, ChevronDown } from "lucide-react";
+import { Menu, X, Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/layout/Container";
 import { cn } from "@/lib/utils";

@@ -172,12 +172,6 @@ export interface GalleryItem {
   image?: string;
 }
 
-/* ─── Donation Amount ─── */
-export interface DonationTier {
-  amount: number;
-  impact: string;
-}
-
 /* ─── Contact Info ─── */
 export interface ContactInfoBlock {
   iconName: string;
