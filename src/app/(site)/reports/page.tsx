@@ -45,7 +45,7 @@ export default function ReportsPage() {
                   <FileText size={24} className="text-primary group-hover:scale-110 transition-transform" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-bold font-heading text-lg text-secondary group-hover:text-primary transition-colors">
+                  <h3 className="font-bold font-heading text-lg text-text-dark group-hover:text-primary transition-colors">
                     {report.title}
                   </h3>
                   <div className="flex flex-wrap gap-4 mt-2 text-text-muted text-xs font-semibold uppercase tracking-wider">
@@ -74,9 +74,9 @@ export default function ReportsPage() {
                     className="bg-surface border border-border-light/60 rounded-xl p-5 flex items-center gap-4 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 cursor-pointer group"
                   >
                     <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center shrink-0">
-                      <BarChart3 size={18} className="text-secondary" />
+                      <BarChart3 size={18} className="text-primary" />
                     </div>
-                    <span className="font-bold text-secondary flex-1 group-hover:text-primary transition-colors">{report.title}</span>
+                    <span className="font-bold text-text-dark flex-1 group-hover:text-primary transition-colors">{report.title}</span>
                     <Download size={18} className="text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
                 ))}
@@ -93,7 +93,7 @@ export default function ReportsPage() {
                     <div className="w-10 h-10 rounded-full bg-accent-green/10 flex items-center justify-center shrink-0">
                       <ShieldCheck size={18} className="text-accent-green" />
                     </div>
-                    <span className="font-bold text-secondary flex-1 group-hover:text-primary transition-colors">{report.title}</span>
+                    <span className="font-bold text-text-dark flex-1 group-hover:text-primary transition-colors">{report.title}</span>
                     <Download size={18} className="text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
                 ))}

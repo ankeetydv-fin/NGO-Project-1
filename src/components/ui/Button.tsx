@@ -15,7 +15,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     // Variant styles mapping - flat, high contrast
     const variants = {
       primary: "bg-primary text-white hover:bg-primary/90 hover:scale-[1.02]",
-      secondary: "bg-secondary text-white hover:bg-secondary/90 hover:scale-[1.02]",
+      secondary: "bg-secondary text-text-dark hover:bg-secondary/90 hover:scale-[1.02]",
       accent: "bg-accent-orange text-white hover:bg-accent-orange/90 hover:scale-[1.02]",
       outline: "border-2 border-primary text-primary hover:bg-primary hover:text-white",
       ghost: "hover:bg-primary/10 text-primary",

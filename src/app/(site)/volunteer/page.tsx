@@ -70,7 +70,7 @@ export default function VolunteerPage() {
                       <Icon size={24} className="text-primary group-hover:text-surface transition-colors" />
                     </div>
                     <div className="space-y-3">
-                      <h3 className="font-bold font-heading text-xl text-secondary">{role.title}</h3>
+                      <h3 className="font-bold font-heading text-xl text-text-dark">{role.title}</h3>
                       <div className="flex flex-wrap gap-4 text-text-muted text-xs font-semibold uppercase tracking-wider">
                         <span className="flex items-center gap-1.5"><MapPin size={14} className="text-primary" /> {role.location}</span>
                         <span className="flex items-center gap-1.5"><Clock size={14} className="text-primary" /> {role.commitment}</span>
@@ -95,7 +95,7 @@ export default function VolunteerPage() {
                 <p className="text-primary font-bold text-sm uppercase tracking-widest mb-3">
                   Why Volunteer
                 </p>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold font-heading text-secondary leading-tight">Benefits of Volunteering</h2>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold font-heading text-text-dark leading-tight">Benefits of Volunteering</h2>
               </div>
               <ul className="space-y-4">
                 {volunteerBenefits.map((b) => (
@@ -107,10 +107,10 @@ export default function VolunteerPage() {
               </ul>
               <div className="bg-white border border-border-light/60 rounded-2xl p-5 sm:p-6 md:p-8 shadow-sm flex items-start gap-5 mt-8">
                 <div className="w-12 h-12 rounded-full bg-secondary/5 flex items-center justify-center shrink-0">
-                  <Users size={24} className="text-secondary" />
+                  <Users size={24} className="text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-extrabold font-heading text-xl sm:text-2xl text-secondary mb-1">
+                  <h3 className="font-extrabold font-heading text-xl sm:text-2xl text-text-dark mb-1">
                     {volunteerCommunityStats.count} {volunteerCommunityStats.label}
                   </h3>
                   <p className="text-text-muted text-sm leading-relaxed">
@@ -123,7 +123,7 @@ export default function VolunteerPage() {
             {/* Form */}
             <div>
               <div className="bg-surface border border-border-light/60 rounded-2xl p-5 sm:p-8 md:p-10 shadow-soft">
-                <h3 className="text-2xl sm:text-3xl font-extrabold font-heading mb-8 flex items-center gap-3 text-secondary">
+                <h3 className="text-2xl sm:text-3xl font-extrabold font-heading mb-8 flex items-center gap-3 text-text-dark">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                     <HandHeart size={20} />
                   </div>
@@ -133,7 +133,7 @@ export default function VolunteerPage() {
                 {submitted ? (
                   <div className="text-center py-12 space-y-4">
                     <CheckCircle size={56} className="text-accent-green mx-auto" />
-                    <h4 className="text-2xl font-bold font-heading text-secondary">Thank You!</h4>
+                    <h4 className="text-2xl font-bold font-heading text-text-dark">Thank You!</h4>
                     <p className="text-text-muted">We will reach out to you within 48 hours.</p>
                   </div>
                 ) : (

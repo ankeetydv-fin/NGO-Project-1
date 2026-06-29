@@ -110,17 +110,20 @@ export default function AboutPage() {
       />
 
       {/* ─── Our Story ─── */}
-      <Section spacing="lg" background="white">
+      <Section spacing="md" background="white">
         <Container size="lg">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Text side */}
             <div className="space-y-6">
-              <SectionHeading
-                label="Who We Are"
-                title="Our Story"
-                align="left"
-                className="mb-0"
-              />
+              <div className="flex items-center gap-2 mb-4">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent-orange" />
+                <span className="text-sm font-bold uppercase tracking-[0.2em] text-primary">
+                  Who We Are
+                </span>
+              </div>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-text-dark mb-6 leading-tight tracking-tight">
+                Our Story
+              </h2>
               {aboutStory.paragraphs.map((p, i) => (
                 <p key={i} className="text-text-muted leading-relaxed">
                   {p}
@@ -151,67 +154,56 @@ export default function AboutPage() {
         </Container>
       </Section>
 
-      {/* ─── Vision Section (Horizontal Banner with Overlay Content Card) ─── */}
-      <section className="relative min-h-[450px] md:min-h-[550px] flex items-center justify-center overflow-hidden bg-neutral-950 py-16">
-        {/* Large Horizontal Picture Background Banner - NULL for now, stylized with placeholder grid & overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-neutral-850 to-neutral-950 flex items-center justify-center opacity-70">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,151,43,0.18),transparent_75%)]" />
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:50px_50px]" />
-          <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.4),rgba(0,0,0,0.75))]" />
-          
-          {/* Placeholder decorative artwork */}
-          <div className="flex flex-col items-center gap-3 text-stone-500/20 pointer-events-none select-none">
-            <svg className="w-20 h-20 stroke-[0.75]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
-            </svg>
-            <span className="text-xs uppercase tracking-[0.25em] font-medium">Vision Section Picture Banner</span>
-          </div>
-        </div>
+      {/* ─── Vision Section (Horizontal Banner with Overlay text directly on BG) ─── */}
+      <section className="relative min-h-[450px] md:min-h-[550px] flex items-center justify-center overflow-hidden bg-neutral-800 py-16">
+        {/* Large Horizontal Picture Background Banner */}
+        <div className="absolute inset-0 bg-[url('/images/placeholder.svg')] bg-cover bg-center opacity-25 grayscale mix-blend-overlay" />
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-900/90 to-neutral-800/40" />
 
-        {/* Content Card Lying Over the Banner */}
-        <Container size="md" className="relative z-10 px-4">
-          <div className="bg-surface/95 backdrop-blur-md rounded-2xl border border-white/20 p-5 sm:p-8 md:p-12 shadow-2xl text-center max-w-2xl mx-auto hover:translate-y-[-4px] transition-transform duration-300">
-            <div className="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center mx-auto mb-6">
-              <Eye size={24} />
-            </div>
-            <span className="text-xs font-bold uppercase tracking-widest text-primary mb-3 block">
+        <Container size="md" className="relative z-10 px-4 text-center max-w-3xl mx-auto">
+          <div className="flex items-center gap-2 mb-4 justify-center">
+            <span className="w-1.5 h-1.5 rounded-full bg-accent-orange animate-pulse" />
+            <span className="text-sm font-bold uppercase tracking-[0.2em] text-primary">
               Our Dream &amp; Destination
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold font-heading text-text-dark mb-6">
-              Our Vision
-            </h2>
-            <p className="text-base md:text-lg text-text-dark/90 leading-relaxed font-sans font-light italic mb-8">
-              &ldquo;{aboutVision.text}&rdquo;
-            </p>
-            <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 pt-6 border-t border-border-light/60 text-xs font-semibold text-text-muted">
-              <div className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                <span>Inclusive Progress</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                <span>Youth Empowerment</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                <span>Community Action</span>
-              </div>
+          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-white mb-6 leading-tight tracking-tight">
+            Our Vision
+          </h2>
+          <p className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-white leading-relaxed italic mb-8 drop-shadow-md">
+            &ldquo;{aboutVision.text}&rdquo;
+          </p>
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 pt-6 border-t border-white/20 text-xs sm:text-sm font-bold text-white/80">
+            <div className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+              <span>Inclusive Progress</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+              <span>Youth Empowerment</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+              <span>Community Action</span>
             </div>
           </div>
         </Container>
       </section>
 
       {/* ─── Mission Section (Minimalist, Professional, Highly Interactive Explorer) ─── */}
-      <Section spacing="lg" background="default" className="relative overflow-hidden py-16 md:py-24 animate-fade-in">
+      <Section spacing="md" background="default" className="relative overflow-hidden py-16 md:py-24 animate-fade-in">
         {/* Subtle grid details */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(23,23,23,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(23,23,23,0.01)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
         
         <Container size="lg" className="relative z-10">
           <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
-            <span className="inline-block px-3 py-1 rounded-md bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-3">
-              Strategic Path
-            </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold font-heading text-text-dark tracking-tight">
+            <div className="flex items-center gap-2 mb-4 justify-center">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-orange" />
+              <span className="text-sm font-bold uppercase tracking-[0.2em] text-primary">
+                Strategic Path
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-text-dark mb-4 leading-tight tracking-tight">
               Our Mission Explorer
             </h2>
             <p className="text-sm md:text-base text-text-muted mt-3">
@@ -426,13 +418,22 @@ export default function AboutPage() {
       </Section>
 
       {/* ─── Our Pillars ─── */}
-      <Section spacing="lg" background="white">
+      <Section spacing="md" background="white">
         <Container size="lg">
-          <SectionHeading
-            label="What We Stand For"
-            title="Our Core Pillars"
-            description="Three areas that define our work and our commitment to society."
-          />
+          <div className="text-center flex flex-col items-center mb-12 md:mb-16">
+            <div className="flex items-center gap-2 mb-4 justify-center">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-orange" />
+              <span className="text-sm font-bold uppercase tracking-[0.2em] text-primary">
+                What We Stand For
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-text-dark mb-4 leading-tight tracking-tight">
+              Our Core Pillars
+            </h2>
+            <p className="text-text-muted text-base md:text-lg max-w-2xl mx-auto">
+              Three areas that define our work and our commitment to society.
+            </p>
+          </div>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             {aboutPillars.map((pillar) => {
               const Icon = ICON_MAP[pillar.iconName] || Heart;
@@ -441,7 +442,7 @@ export default function AboutPage() {
                   <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto transition-transform duration-300 group-hover:scale-110">
                     <Icon size={36} className="text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold font-heading text-secondary">{pillar.title}</h3>
+                  <h3 className="text-2xl font-bold font-heading text-text-dark">{pillar.title}</h3>
                   <p className="text-text-muted leading-relaxed max-w-sm mx-auto">{pillar.description}</p>
                 </div>
               );
@@ -451,25 +452,34 @@ export default function AboutPage() {
       </Section>
 
       {/* ─── Core Values ─── */}
-      <Section spacing="lg" background="default">
+      <Section spacing="md" background="default">
         <Container size="lg">
-          <SectionHeading
-            label="What Guides Us"
-            title="Our Core Values"
-            description="Every decision we make is rooted in these principles."
-          />
+          <div className="text-center flex flex-col items-center mb-12 md:mb-16">
+            <div className="flex items-center gap-2 mb-4 justify-center">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-orange" />
+              <span className="text-sm font-bold uppercase tracking-[0.2em] text-primary">
+                What Guides Us
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-text-dark mb-4 leading-tight tracking-tight">
+              Our Core Values
+            </h2>
+            <p className="text-text-muted text-base md:text-lg max-w-2xl mx-auto">
+              Every decision we make is rooted in these principles.
+            </p>
+          </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((v) => {
               const Icon = ICON_MAP[v.iconName] || Heart;
               return (
                 <div
                   key={v.title}
-                  className="bg-surface border border-border-light/60 rounded-[var(--radius-md)] p-5 sm:p-6 md:p-8 text-center shadow-soft hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                  className="bg-surface border border-border-light/40 rounded-2xl p-5 sm:p-6 md:p-8 text-center shadow-soft hover:shadow-md transition-shadow"
                 >
                   <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5">
                     <Icon size={26} className="text-primary" />
                   </div>
-                  <h3 className="font-bold font-heading text-lg mb-3 text-secondary">{v.title}</h3>
+                  <h3 className="font-bold font-heading text-lg mb-3 text-text-dark">{v.title}</h3>
                   <p className="text-text-muted text-sm leading-relaxed">{v.text}</p>
                 </div>
               );
@@ -479,18 +489,27 @@ export default function AboutPage() {
       </Section>
 
       {/* ─── Team ─── */}
-      <Section spacing="lg" background="white">
+      <Section spacing="md" background="white">
         <Container size="lg">
-          <SectionHeading
-            label="Our People"
-            title="Leadership Team"
-            description="Dedicated individuals driving our mission forward."
-          />
+          <div className="text-center flex flex-col items-center mb-12 md:mb-16">
+            <div className="flex items-center gap-2 mb-4 justify-center">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-orange" />
+              <span className="text-sm font-bold uppercase tracking-[0.2em] text-primary">
+                Our People
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-text-dark mb-4 leading-tight tracking-tight">
+              Leadership Team
+            </h2>
+            <p className="text-text-muted text-base md:text-lg max-w-2xl mx-auto">
+              Dedicated individuals driving our mission forward.
+            </p>
+          </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {teamMembers.map((member) => (
               <div
                 key={member.name}
-                className="bg-surface border border-border-light/60 rounded-[var(--radius-md)] p-5 sm:p-6 md:p-8 text-center shadow-soft hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                className="bg-surface border border-border-light/40 rounded-2xl p-5 sm:p-6 md:p-8 text-center shadow-soft hover:shadow-md transition-shadow"
               >
                 {member.image ? (
                   <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden mx-auto mb-5 relative border-2 border-primary/20">
@@ -501,7 +520,7 @@ export default function AboutPage() {
                     {member.initials}
                   </div>
                 )}
-                <h3 className="font-bold font-heading text-lg text-secondary mb-1">{member.name}</h3>
+                <h3 className="font-bold font-heading text-lg text-text-dark mb-1">{member.name}</h3>
                 <p className="text-text-muted text-sm font-semibold uppercase tracking-widest">{member.role}</p>
               </div>
             ))}
@@ -522,7 +541,7 @@ export default function AboutPage() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link href="/donate" tabIndex={-1}>
-                <Button variant="secondary" size="lg" className="gap-2 rounded-full px-8 shadow-glow hover:-translate-y-1 transition-transform font-bold text-surface">
+                <Button variant="secondary" size="lg" className="gap-2 rounded-full px-8 shadow-glow hover:-translate-y-1 transition-transform font-bold text-primary">
                   <Heart size={20} /> Donate Now
                 </Button>
               </Link>

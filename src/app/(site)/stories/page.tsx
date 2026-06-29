@@ -40,7 +40,7 @@ export default function StoriesPage() {
                         {story.category}
                       </span>
                     </div>
-                    <h3 className="text-xl font-extrabold font-heading text-secondary mb-3 line-clamp-2 group-hover:text-primary transition-colors">
+                    <h3 className="text-xl font-extrabold font-heading text-text-dark mb-3 line-clamp-2 group-hover:text-primary transition-colors">
                       {story.title}
                     </h3>
                     <p className="text-text-muted text-sm leading-relaxed flex-1 line-clamp-3 mb-6">

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useRef } from "react";
 import { PageBanner } from "@/components/ui/PageBanner";
@@ -79,7 +79,7 @@ export default function ContactPageContent({ siteSettings }: ContactPageContentP
           <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
             <div className="lg:col-span-3">
               <div className="bg-surface border border-border-light/60 rounded-2xl p-5 sm:p-8 md:p-10 shadow-soft">
-                <h2 className="text-2xl sm:text-3xl font-extrabold font-heading mb-3 flex items-center gap-3 text-secondary">
+                <h2 className="text-2xl sm:text-3xl font-extrabold font-heading mb-3 flex items-center gap-3 text-text-dark">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                     <MessageSquare size={20} />
                   </div>
@@ -92,7 +92,7 @@ export default function ContactPageContent({ siteSettings }: ContactPageContentP
                 {submitted ? (
                   <div className="text-center py-16 space-y-4">
                     <CheckCircle size={56} className="text-accent-green mx-auto" />
-                    <h3 className="text-2xl font-bold font-heading text-secondary">Message Sent!</h3>
+                    <h3 className="text-2xl font-bold font-heading text-text-dark">Message Sent!</h3>
                     <p className="text-text-muted">Thank you for reaching out. We will get back to you shortly.</p>
                   </div>
                 ) : (
@@ -166,7 +166,7 @@ export default function ContactPageContent({ siteSettings }: ContactPageContentP
                       <Icon size={22} className="text-primary group-hover:text-surface transition-colors" />
                     </div>
                     <div>
-                      <h3 className="font-bold font-heading mb-1.5 text-secondary">{info.title}</h3>
+                      <h3 className="font-bold font-heading mb-1.5 text-text-dark">{info.title}</h3>
                       {info.lines.map((line: string) => (
                         <p key={line} className="text-text-muted text-sm leading-relaxed">{line}</p>
                       ))}
@@ -177,7 +177,7 @@ export default function ContactPageContent({ siteSettings }: ContactPageContentP
 
               <a
                 href="#location-map"
-                className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-primary hover:text-secondary transition-colors mt-8"
+                className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-primary hover:text-text-dark transition-colors mt-8"
               >
                 <MapPin size={16} /> View full map below
               </a>
@@ -201,7 +201,7 @@ export default function ContactPageContent({ siteSettings }: ContactPageContentP
           />
           <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 md:bottom-10 md:left-10 z-10">
             <div className="bg-surface/95 backdrop-blur-md rounded-xl shadow-xl p-4 sm:p-6 border border-white/20 max-w-sm">
-              <p className="font-extrabold font-heading text-lg text-secondary flex items-center gap-2 mb-2">
+              <p className="font-extrabold font-heading text-lg text-text-dark flex items-center gap-2 mb-2">
                 <MapPin size={20} className="text-primary" />
                 {siteSettings?.name ?? "Shiv Prabha Foundation"}
               </p>
